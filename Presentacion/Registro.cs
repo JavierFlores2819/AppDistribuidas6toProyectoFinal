@@ -17,8 +17,36 @@ namespace Presentacion
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonSopa_Click(object sender, EventArgs e)
         {
+
+            Platos a = new Platos();
+            a.labelPlato.Text = "Sopa";
+            a.Show();
+
+        }
+
+        private void buttonSegund_Click(object sender, EventArgs e)
+        {
+            Platos a = new Platos();
+            a.labelPlato.Text = "Segundo";
+            a.Show();
+
+        }
+
+        private void buttonBebida_Click(object sender, EventArgs e)
+        {
+            Platos a = new Platos();
+            a.labelPlato.Text = "Bebida";
+            a.Show();
+
+        }
+
+        private void buttonPostre_Click(object sender, EventArgs e)
+        {
+            Platos a = new Platos();
+            a.labelPlato.Text = "Postre";
+            a.Show();
 
         }
     }

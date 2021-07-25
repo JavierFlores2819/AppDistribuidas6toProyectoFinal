@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ingredientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ingredientes.Designer.cs">
+      <DependentUpon>Ingredientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="PagPrinc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ingredientes.resx">
+      <DependentUpon>Ingredientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PagPrinc.resx">
       <DependentUpon>PagPrinc.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,6 +105,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{6f3422b9-7f7e-4903-b81b-ea6ecb432545}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{13df61e6-7f73-4a89-8722-8e0ab50c0cb8}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

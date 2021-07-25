@@ -41,10 +41,10 @@ namespace Presentacion
             this.buttonCancelReg = new System.Windows.Forms.Button();
             this.buttonRegistra = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonSopa = new System.Windows.Forms.Button();
+            this.buttonPostre = new System.Windows.Forms.Button();
+            this.buttonBebida = new System.Windows.Forms.Button();
+            this.buttonSegund = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -100,9 +100,9 @@ namespace Presentacion
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 105);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.Size = new System.Drawing.Size(79, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Postre";
+            this.label4.Text = "Postre/Entrada";
             // 
             // label3
             // 
@@ -157,42 +157,45 @@ namespace Presentacion
             this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
             this.dateTimePicker1.TabIndex = 7;
             // 
-            // button1
+            // buttonSopa
             // 
-            this.button1.Location = new System.Drawing.Point(276, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 21);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSopa.Location = new System.Drawing.Point(276, 33);
+            this.buttonSopa.Name = "buttonSopa";
+            this.buttonSopa.Size = new System.Drawing.Size(31, 21);
+            this.buttonSopa.TabIndex = 8;
+            this.buttonSopa.Text = "...";
+            this.buttonSopa.UseVisualStyleBackColor = true;
+            this.buttonSopa.Click += new System.EventHandler(this.buttonSopa_Click);
             // 
-            // button2
+            // buttonPostre
             // 
-            this.button2.Location = new System.Drawing.Point(276, 114);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(31, 21);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "...";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonPostre.Location = new System.Drawing.Point(276, 114);
+            this.buttonPostre.Name = "buttonPostre";
+            this.buttonPostre.Size = new System.Drawing.Size(31, 21);
+            this.buttonPostre.TabIndex = 9;
+            this.buttonPostre.Text = "...";
+            this.buttonPostre.UseVisualStyleBackColor = true;
+            this.buttonPostre.Click += new System.EventHandler(this.buttonPostre_Click);
             // 
-            // button3
+            // buttonBebida
             // 
-            this.button3.Location = new System.Drawing.Point(276, 87);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(31, 21);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "...";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonBebida.Location = new System.Drawing.Point(276, 87);
+            this.buttonBebida.Name = "buttonBebida";
+            this.buttonBebida.Size = new System.Drawing.Size(31, 21);
+            this.buttonBebida.TabIndex = 10;
+            this.buttonBebida.Text = "...";
+            this.buttonBebida.UseVisualStyleBackColor = true;
+            this.buttonBebida.Click += new System.EventHandler(this.buttonBebida_Click);
             // 
-            // button4
+            // buttonSegund
             // 
-            this.button4.Location = new System.Drawing.Point(276, 60);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(31, 21);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "...";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonSegund.Location = new System.Drawing.Point(276, 60);
+            this.buttonSegund.Name = "buttonSegund";
+            this.buttonSegund.Size = new System.Drawing.Size(31, 21);
+            this.buttonSegund.TabIndex = 11;
+            this.buttonSegund.Text = "...";
+            this.buttonSegund.UseVisualStyleBackColor = true;
+            this.buttonSegund.Click += new System.EventHandler(this.buttonSegund_Click);
             // 
             // textBox1
             // 
@@ -218,10 +221,10 @@ namespace Presentacion
             this.ClientSize = new System.Drawing.Size(320, 354);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonSegund);
+            this.Controls.Add(this.buttonBebida);
+            this.Controls.Add(this.buttonPostre);
+            this.Controls.Add(this.buttonSopa);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.buttonRegistra);
             this.Controls.Add(this.buttonCancelReg);
@@ -253,10 +256,10 @@ namespace Presentacion
         private System.Windows.Forms.Button buttonCancelReg;
         private System.Windows.Forms.Button buttonRegistra;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonSopa;
+        private System.Windows.Forms.Button buttonPostre;
+        private System.Windows.Forms.Button buttonBebida;
+        private System.Windows.Forms.Button buttonSegund;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
     }

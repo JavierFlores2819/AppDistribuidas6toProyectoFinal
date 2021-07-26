@@ -55,5 +55,27 @@ namespace Datos.Properties {
                 return ((string)(this["APPDISTRIPRUEBAConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=AppDistr6TO.mssql.somee.com;Initial Catalog=AppDistr6TO;Persist Secur" +
+            "ity Info=True;User ID=JaviFlores2819_SQLLogin_1;Password=scgiu6codk")]
+        public string AppDistr6TOConnectionString {
+            get {
+                return ((string)(this["AppDistr6TOConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=AppDistrI6TO.mssql.somee.com;Initial Catalog=AppDistrI6TO;Persist Sec" +
+            "urity Info=True;User ID=JaviFlores2819_SQLLogin_1;Password=scgiu6codk")]
+        public string AppDistrI6TOConnectionString {
+            get {
+                return ((string)(this["AppDistrI6TOConnectionString"]));
+            }
+        }
     }
 }

@@ -26,10 +26,12 @@ namespace Presentacion
         {
             Ingredientes a = new Ingredientes();
             a.Show();
+            this.Hide();
             a.FormClosed += new FormClosedEventHandler(form_FormClosed);
         }
         private void form_FormClosed(object sender, FormClosedEventArgs e)
         {
+            this.Show();
             checkedListBoxIngrediente.Items.Clear();
             llenarCheckBox();
 
@@ -49,7 +51,6 @@ namespace Presentacion
 
         private void Platos_Load(object sender, EventArgs e)
         {
-
             llenarCheckBox();
         }
 
@@ -66,10 +67,10 @@ namespace Presentacion
 
         private void buttonGuarPla_Click(object sender, EventArgs e)
         {
-            guardarSopa();
+            guardar();
         }
 
-        private void guardarSopa()
+        private void guardar()
         {
             if (imgPlato.Image != null)
             {
@@ -92,55 +93,56 @@ namespace Presentacion
                         Boolean c = NegocioDetalleSopa.NuevoDetalleSopaNegocio(es);
                     }
                 }
-                else if(labelPlato.Text == "Segundo")
+                else if (labelPlato.Text == "Segundo")
                 {
-                    EntidadSopa s = new EntidadSopa();
-                    s.NOM_SOP = textBoxNombrePlato.Text;
-                    s.IMG_SOPA = m.GetBuffer();
-                    int b = NegocioSopa.NuevaSopaNegocio(s);
+                    EntidadSegundo s = new EntidadSegundo();
+                    s.NOM_SEG = textBoxNombrePlato.Text;
+                    s.IMG_Segundo = m.GetBuffer();
+                    int b = NegocioSegundo.NuevSegundoNegocio(s);
                     int a;
                     foreach (var item in checkedListBoxIngrediente.CheckedIndices)
                     {
                         a = int.Parse(item.ToString()) + 1;
-                        EntidadDetalleSopa es = new EntidadDetalleSopa();
+                        EntidadDetalleSegundo es = new EntidadDetalleSegundo();
                         es.ID_ING_USA = a;
                         es.ID_REC_PER = b;
-                        Boolean c = NegocioDetalleSopa.NuevoDetalleSopaNegocio(es);
+                        Boolean c = NegocioDetalleSegundo.NuevoDetalleSegundoNegocio(es);
                     }
                 }
                 else if (labelPlato.Text == "Bebida")
                 {
-                    EntidadSopa s = new EntidadSopa();
-                    s.NOM_SOP = textBoxNombrePlato.Text;
-                    s.IMG_SOPA = m.GetBuffer();
-                    int b = NegocioSopa.NuevaSopaNegocio(s);
+                    EntidadBebida s = new EntidadBebida();
+                    s.NOM_BEB = textBoxNombrePlato.Text;
+                    s.IMG_BEBIDA = m.GetBuffer();
+                    int b = NegocioBebida.NuevoBebidaNegocio(s);
                     int a;
                     foreach (var item in checkedListBoxIngrediente.CheckedIndices)
                     {
                         a = int.Parse(item.ToString()) + 1;
-                        EntidadDetalleSopa es = new EntidadDetalleSopa();
+                        EntidadDetalleBebida es = new EntidadDetalleBebida();
                         es.ID_ING_USA = a;
                         es.ID_REC_PER = b;
-                        Boolean c = NegocioDetalleSopa.NuevoDetalleSopaNegocio(es);
+                        Boolean c = NegocioDetalleBebida.NuevoDetalleBebidaNegocio(es);
                     }
                 }
                 else if (labelPlato.Text == "Postre")
                 {
-                    EntidadSopa s = new EntidadSopa();
-                    s.NOM_SOP = textBoxNombrePlato.Text;
-                    s.IMG_SOPA = m.GetBuffer();
-                    int b = NegocioSopa.NuevaSopaNegocio(s);
+                    EntidadPostre s = new EntidadPostre();
+                    s.NOM_POS = textBoxNombrePlato.Text;
+                    s.IMG_POSTRE = m.GetBuffer();
+                    int b = NegocioPostre.NuevoPostreNegocio(s);
                     int a;
                     foreach (var item in checkedListBoxIngrediente.CheckedIndices)
                     {
                         a = int.Parse(item.ToString()) + 1;
-                        EntidadDetalleSopa es = new EntidadDetalleSopa();
+                        EntidadDetallePostre es = new EntidadDetallePostre();
                         es.ID_ING_USA = a;
                         es.ID_REC_PER = b;
-                        Boolean c = NegocioDetalleSopa.NuevoDetalleSopaNegocio(es);
+                        Boolean c = NegocioDetallePostre.NuevoDetallePostreNegocio(es);
                     }
 
                 }
+                MessageBox.Show("se guardo correctamente", "hecho", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

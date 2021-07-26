@@ -26,5 +26,21 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=DESKTOP-5T0Q15T\BASE;Initial Catalog=APPDISTRIPRUEBA;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="AppDistr6TOConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=AppDistr6TO.mssql.somee.com;Initial Catalog=AppDistr6TO;Persist Security Info=True;User ID=JaviFlores2819_SQLLogin_1;Password=scgiu6codk&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=AppDistr6TO.mssql.somee.com;Initial Catalog=AppDistr6TO;Persist Security Info=True;User ID=JaviFlores2819_SQLLogin_1;Password=scgiu6codk</Value>
+    </Setting>
+    <Setting Name="AppDistrI6TOConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=AppDistrI6TO.mssql.somee.com;Initial Catalog=AppDistrI6TO;Persist Security Info=True;User ID=JaviFlores2819_SQLLogin_1;Password=scgiu6codk&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=AppDistrI6TO.mssql.somee.com;Initial Catalog=AppDistrI6TO;Persist Security Info=True;User ID=JaviFlores2819_SQLLogin_1;Password=scgiu6codk</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -20,7 +20,6 @@ namespace Negocio
             {
                 return false;
             }
-
         }
 
         public static List<EntidadIngredientes> CargarIngredientesNegocio()

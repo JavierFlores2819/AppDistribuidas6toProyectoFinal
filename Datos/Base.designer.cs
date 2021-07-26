@@ -22,7 +22,7 @@ namespace Datos
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="APPDISTRIPRUEBA")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="AppDistrI6TO")]
 	public partial class BASEDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -39,21 +39,21 @@ namespace Datos
     partial void InsertDETALLE_POSTRE(DETALLE_POSTRE instance);
     partial void UpdateDETALLE_POSTRE(DETALLE_POSTRE instance);
     partial void DeleteDETALLE_POSTRE(DETALLE_POSTRE instance);
-    partial void InsertDETALLE_SEGUNDO(DETALLE_SEGUNDO instance);
-    partial void UpdateDETALLE_SEGUNDO(DETALLE_SEGUNDO instance);
-    partial void DeleteDETALLE_SEGUNDO(DETALLE_SEGUNDO instance);
     partial void InsertDETALLE_SOPA(DETALLE_SOPA instance);
     partial void UpdateDETALLE_SOPA(DETALLE_SOPA instance);
     partial void DeleteDETALLE_SOPA(DETALLE_SOPA instance);
+    partial void InsertDETALLE_SEGUNDO(DETALLE_SEGUNDO instance);
+    partial void UpdateDETALLE_SEGUNDO(DETALLE_SEGUNDO instance);
+    partial void DeleteDETALLE_SEGUNDO(DETALLE_SEGUNDO instance);
     partial void InsertINGREDIENTES(INGREDIENTES instance);
     partial void UpdateINGREDIENTES(INGREDIENTES instance);
     partial void DeleteINGREDIENTES(INGREDIENTES instance);
-    partial void InsertMENU(MENU instance);
-    partial void UpdateMENU(MENU instance);
-    partial void DeleteMENU(MENU instance);
     partial void InsertPOSTRE(POSTRE instance);
     partial void UpdatePOSTRE(POSTRE instance);
     partial void DeletePOSTRE(POSTRE instance);
+    partial void InsertMENU(MENU instance);
+    partial void UpdateMENU(MENU instance);
+    partial void DeleteMENU(MENU instance);
     partial void InsertSEGUNDO(SEGUNDO instance);
     partial void UpdateSEGUNDO(SEGUNDO instance);
     partial void DeleteSEGUNDO(SEGUNDO instance);
@@ -63,7 +63,7 @@ namespace Datos
     #endregion
 		
 		public BASEDataContext() : 
-				base(global::Datos.Properties.Settings.Default.APPDISTRIPRUEBAConnectionString, mappingSource)
+				base(global::Datos.Properties.Settings.Default.AppDistrI6TOConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -116,19 +116,19 @@ namespace Datos
 			}
 		}
 		
-		public System.Data.Linq.Table<DETALLE_SEGUNDO> DETALLE_SEGUNDO
-		{
-			get
-			{
-				return this.GetTable<DETALLE_SEGUNDO>();
-			}
-		}
-		
 		public System.Data.Linq.Table<DETALLE_SOPA> DETALLE_SOPA
 		{
 			get
 			{
 				return this.GetTable<DETALLE_SOPA>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DETALLE_SEGUNDO> DETALLE_SEGUNDO
+		{
+			get
+			{
+				return this.GetTable<DETALLE_SEGUNDO>();
 			}
 		}
 		
@@ -140,19 +140,19 @@ namespace Datos
 			}
 		}
 		
-		public System.Data.Linq.Table<MENU> MENU
-		{
-			get
-			{
-				return this.GetTable<MENU>();
-			}
-		}
-		
 		public System.Data.Linq.Table<POSTRE> POSTRE
 		{
 			get
 			{
 				return this.GetTable<POSTRE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MENU> MENU
+		{
+			get
+			{
+				return this.GetTable<MENU>();
 			}
 		}
 		
@@ -723,198 +723,6 @@ namespace Datos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DETALLE_SEGUNDO")]
-	public partial class DETALLE_SEGUNDO : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID_DET_REC;
-		
-		private int _ID_REC_PER;
-		
-		private int _ID_ING_USA;
-		
-		private EntityRef<INGREDIENTES> _INGREDIENTES;
-		
-		private EntityRef<SEGUNDO> _SEGUNDO;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnID_DET_RECChanging(int value);
-    partial void OnID_DET_RECChanged();
-    partial void OnID_REC_PERChanging(int value);
-    partial void OnID_REC_PERChanged();
-    partial void OnID_ING_USAChanging(int value);
-    partial void OnID_ING_USAChanged();
-    #endregion
-		
-		public DETALLE_SEGUNDO()
-		{
-			this._INGREDIENTES = default(EntityRef<INGREDIENTES>);
-			this._SEGUNDO = default(EntityRef<SEGUNDO>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_DET_REC", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID_DET_REC
-		{
-			get
-			{
-				return this._ID_DET_REC;
-			}
-			set
-			{
-				if ((this._ID_DET_REC != value))
-				{
-					this.OnID_DET_RECChanging(value);
-					this.SendPropertyChanging();
-					this._ID_DET_REC = value;
-					this.SendPropertyChanged("ID_DET_REC");
-					this.OnID_DET_RECChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_REC_PER", DbType="Int NOT NULL")]
-		public int ID_REC_PER
-		{
-			get
-			{
-				return this._ID_REC_PER;
-			}
-			set
-			{
-				if ((this._ID_REC_PER != value))
-				{
-					if (this._SEGUNDO.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_REC_PERChanging(value);
-					this.SendPropertyChanging();
-					this._ID_REC_PER = value;
-					this.SendPropertyChanged("ID_REC_PER");
-					this.OnID_REC_PERChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ING_USA", DbType="Int NOT NULL")]
-		public int ID_ING_USA
-		{
-			get
-			{
-				return this._ID_ING_USA;
-			}
-			set
-			{
-				if ((this._ID_ING_USA != value))
-				{
-					if (this._INGREDIENTES.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_ING_USAChanging(value);
-					this.SendPropertyChanging();
-					this._ID_ING_USA = value;
-					this.SendPropertyChanged("ID_ING_USA");
-					this.OnID_ING_USAChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="INGREDIENTES_DETALLE_SEGUNDO", Storage="_INGREDIENTES", ThisKey="ID_ING_USA", OtherKey="ID_ING", IsForeignKey=true)]
-		public INGREDIENTES INGREDIENTES
-		{
-			get
-			{
-				return this._INGREDIENTES.Entity;
-			}
-			set
-			{
-				INGREDIENTES previousValue = this._INGREDIENTES.Entity;
-				if (((previousValue != value) 
-							|| (this._INGREDIENTES.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._INGREDIENTES.Entity = null;
-						previousValue.DETALLE_SEGUNDO.Remove(this);
-					}
-					this._INGREDIENTES.Entity = value;
-					if ((value != null))
-					{
-						value.DETALLE_SEGUNDO.Add(this);
-						this._ID_ING_USA = value.ID_ING;
-					}
-					else
-					{
-						this._ID_ING_USA = default(int);
-					}
-					this.SendPropertyChanged("INGREDIENTES");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SEGUNDO_DETALLE_SEGUNDO", Storage="_SEGUNDO", ThisKey="ID_REC_PER", OtherKey="ID_SEG", IsForeignKey=true)]
-		public SEGUNDO SEGUNDO
-		{
-			get
-			{
-				return this._SEGUNDO.Entity;
-			}
-			set
-			{
-				SEGUNDO previousValue = this._SEGUNDO.Entity;
-				if (((previousValue != value) 
-							|| (this._SEGUNDO.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._SEGUNDO.Entity = null;
-						previousValue.DETALLE_SEGUNDO.Remove(this);
-					}
-					this._SEGUNDO.Entity = value;
-					if ((value != null))
-					{
-						value.DETALLE_SEGUNDO.Add(this);
-						this._ID_REC_PER = value.ID_SEG;
-					}
-					else
-					{
-						this._ID_REC_PER = default(int);
-					}
-					this.SendPropertyChanged("SEGUNDO");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DETALLE_SOPA")]
 	public partial class DETALLE_SOPA : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1107,6 +915,198 @@ namespace Datos
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DETALLE_SEGUNDO")]
+	public partial class DETALLE_SEGUNDO : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_DET_REC;
+		
+		private int _ID_REC_PER;
+		
+		private int _ID_ING_USA;
+		
+		private EntityRef<INGREDIENTES> _INGREDIENTES;
+		
+		private EntityRef<SEGUNDO> _SEGUNDO;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_DET_RECChanging(int value);
+    partial void OnID_DET_RECChanged();
+    partial void OnID_REC_PERChanging(int value);
+    partial void OnID_REC_PERChanged();
+    partial void OnID_ING_USAChanging(int value);
+    partial void OnID_ING_USAChanged();
+    #endregion
+		
+		public DETALLE_SEGUNDO()
+		{
+			this._INGREDIENTES = default(EntityRef<INGREDIENTES>);
+			this._SEGUNDO = default(EntityRef<SEGUNDO>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_DET_REC", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_DET_REC
+		{
+			get
+			{
+				return this._ID_DET_REC;
+			}
+			set
+			{
+				if ((this._ID_DET_REC != value))
+				{
+					this.OnID_DET_RECChanging(value);
+					this.SendPropertyChanging();
+					this._ID_DET_REC = value;
+					this.SendPropertyChanged("ID_DET_REC");
+					this.OnID_DET_RECChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_REC_PER", DbType="Int NOT NULL")]
+		public int ID_REC_PER
+		{
+			get
+			{
+				return this._ID_REC_PER;
+			}
+			set
+			{
+				if ((this._ID_REC_PER != value))
+				{
+					if (this._SEGUNDO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_REC_PERChanging(value);
+					this.SendPropertyChanging();
+					this._ID_REC_PER = value;
+					this.SendPropertyChanged("ID_REC_PER");
+					this.OnID_REC_PERChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ING_USA", DbType="Int NOT NULL")]
+		public int ID_ING_USA
+		{
+			get
+			{
+				return this._ID_ING_USA;
+			}
+			set
+			{
+				if ((this._ID_ING_USA != value))
+				{
+					if (this._INGREDIENTES.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_ING_USAChanging(value);
+					this.SendPropertyChanging();
+					this._ID_ING_USA = value;
+					this.SendPropertyChanged("ID_ING_USA");
+					this.OnID_ING_USAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="INGREDIENTES_DETALLE_SEGUNDO", Storage="_INGREDIENTES", ThisKey="ID_ING_USA", OtherKey="ID_ING", IsForeignKey=true)]
+		public INGREDIENTES INGREDIENTES
+		{
+			get
+			{
+				return this._INGREDIENTES.Entity;
+			}
+			set
+			{
+				INGREDIENTES previousValue = this._INGREDIENTES.Entity;
+				if (((previousValue != value) 
+							|| (this._INGREDIENTES.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._INGREDIENTES.Entity = null;
+						previousValue.DETALLE_SEGUNDO.Remove(this);
+					}
+					this._INGREDIENTES.Entity = value;
+					if ((value != null))
+					{
+						value.DETALLE_SEGUNDO.Add(this);
+						this._ID_ING_USA = value.ID_ING;
+					}
+					else
+					{
+						this._ID_ING_USA = default(int);
+					}
+					this.SendPropertyChanged("INGREDIENTES");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SEGUNDO_DETALLE_SEGUNDO", Storage="_SEGUNDO", ThisKey="ID_REC_PER", OtherKey="ID_SEG", IsForeignKey=true)]
+		public SEGUNDO SEGUNDO
+		{
+			get
+			{
+				return this._SEGUNDO.Entity;
+			}
+			set
+			{
+				SEGUNDO previousValue = this._SEGUNDO.Entity;
+				if (((previousValue != value) 
+							|| (this._SEGUNDO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._SEGUNDO.Entity = null;
+						previousValue.DETALLE_SEGUNDO.Remove(this);
+					}
+					this._SEGUNDO.Entity = value;
+					if ((value != null))
+					{
+						value.DETALLE_SEGUNDO.Add(this);
+						this._ID_REC_PER = value.ID_SEG;
+					}
+					else
+					{
+						this._ID_REC_PER = default(int);
+					}
+					this.SendPropertyChanged("SEGUNDO");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.INGREDIENTES")]
 	public partial class INGREDIENTES : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1121,9 +1121,9 @@ namespace Datos
 		
 		private EntitySet<DETALLE_POSTRE> _DETALLE_POSTRE;
 		
-		private EntitySet<DETALLE_SEGUNDO> _DETALLE_SEGUNDO;
-		
 		private EntitySet<DETALLE_SOPA> _DETALLE_SOPA;
+		
+		private EntitySet<DETALLE_SEGUNDO> _DETALLE_SEGUNDO;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -1139,8 +1139,8 @@ namespace Datos
 		{
 			this._DETALLE_BEBIDA = new EntitySet<DETALLE_BEBIDA>(new Action<DETALLE_BEBIDA>(this.attach_DETALLE_BEBIDA), new Action<DETALLE_BEBIDA>(this.detach_DETALLE_BEBIDA));
 			this._DETALLE_POSTRE = new EntitySet<DETALLE_POSTRE>(new Action<DETALLE_POSTRE>(this.attach_DETALLE_POSTRE), new Action<DETALLE_POSTRE>(this.detach_DETALLE_POSTRE));
-			this._DETALLE_SEGUNDO = new EntitySet<DETALLE_SEGUNDO>(new Action<DETALLE_SEGUNDO>(this.attach_DETALLE_SEGUNDO), new Action<DETALLE_SEGUNDO>(this.detach_DETALLE_SEGUNDO));
 			this._DETALLE_SOPA = new EntitySet<DETALLE_SOPA>(new Action<DETALLE_SOPA>(this.attach_DETALLE_SOPA), new Action<DETALLE_SOPA>(this.detach_DETALLE_SOPA));
+			this._DETALLE_SEGUNDO = new EntitySet<DETALLE_SEGUNDO>(new Action<DETALLE_SEGUNDO>(this.attach_DETALLE_SEGUNDO), new Action<DETALLE_SEGUNDO>(this.detach_DETALLE_SEGUNDO));
 			OnCreated();
 		}
 		
@@ -1210,19 +1210,6 @@ namespace Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="INGREDIENTES_DETALLE_SEGUNDO", Storage="_DETALLE_SEGUNDO", ThisKey="ID_ING", OtherKey="ID_ING_USA")]
-		public EntitySet<DETALLE_SEGUNDO> DETALLE_SEGUNDO
-		{
-			get
-			{
-				return this._DETALLE_SEGUNDO;
-			}
-			set
-			{
-				this._DETALLE_SEGUNDO.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="INGREDIENTES_DETALLE_SOPA", Storage="_DETALLE_SOPA", ThisKey="ID_ING", OtherKey="ID_ING_USA")]
 		public EntitySet<DETALLE_SOPA> DETALLE_SOPA
 		{
@@ -1233,6 +1220,19 @@ namespace Datos
 			set
 			{
 				this._DETALLE_SOPA.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="INGREDIENTES_DETALLE_SEGUNDO", Storage="_DETALLE_SEGUNDO", ThisKey="ID_ING", OtherKey="ID_ING_USA")]
+		public EntitySet<DETALLE_SEGUNDO> DETALLE_SEGUNDO
+		{
+			get
+			{
+				return this._DETALLE_SEGUNDO;
+			}
+			set
+			{
+				this._DETALLE_SEGUNDO.Assign(value);
 			}
 		}
 		
@@ -1280,6 +1280,18 @@ namespace Datos
 			entity.INGREDIENTES = null;
 		}
 		
+		private void attach_DETALLE_SOPA(DETALLE_SOPA entity)
+		{
+			this.SendPropertyChanging();
+			entity.INGREDIENTES = this;
+		}
+		
+		private void detach_DETALLE_SOPA(DETALLE_SOPA entity)
+		{
+			this.SendPropertyChanging();
+			entity.INGREDIENTES = null;
+		}
+		
 		private void attach_DETALLE_SEGUNDO(DETALLE_SEGUNDO entity)
 		{
 			this.SendPropertyChanging();
@@ -1291,17 +1303,171 @@ namespace Datos
 			this.SendPropertyChanging();
 			entity.INGREDIENTES = null;
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.POSTRE")]
+	public partial class POSTRE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		private void attach_DETALLE_SOPA(DETALLE_SOPA entity)
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_POS;
+		
+		private string _NOM_POS;
+		
+		private System.Data.Linq.Binary _IMG_POSTRE;
+		
+		private EntitySet<DETALLE_POSTRE> _DETALLE_POSTRE;
+		
+		private EntitySet<MENU> _MENU;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_POSChanging(int value);
+    partial void OnID_POSChanged();
+    partial void OnNOM_POSChanging(string value);
+    partial void OnNOM_POSChanged();
+    partial void OnIMG_POSTREChanging(System.Data.Linq.Binary value);
+    partial void OnIMG_POSTREChanged();
+    #endregion
+		
+		public POSTRE()
 		{
-			this.SendPropertyChanging();
-			entity.INGREDIENTES = this;
+			this._DETALLE_POSTRE = new EntitySet<DETALLE_POSTRE>(new Action<DETALLE_POSTRE>(this.attach_DETALLE_POSTRE), new Action<DETALLE_POSTRE>(this.detach_DETALLE_POSTRE));
+			this._MENU = new EntitySet<MENU>(new Action<MENU>(this.attach_MENU), new Action<MENU>(this.detach_MENU));
+			OnCreated();
 		}
 		
-		private void detach_DETALLE_SOPA(DETALLE_SOPA entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_POS", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_POS
+		{
+			get
+			{
+				return this._ID_POS;
+			}
+			set
+			{
+				if ((this._ID_POS != value))
+				{
+					this.OnID_POSChanging(value);
+					this.SendPropertyChanging();
+					this._ID_POS = value;
+					this.SendPropertyChanged("ID_POS");
+					this.OnID_POSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOM_POS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string NOM_POS
+		{
+			get
+			{
+				return this._NOM_POS;
+			}
+			set
+			{
+				if ((this._NOM_POS != value))
+				{
+					this.OnNOM_POSChanging(value);
+					this.SendPropertyChanging();
+					this._NOM_POS = value;
+					this.SendPropertyChanged("NOM_POS");
+					this.OnNOM_POSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IMG_POSTRE", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary IMG_POSTRE
+		{
+			get
+			{
+				return this._IMG_POSTRE;
+			}
+			set
+			{
+				if ((this._IMG_POSTRE != value))
+				{
+					this.OnIMG_POSTREChanging(value);
+					this.SendPropertyChanging();
+					this._IMG_POSTRE = value;
+					this.SendPropertyChanged("IMG_POSTRE");
+					this.OnIMG_POSTREChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="POSTRE_DETALLE_POSTRE", Storage="_DETALLE_POSTRE", ThisKey="ID_POS", OtherKey="ID_REC_PER")]
+		public EntitySet<DETALLE_POSTRE> DETALLE_POSTRE
+		{
+			get
+			{
+				return this._DETALLE_POSTRE;
+			}
+			set
+			{
+				this._DETALLE_POSTRE.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="POSTRE_MENU", Storage="_MENU", ThisKey="ID_POS", OtherKey="ID_POS_MEN")]
+		public EntitySet<MENU> MENU
+		{
+			get
+			{
+				return this._MENU;
+			}
+			set
+			{
+				this._MENU.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_DETALLE_POSTRE(DETALLE_POSTRE entity)
 		{
 			this.SendPropertyChanging();
-			entity.INGREDIENTES = null;
+			entity.POSTRE = this;
+		}
+		
+		private void detach_DETALLE_POSTRE(DETALLE_POSTRE entity)
+		{
+			this.SendPropertyChanging();
+			entity.POSTRE = null;
+		}
+		
+		private void attach_MENU(MENU entity)
+		{
+			this.SendPropertyChanging();
+			entity.POSTRE = this;
+		}
+		
+		private void detach_MENU(MENU entity)
+		{
+			this.SendPropertyChanging();
+			entity.POSTRE = null;
 		}
 	}
 	
@@ -1648,172 +1814,6 @@ namespace Datos
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.POSTRE")]
-	public partial class POSTRE : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID_POS;
-		
-		private string _NOM_POS;
-		
-		private System.Data.Linq.Binary _IMG_POSTRE;
-		
-		private EntitySet<DETALLE_POSTRE> _DETALLE_POSTRE;
-		
-		private EntitySet<MENU> _MENU;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnID_POSChanging(int value);
-    partial void OnID_POSChanged();
-    partial void OnNOM_POSChanging(string value);
-    partial void OnNOM_POSChanged();
-    partial void OnIMG_POSTREChanging(System.Data.Linq.Binary value);
-    partial void OnIMG_POSTREChanged();
-    #endregion
-		
-		public POSTRE()
-		{
-			this._DETALLE_POSTRE = new EntitySet<DETALLE_POSTRE>(new Action<DETALLE_POSTRE>(this.attach_DETALLE_POSTRE), new Action<DETALLE_POSTRE>(this.detach_DETALLE_POSTRE));
-			this._MENU = new EntitySet<MENU>(new Action<MENU>(this.attach_MENU), new Action<MENU>(this.detach_MENU));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_POS", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID_POS
-		{
-			get
-			{
-				return this._ID_POS;
-			}
-			set
-			{
-				if ((this._ID_POS != value))
-				{
-					this.OnID_POSChanging(value);
-					this.SendPropertyChanging();
-					this._ID_POS = value;
-					this.SendPropertyChanged("ID_POS");
-					this.OnID_POSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOM_POS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string NOM_POS
-		{
-			get
-			{
-				return this._NOM_POS;
-			}
-			set
-			{
-				if ((this._NOM_POS != value))
-				{
-					this.OnNOM_POSChanging(value);
-					this.SendPropertyChanging();
-					this._NOM_POS = value;
-					this.SendPropertyChanged("NOM_POS");
-					this.OnNOM_POSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IMG_POSTRE", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary IMG_POSTRE
-		{
-			get
-			{
-				return this._IMG_POSTRE;
-			}
-			set
-			{
-				if ((this._IMG_POSTRE != value))
-				{
-					this.OnIMG_POSTREChanging(value);
-					this.SendPropertyChanging();
-					this._IMG_POSTRE = value;
-					this.SendPropertyChanged("IMG_POSTRE");
-					this.OnIMG_POSTREChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="POSTRE_DETALLE_POSTRE", Storage="_DETALLE_POSTRE", ThisKey="ID_POS", OtherKey="ID_REC_PER")]
-		public EntitySet<DETALLE_POSTRE> DETALLE_POSTRE
-		{
-			get
-			{
-				return this._DETALLE_POSTRE;
-			}
-			set
-			{
-				this._DETALLE_POSTRE.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="POSTRE_MENU", Storage="_MENU", ThisKey="ID_POS", OtherKey="ID_POS_MEN")]
-		public EntitySet<MENU> MENU
-		{
-			get
-			{
-				return this._MENU;
-			}
-			set
-			{
-				this._MENU.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_DETALLE_POSTRE(DETALLE_POSTRE entity)
-		{
-			this.SendPropertyChanging();
-			entity.POSTRE = this;
-		}
-		
-		private void detach_DETALLE_POSTRE(DETALLE_POSTRE entity)
-		{
-			this.SendPropertyChanging();
-			entity.POSTRE = null;
-		}
-		
-		private void attach_MENU(MENU entity)
-		{
-			this.SendPropertyChanging();
-			entity.POSTRE = this;
-		}
-		
-		private void detach_MENU(MENU entity)
-		{
-			this.SendPropertyChanging();
-			entity.POSTRE = null;
 		}
 	}
 	

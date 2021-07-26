@@ -50,12 +50,12 @@ namespace Presentacion
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 25);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 20);
+            this.textBox1.Size = new System.Drawing.Size(218, 20);
             this.textBox1.TabIndex = 1;
             // 
             // buttonGuardarIngrediente
             // 
-            this.buttonGuardarIngrediente.Location = new System.Drawing.Point(21, 153);
+            this.buttonGuardarIngrediente.Location = new System.Drawing.Point(40, 189);
             this.buttonGuardarIngrediente.Name = "buttonGuardarIngrediente";
             this.buttonGuardarIngrediente.Size = new System.Drawing.Size(69, 23);
             this.buttonGuardarIngrediente.TabIndex = 2;
@@ -65,7 +65,7 @@ namespace Presentacion
             // 
             // buttonCnacelarIngrediente
             // 
-            this.buttonCnacelarIngrediente.Location = new System.Drawing.Point(96, 153);
+            this.buttonCnacelarIngrediente.Location = new System.Drawing.Point(115, 189);
             this.buttonCnacelarIngrediente.Name = "buttonCnacelarIngrediente";
             this.buttonCnacelarIngrediente.Size = new System.Drawing.Size(69, 23);
             this.buttonCnacelarIngrediente.TabIndex = 3;
@@ -80,21 +80,23 @@ namespace Presentacion
             this.dataGridViewIngredeintes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewIngredeintes.Location = new System.Drawing.Point(12, 51);
             this.dataGridViewIngredeintes.Name = "dataGridViewIngredeintes";
-            this.dataGridViewIngredeintes.Size = new System.Drawing.Size(171, 96);
+            this.dataGridViewIngredeintes.Size = new System.Drawing.Size(218, 132);
             this.dataGridViewIngredeintes.TabIndex = 4;
             // 
             // Ingredientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(195, 188);
+            this.ClientSize = new System.Drawing.Size(242, 224);
             this.Controls.Add(this.dataGridViewIngredeintes);
             this.Controls.Add(this.buttonCnacelarIngrediente);
             this.Controls.Add(this.buttonGuardarIngrediente);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Ingredientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingredientes";
+            this.Load += new System.EventHandler(this.Ingredientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIngredeintes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

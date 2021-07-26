@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
+using Negocio;
 
 namespace Presentacion
 {
@@ -22,7 +24,25 @@ namespace Presentacion
            
             Registro a = new Registro();
             a.Show();
-
+            this.Hide();
+            a.FormClosed += new FormClosedEventHandler(form_FormClosed);
+          
         }
+
+        private void form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cargarMenu();
+            this.Show();
+        }
+
+        private void PagPrinc_Load(object sender, EventArgs e)
+        {
+            cargarMenu();
+        }
+
+        private void cargarMenu() {
+            dataGridViewMenu.DataSource = NegocioMenu.NegocioCargarMenu();
+        }
+
     }
 }

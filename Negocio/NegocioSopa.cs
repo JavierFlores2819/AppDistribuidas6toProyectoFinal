@@ -21,5 +21,16 @@ namespace Negocio
             }
         }
 
+        public static List<EntidadSopa> NegocioCargarSopa()
+        {
+            try
+            {
+                return DatosSopa.DatosCargarSopa();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

@@ -8,32 +8,33 @@ using Datos;
 
 namespace Negocio
 {
-  public class NegocioBebida
+    public class NegocioDetalleBebida
     {
-        public static int NuevoBebidaNegocio(EntidadBebida e)
+        public static Boolean NuevoDetalleBebidaNegocio(EntidadDetalleBebida e)
         {
             try
             {
-                return DatosBebida.NuevoDatosBebida(e);
+                return DatosDetalleBebida.NuevoDatosDetalleBebida(e);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static String NegocioDetalleBebidaObtenerIngredientes(int e)
+        {
+            try
+            {
+                return DatosDetalleBebida.DatosDetalleBebidaObtenerIngredientes(e);
             }
             catch (Exception)
             {
                 throw;
             }
-        }
-
-        public static List<EntidadBebida> NegocioCargarBebida()
-        {
-            try
-            {
-                return DatosBebida.DatosCargarBebida();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
 
         }
+
 
     }
 }

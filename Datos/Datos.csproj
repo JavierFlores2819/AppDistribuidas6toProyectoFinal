@@ -47,9 +47,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BASE.dbml</DependentUpon>
     </Compile>
-    <Compile Include="DatosBebidas.cs" />
+    <Compile Include="DatosBebida.cs" />
+    <Compile Include="DatosDetalleBebida.cs" />
+    <Compile Include="DatosDetallePostre.cs" />
+    <Compile Include="DatosDetalleSegundo.cs" />
     <Compile Include="DatosDetalleSopa.cs" />
     <Compile Include="DatosIngredientes.cs" />
+    <Compile Include="DatosMenu.cs" />
     <Compile Include="DatosPostre.cs" />
     <Compile Include="DatosSegundo.cs" />
     <Compile Include="DatosSopa.cs" />

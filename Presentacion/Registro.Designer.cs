@@ -29,10 +29,10 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBoxSopa = new System.Windows.Forms.ComboBox();
+            this.comboBoxSegundo = new System.Windows.Forms.ComboBox();
+            this.comboBoxPostre = new System.Windows.Forms.ComboBox();
+            this.comboBoxBebida = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,47 +40,55 @@ namespace Presentacion
             this.label2 = new System.Windows.Forms.Label();
             this.buttonCancelReg = new System.Windows.Forms.Button();
             this.buttonRegistra = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
             this.buttonSopa = new System.Windows.Forms.Button();
             this.buttonPostre = new System.Windows.Forms.Button();
             this.buttonBebida = new System.Windows.Forms.Button();
             this.buttonSegund = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxPostreIngrediente = new System.Windows.Forms.TextBox();
+            this.textBoxSopaIngrediente = new System.Windows.Forms.TextBox();
+            this.textBoxBebidaIngrediente = new System.Windows.Forms.TextBox();
+            this.textBoxSegundoIngrediente = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // comboBoxSopa
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(149, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.comboBoxSopa.FormattingEnabled = true;
+            this.comboBoxSopa.Location = new System.Drawing.Point(141, 33);
+            this.comboBoxSopa.Name = "comboBoxSopa";
+            this.comboBoxSopa.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxSopa.TabIndex = 0;
+            this.comboBoxSopa.SelectionChangeCommitted += new System.EventHandler(this.comboBoxSopa_SelectionChangeCommitted);
             // 
-            // comboBox2
+            // comboBoxSegundo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(149, 60);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 1;
+            this.comboBoxSegundo.FormattingEnabled = true;
+            this.comboBoxSegundo.Location = new System.Drawing.Point(141, 60);
+            this.comboBoxSegundo.Name = "comboBoxSegundo";
+            this.comboBoxSegundo.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxSegundo.TabIndex = 1;
+            this.comboBoxSegundo.SelectionChangeCommitted += new System.EventHandler(this.comboBoxSegundo_SelectionChangeCommitted);
             // 
-            // comboBox3
+            // comboBoxPostre
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(149, 114);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 2;
+            this.comboBoxPostre.FormattingEnabled = true;
+            this.comboBoxPostre.Location = new System.Drawing.Point(141, 114);
+            this.comboBoxPostre.Name = "comboBoxPostre";
+            this.comboBoxPostre.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxPostre.TabIndex = 2;
+            this.comboBoxPostre.SelectionChangeCommitted += new System.EventHandler(this.comboBoxPostre_SelectionChangeCommitted);
             // 
-            // comboBox4
+            // comboBoxBebida
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(149, 87);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 3;
+            this.comboBoxBebida.FormattingEnabled = true;
+            this.comboBoxBebida.Location = new System.Drawing.Point(141, 87);
+            this.comboBoxBebida.Name = "comboBoxBebida";
+            this.comboBoxBebida.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxBebida.TabIndex = 3;
+            this.comboBoxBebida.SelectionChangeCommitted += new System.EventHandler(this.comboBoxBebida_SelectionChangeCommitted);
             // 
             // groupBox1
             // 
@@ -133,33 +141,35 @@ namespace Presentacion
             // 
             // buttonCancelReg
             // 
-            this.buttonCancelReg.Location = new System.Drawing.Point(149, 184);
+            this.buttonCancelReg.Location = new System.Drawing.Point(175, 293);
             this.buttonCancelReg.Name = "buttonCancelReg";
             this.buttonCancelReg.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelReg.TabIndex = 5;
             this.buttonCancelReg.Text = "Cancelar";
             this.buttonCancelReg.UseVisualStyleBackColor = true;
+            this.buttonCancelReg.Click += new System.EventHandler(this.buttonCancelReg_Click);
             // 
             // buttonRegistra
             // 
-            this.buttonRegistra.Location = new System.Drawing.Point(58, 184);
+            this.buttonRegistra.Location = new System.Drawing.Point(94, 293);
             this.buttonRegistra.Name = "buttonRegistra";
             this.buttonRegistra.Size = new System.Drawing.Size(75, 23);
             this.buttonRegistra.TabIndex = 6;
             this.buttonRegistra.Text = "Registrar";
             this.buttonRegistra.UseVisualStyleBackColor = true;
+            this.buttonRegistra.Click += new System.EventHandler(this.buttonRegistra_Click);
             // 
-            // dateTimePicker1
+            // dateTimePickerFecha
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(149, 142);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dateTimePickerFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerFecha.Location = new System.Drawing.Point(141, 142);
+            this.dateTimePickerFecha.Name = "dateTimePickerFecha";
+            this.dateTimePickerFecha.Size = new System.Drawing.Size(157, 20);
+            this.dateTimePickerFecha.TabIndex = 7;
             // 
             // buttonSopa
             // 
-            this.buttonSopa.Location = new System.Drawing.Point(276, 33);
+            this.buttonSopa.Location = new System.Drawing.Point(304, 33);
             this.buttonSopa.Name = "buttonSopa";
             this.buttonSopa.Size = new System.Drawing.Size(31, 21);
             this.buttonSopa.TabIndex = 8;
@@ -169,7 +179,7 @@ namespace Presentacion
             // 
             // buttonPostre
             // 
-            this.buttonPostre.Location = new System.Drawing.Point(276, 114);
+            this.buttonPostre.Location = new System.Drawing.Point(304, 114);
             this.buttonPostre.Name = "buttonPostre";
             this.buttonPostre.Size = new System.Drawing.Size(31, 21);
             this.buttonPostre.TabIndex = 9;
@@ -179,7 +189,7 @@ namespace Presentacion
             // 
             // buttonBebida
             // 
-            this.buttonBebida.Location = new System.Drawing.Point(276, 87);
+            this.buttonBebida.Location = new System.Drawing.Point(304, 87);
             this.buttonBebida.Name = "buttonBebida";
             this.buttonBebida.Size = new System.Drawing.Size(31, 21);
             this.buttonBebida.TabIndex = 10;
@@ -189,7 +199,7 @@ namespace Presentacion
             // 
             // buttonSegund
             // 
-            this.buttonSegund.Location = new System.Drawing.Point(276, 60);
+            this.buttonSegund.Location = new System.Drawing.Point(304, 60);
             this.buttonSegund.Name = "buttonSegund";
             this.buttonSegund.Size = new System.Drawing.Size(31, 21);
             this.buttonSegund.TabIndex = 11;
@@ -197,57 +207,95 @@ namespace Presentacion
             this.buttonSegund.UseVisualStyleBackColor = true;
             this.buttonSegund.Click += new System.EventHandler(this.buttonSegund_Click);
             // 
-            // textBox1
+            // groupBox2
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 243);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(295, 99);
-            this.textBox1.TabIndex = 12;
+            this.groupBox2.Controls.Add(this.textBoxPostreIngrediente);
+            this.groupBox2.Controls.Add(this.textBoxSopaIngrediente);
+            this.groupBox2.Controls.Add(this.textBoxBebidaIngrediente);
+            this.groupBox2.Controls.Add(this.textBoxSegundoIngrediente);
+            this.groupBox2.Location = new System.Drawing.Point(12, 168);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(323, 119);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Ingredientes";
             // 
-            // label5
+            // textBoxPostreIngrediente
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 224);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Ingredientes";
+            this.textBoxPostreIngrediente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPostreIngrediente.Location = new System.Drawing.Point(6, 91);
+            this.textBoxPostreIngrediente.Multiline = true;
+            this.textBoxPostreIngrediente.Name = "textBoxPostreIngrediente";
+            this.textBoxPostreIngrediente.ReadOnly = true;
+            this.textBoxPostreIngrediente.Size = new System.Drawing.Size(319, 18);
+            this.textBoxPostreIngrediente.TabIndex = 20;
+            // 
+            // textBoxSopaIngrediente
+            // 
+            this.textBoxSopaIngrediente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSopaIngrediente.Location = new System.Drawing.Point(6, 19);
+            this.textBoxSopaIngrediente.Multiline = true;
+            this.textBoxSopaIngrediente.Name = "textBoxSopaIngrediente";
+            this.textBoxSopaIngrediente.ReadOnly = true;
+            this.textBoxSopaIngrediente.Size = new System.Drawing.Size(319, 18);
+            this.textBoxSopaIngrediente.TabIndex = 17;
+            // 
+            // textBoxBebidaIngrediente
+            // 
+            this.textBoxBebidaIngrediente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxBebidaIngrediente.Location = new System.Drawing.Point(6, 67);
+            this.textBoxBebidaIngrediente.Multiline = true;
+            this.textBoxBebidaIngrediente.Name = "textBoxBebidaIngrediente";
+            this.textBoxBebidaIngrediente.ReadOnly = true;
+            this.textBoxBebidaIngrediente.Size = new System.Drawing.Size(319, 18);
+            this.textBoxBebidaIngrediente.TabIndex = 19;
+            // 
+            // textBoxSegundoIngrediente
+            // 
+            this.textBoxSegundoIngrediente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSegundoIngrediente.Location = new System.Drawing.Point(6, 43);
+            this.textBoxSegundoIngrediente.Multiline = true;
+            this.textBoxSegundoIngrediente.Name = "textBoxSegundoIngrediente";
+            this.textBoxSegundoIngrediente.ReadOnly = true;
+            this.textBoxSegundoIngrediente.Size = new System.Drawing.Size(319, 18);
+            this.textBoxSegundoIngrediente.TabIndex = 18;
             // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 354);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(347, 321);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.buttonSegund);
             this.Controls.Add(this.buttonBebida);
             this.Controls.Add(this.buttonPostre);
             this.Controls.Add(this.buttonSopa);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimePickerFecha);
             this.Controls.Add(this.buttonRegistra);
             this.Controls.Add(this.buttonCancelReg);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxBebida);
+            this.Controls.Add(this.comboBoxPostre);
+            this.Controls.Add(this.comboBoxSegundo);
+            this.Controls.Add(this.comboBoxSopa);
             this.Name = "Registro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
+            this.Load += new System.EventHandler(this.Registro_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBoxSopa;
+        private System.Windows.Forms.ComboBox comboBoxSegundo;
+        private System.Windows.Forms.ComboBox comboBoxPostre;
+        private System.Windows.Forms.ComboBox comboBoxBebida;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -255,12 +303,15 @@ namespace Presentacion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonCancelReg;
         private System.Windows.Forms.Button buttonRegistra;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
         private System.Windows.Forms.Button buttonSopa;
         private System.Windows.Forms.Button buttonPostre;
         private System.Windows.Forms.Button buttonBebida;
         private System.Windows.Forms.Button buttonSegund;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox textBoxPostreIngrediente;
+        private System.Windows.Forms.TextBox textBoxSopaIngrediente;
+        private System.Windows.Forms.TextBox textBoxBebidaIngrediente;
+        private System.Windows.Forms.TextBox textBoxSegundoIngrediente;
     }
 }

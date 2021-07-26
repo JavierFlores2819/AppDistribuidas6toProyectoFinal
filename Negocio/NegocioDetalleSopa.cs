@@ -9,7 +9,8 @@ namespace Negocio
 {
     public class NegocioDetalleSopa
     {
-        public static Boolean NuevoDetalleSopaNegocio(EntidadDetalleSopa e) {
+        public static Boolean NuevoDetalleSopaNegocio(EntidadDetalleSopa e)
+        {
 
             try
             {
@@ -19,6 +20,19 @@ namespace Negocio
             {
                 throw;
             }
+        }
+
+        public static String NegocioDetalleSopaObtenerIngredientes(int e)
+        {
+            try
+            {
+                return DatosDetalleSopa.DatosDetalleSopaObtenerIngredientes(e);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
     }
 }

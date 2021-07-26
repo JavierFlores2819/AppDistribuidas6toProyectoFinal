@@ -8,13 +8,13 @@ using Datos;
 
 namespace Negocio
 {
-  public class NegocioBebida
+    public class NegocioMenu
     {
-        public static int NuevoBebidaNegocio(EntidadBebida e)
+        public static int NuevoMenuNegocio(EntidadMenu e)
         {
             try
             {
-                return DatosBebida.NuevoDatosBebida(e);
+                return DatosMenu.NuevoMenu(e);
             }
             catch (Exception)
             {
@@ -22,17 +22,13 @@ namespace Negocio
             }
         }
 
-        public static List<EntidadBebida> NegocioCargarBebida()
+        public static List<EntidadMenuNombres> NegocioCargarMenu()
         {
             try
             {
-                return DatosBebida.DatosCargarBebida();
+                return DatosMenu.DatosCargarMenu();
             }
-            catch (Exception)
-            {
-                throw;
-            }
-
+            catch (Exception) { throw; }
         }
 
     }

@@ -7,20 +7,20 @@ using Entidades;
 
 namespace Datos
 {
-    public class DatosDetalleSopa
+    public class DatosDetallePostre
     {
-        public static Boolean NuevoDetalleSopaDatos(EntidadDetalleSopa e)
+        public static Boolean NuevoDatosDetallePostre(EntidadDetallePostre e)
         {
             try
             {
-                DETALLE_SOPA s = new DETALLE_SOPA();
+                DETALLE_POSTRE s = new DETALLE_POSTRE();
                 s.ID_DET_REC = e.ID_DET_REC;
                 s.ID_REC_PER = e.ID_REC_PER;
                 s.ID_ING_USA = e.ID_ING_USA;
 
                 using (BASEDataContext contexto = new BASEDataContext())
                 {
-                    contexto.DETALLE_SOPA.InsertOnSubmit(s);
+                    contexto.DETALLE_POSTRE.InsertOnSubmit(s);
                     contexto.SubmitChanges();
                     return true;
                 }
@@ -29,26 +29,24 @@ namespace Datos
             {
                 throw;
             }
-
-
         }
 
-        public static String DatosDetalleSopaObtenerIngredientes(int id)
+        public static String DatosDetalleBebidaObtenerIngredientes(int id)
         {
             try
             {
-                List<DETALLE_SOPA> listaDETALLE_SOPA = new List<DETALLE_SOPA>();
+                List<DETALLE_POSTRE> listaDETALLE_POSTRE = new List<DETALLE_POSTRE>();
 
                 List<String> a = new List<string>();
                 String b = "";
                 using (BASEDataContext contexto = new BASEDataContext())
                 {
-                    var result = from c in contexto.DETALLE_SOPA
+                    var result = from c in contexto.DETALLE_POSTRE
                                  where c.ID_REC_PER == id
                                  select c;
-                    listaDETALLE_SOPA = result.ToList();
+                    listaDETALLE_POSTRE = result.ToList();
                 }
-                foreach (var item in listaDETALLE_SOPA)
+                foreach (var item in listaDETALLE_POSTRE)
                 {
                     b += DatosIngredientes.DatosObtenerIdIngrediente(item.ID_ING_USA) + ", ";
                 }
@@ -59,6 +57,5 @@ namespace Datos
                 throw;
             }
         }
-
     }
 }

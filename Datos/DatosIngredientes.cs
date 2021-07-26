@@ -15,7 +15,7 @@ namespace Datos
             {
                 INGREDIENTES s = new INGREDIENTES();
                 s.ID_ING = e.ID_ING;
-                s.NOM_ING = e.NOM_ING;
+                s.NOM_ING = e.NOM_ING.ToUpper();
 
                 using (BASEDataContext contexto = new BASEDataContext())
                 {
@@ -56,6 +56,26 @@ namespace Datos
             catch (Exception) { throw; }
         }
 
+
+        public static String DatosObtenerIdIngrediente(int id)
+        {
+            try
+            {
+                String b = "";
+                using (BASEDataContext contexto = new BASEDataContext())
+                {
+                    var a = contexto.INGREDIENTES.FirstOrDefault(cc => cc.ID_ING == id);
+                    b = a.NOM_ING;
+                }
+                return b;
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+        }
 
     }
 }

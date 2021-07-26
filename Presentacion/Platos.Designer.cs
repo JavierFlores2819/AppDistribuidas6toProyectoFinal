@@ -127,6 +127,7 @@ namespace Presentacion
             this.Controls.Add(this.textBoxNombrePlato);
             this.Controls.Add(this.labelPlato);
             this.Name = "Platos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Platos";
             this.Load += new System.EventHandler(this.Platos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgPlato)).EndInit();

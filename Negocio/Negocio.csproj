@@ -42,8 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NegocioBebida.cs" />
+    <Compile Include="NegocioDetalleBebida.cs" />
+    <Compile Include="NegocioDetallePostre.cs" />
+    <Compile Include="NegocioDetalleSegundo.cs" />
     <Compile Include="NegocioDetalleSopa.cs" />
     <Compile Include="NegocioIngredientes.cs" />
+    <Compile Include="NegocioMenu.cs" />
     <Compile Include="NegocioPostre.cs" />
     <Compile Include="NegocioSegundo.cs" />
     <Compile Include="NegocioSopa.cs" />

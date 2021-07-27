@@ -10,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{13DF61E6-7F73-4A89-8722-8E0AB50C0CB8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Presentacion\Presentacion.csproj", "{E1D4DEDB-AB72-4027-A109-E060EAF322C4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{671952B5-E186-4F21-B5DB-C1C3F5C32DAE} = {671952B5-E186-4F21-B5DB-C1C3F5C32DAE}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicios", "Servicios\Servicios.csproj", "{671952B5-E186-4F21-B5DB-C1C3F5C32DAE}"
 EndProject

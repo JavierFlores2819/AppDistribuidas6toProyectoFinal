@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Negocio;
-using Entidades;
+using Presentacion.ServiciosR;
 
 namespace Presentacion
 {
     public partial class Registro : Form
     {
+        ServiciowsSoapClient ws = new ServiciowsSoapClient();
         public Registro()
         {
             InitializeComponent();
@@ -70,7 +70,8 @@ namespace Presentacion
             m.ID_SEG_MEN = int.Parse(comboBoxSegundo.SelectedValue.ToString());
             m.ID_SOP_MEN = int.Parse(comboBoxSopa.SelectedValue.ToString());
             m.FECHA_MEN = dateTimePickerFecha.Value;
-            NegocioMenu.NuevoMenuNegocio(m);
+            ws.ServiciosNuevoMenu(m);
+            llenarCombobox();
             MessageBox.Show("hecho");
            
         }
@@ -82,19 +83,19 @@ namespace Presentacion
 
         private void llenarCombobox()
         {
-            comboBoxSopa.DataSource = NegocioSopa.NegocioCargarSopa();
+            comboBoxSopa.DataSource = ws.ServicioCargarSopa();
             comboBoxSopa.DisplayMember = "NOM_SOP";
             comboBoxSopa.ValueMember = "ID_SOP";
             comboBoxSopa.Text = "Seleccione un opción:";
-            comboBoxBebida.DataSource = NegocioBebida.NegocioCargarBebida();
+            comboBoxBebida.DataSource = ws.ServicioCargarBebida();
             comboBoxBebida.DisplayMember = "NOM_BEB";
             comboBoxBebida.ValueMember = "ID_BEB";
             comboBoxBebida.Text = "Seleccione un opción:";
-            comboBoxPostre.DataSource = NegocioPostre.NegocioCargarPostre();
+            comboBoxPostre.DataSource = ws.ServicioCargarPostre();
             comboBoxPostre.DisplayMember = "NOM_POS";
             comboBoxPostre.ValueMember = "ID_POS";
             comboBoxPostre.Text = "Seleccione un opción:";
-            comboBoxSegundo.DataSource = NegocioSegundo.NegocioCargarSegundo();
+            comboBoxSegundo.DataSource = ws.ServicioCargarSegundo();
             comboBoxSegundo.DisplayMember = "NOM_SEG";
             comboBoxSegundo.ValueMember = "ID_SEG";
             comboBoxSegundo.Text = "Seleccione un opción:";
@@ -108,28 +109,28 @@ namespace Presentacion
         private void comboBoxPostre_SelectionChangeCommitted(object sender, EventArgs e)
         {
             int a = int.Parse(comboBoxPostre.SelectedValue.ToString());
-            textBoxPostreIngrediente.Text = $"POSTRE/ENTRADA: {NegocioDetallePostre.NegocioDetallePostreObtenerIngredientes(a)} {Environment.NewLine}";
+            textBoxPostreIngrediente.Text = $"POSTRE/ENTRADA: {ws.ServicioDetallePostreObtenerIngredientes(a)} {Environment.NewLine}";
 
         }
 
         private void comboBoxSopa_SelectionChangeCommitted(object sender, EventArgs e)
         {
             int b = int.Parse(comboBoxSopa.SelectedValue.ToString());
-            textBoxSopaIngrediente.Text = $"SOPA: {NegocioDetalleSopa.NegocioDetalleSopaObtenerIngredientes(b)} {Environment.NewLine }";
+            textBoxSopaIngrediente.Text = $"SOPA: {ws.ServicioDetalleSopaObtenerIngredientes(b)} {Environment.NewLine }";
 
         }
 
         private void comboBoxBebida_SelectionChangeCommitted(object sender, EventArgs e)
         {
             int c = int.Parse(comboBoxBebida.SelectedValue.ToString());
-            textBoxBebidaIngrediente.Text = $"BEBIDA: {NegocioDetalleBebida.NegocioDetalleBebidaObtenerIngredientes(c)} {Environment.NewLine }";
+            textBoxBebidaIngrediente.Text = $"BEBIDA: {ws.ServicioDetalleBebidaObtenerIngredientes(c)} {Environment.NewLine }";
 
         }
 
         private void comboBoxSegundo_SelectionChangeCommitted(object sender, EventArgs e)
         {
             int d = int.Parse(comboBoxSegundo.SelectedValue.ToString());
-            textBoxSegundoIngrediente.Text = $"SEGUNDO: {NegocioDetalleSegundo.NegocioDetalleSegundoObtenerIngredientes(d)} { Environment.NewLine }";
+            textBoxSegundoIngrediente.Text = $"SEGUNDO: {ws.ServicioDetalleSegundoObtenerIngredientes(d)} { Environment.NewLine }";
 
         }
 

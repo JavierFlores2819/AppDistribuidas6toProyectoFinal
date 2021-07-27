@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Entidades;
-using Negocio;
+using Presentacion.ServiciosR;
 
 namespace Presentacion
 {
     public partial class PagPrinc : Form
     {
+        ServiciowsSoapClient ws = new ServiciowsSoapClient();
         public PagPrinc()
         {
             InitializeComponent();
@@ -21,12 +21,12 @@ namespace Presentacion
 
         private void buttonRegisMenu_Click(object sender, EventArgs e)
         {
-           
+
             Registro a = new Registro();
             a.Show();
             this.Hide();
             a.FormClosed += new FormClosedEventHandler(form_FormClosed);
-          
+
         }
 
         private void form_FormClosed(object sender, FormClosedEventArgs e)
@@ -40,8 +40,9 @@ namespace Presentacion
             cargarMenu();
         }
 
-        private void cargarMenu() {
-            dataGridViewMenu.DataSource = NegocioMenu.NegocioCargarMenu();
+        private void cargarMenu()
+        {
+            dataGridViewMenu.DataSource = ws.ServicioCargarMenu();
         }
 
     }

@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Negocio;
-using Entidades;
+using Presentacion.ServiciosR;
 
 namespace Presentacion
 {
     public partial class Platos : Form
     {
-
+        ServiciowsSoapClient ws = new ServiciowsSoapClient();
         public Platos()
         {
             InitializeComponent();
@@ -39,7 +38,7 @@ namespace Presentacion
 
         public void llenarCheckBox()
         {
-            List<EntidadIngredientes> a = NegocioIngredientes.CargarIngredientesNegocio();
+            List<EntidadIngredientes> a = ws.ServicioCargarIngredientes();
             foreach (var item in a)
             {
                 checkedListBoxIngrediente.Items.Add(item.NOM_ING);
@@ -82,7 +81,7 @@ namespace Presentacion
                     EntidadSopa s = new EntidadSopa();
                     s.NOM_SOP = textBoxNombrePlato.Text;
                     s.IMG_SOPA = m.GetBuffer();
-                    int b = NegocioSopa.NuevaSopaNegocio(s);
+                    int b = ws.ServicioNuevaSopa(s);
                     int a;
                     foreach (var item in checkedListBoxIngrediente.CheckedIndices)
                     {
@@ -90,7 +89,7 @@ namespace Presentacion
                         EntidadDetalleSopa es = new EntidadDetalleSopa();
                         es.ID_ING_USA = a;
                         es.ID_REC_PER = b;
-                        Boolean c = NegocioDetalleSopa.NuevoDetalleSopaNegocio(es);
+                        Boolean c = ws.ServicioNuevoDetalleSopa(es);
                     }
                 }
                 else if (labelPlato.Text == "Segundo")
@@ -98,7 +97,7 @@ namespace Presentacion
                     EntidadSegundo s = new EntidadSegundo();
                     s.NOM_SEG = textBoxNombrePlato.Text;
                     s.IMG_Segundo = m.GetBuffer();
-                    int b = NegocioSegundo.NuevSegundoNegocio(s);
+                    int b = ws.ServicioNuevoSegundo(s);
                     int a;
                     foreach (var item in checkedListBoxIngrediente.CheckedIndices)
                     {
@@ -106,7 +105,7 @@ namespace Presentacion
                         EntidadDetalleSegundo es = new EntidadDetalleSegundo();
                         es.ID_ING_USA = a;
                         es.ID_REC_PER = b;
-                        Boolean c = NegocioDetalleSegundo.NuevoDetalleSegundoNegocio(es);
+                        Boolean c = ws.ServicioNuevoDetalleSegundo(es);
                     }
                 }
                 else if (labelPlato.Text == "Bebida")
@@ -114,7 +113,7 @@ namespace Presentacion
                     EntidadBebida s = new EntidadBebida();
                     s.NOM_BEB = textBoxNombrePlato.Text;
                     s.IMG_BEBIDA = m.GetBuffer();
-                    int b = NegocioBebida.NuevoBebidaNegocio(s);
+                    int b = ws.ServicioNuevoBebida(s);
                     int a;
                     foreach (var item in checkedListBoxIngrediente.CheckedIndices)
                     {
@@ -122,7 +121,7 @@ namespace Presentacion
                         EntidadDetalleBebida es = new EntidadDetalleBebida();
                         es.ID_ING_USA = a;
                         es.ID_REC_PER = b;
-                        Boolean c = NegocioDetalleBebida.NuevoDetalleBebidaNegocio(es);
+                        Boolean c = ws.ServicioNuevoDetalleBebida(es);
                     }
                 }
                 else if (labelPlato.Text == "Postre")
@@ -130,7 +129,7 @@ namespace Presentacion
                     EntidadPostre s = new EntidadPostre();
                     s.NOM_POS = textBoxNombrePlato.Text;
                     s.IMG_POSTRE = m.GetBuffer();
-                    int b = NegocioPostre.NuevoPostreNegocio(s);
+                    int b = ws.ServiciosNuevoPostre(s);
                     int a;
                     foreach (var item in checkedListBoxIngrediente.CheckedIndices)
                     {
@@ -138,7 +137,7 @@ namespace Presentacion
                         EntidadDetallePostre es = new EntidadDetallePostre();
                         es.ID_ING_USA = a;
                         es.ID_REC_PER = b;
-                        Boolean c = NegocioDetallePostre.NuevoDetallePostreNegocio(es);
+                        Boolean c = ws.ServicioNuevoDetallePostre(es);
                     }
 
                 }

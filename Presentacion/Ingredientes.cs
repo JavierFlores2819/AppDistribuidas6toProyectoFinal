@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Negocio;
-using Entidades;
+using Presentacion.ServiciosR;
 
 namespace Presentacion
 {
     public partial class Ingredientes : Form
     {
+        ServiciowsSoapClient ws = new ServiciowsSoapClient();
         public Ingredientes()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace Presentacion
 
         private void cargar()
         {
-            dataGridViewIngredeintes.DataSource = NegocioIngredientes.CargarIngredientesNegocio();
+            dataGridViewIngredeintes.DataSource = ws.ServicioCargarIngredientes();
         }
         private void buttonGuardarIngrediente_Click(object sender, EventArgs e)
         {
@@ -45,7 +45,7 @@ namespace Presentacion
         {
             EntidadIngredientes a = new EntidadIngredientes();
             a.NOM_ING = textBox1.Text;
-            return NegocioIngredientes.NuevoIngredienteNegocio(a);
+            return ws.ServicioNuevoIngrediente(a);
         }
 
         private void buttonCnacelarIngrediente_Click(object sender, EventArgs e)

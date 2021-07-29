@@ -178,7 +178,7 @@
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServiciosNuevoPostreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Serviciows.wsdl" />
+    <None Include="Connected Services\ServiciosR\Serviciows1.wsdl" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -199,9 +199,6 @@
     <WCFMetadataStorage Include="Connected Services\ServiciosR\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiciosR\Serviciows.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\ServiciosR\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -212,6 +209,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiciosR\Serviciows1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

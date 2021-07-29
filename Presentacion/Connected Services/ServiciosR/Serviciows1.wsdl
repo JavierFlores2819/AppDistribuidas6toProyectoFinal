@@ -942,10 +942,10 @@
   </wsdl:binding>
   <wsdl:service name="Serviciows">
     <wsdl:port name="ServiciowsSoap" binding="tns:ServiciowsSoap">
-      <soap:address location="http://localhost:57686/Serviciows.asmx" />
+      <soap:address location="http://appdistriuidas6to.somee.com/WSLP/Serviciows.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiciowsSoap12" binding="tns:ServiciowsSoap12">
-      <soap12:address location="http://localhost:57686/Serviciows.asmx" />
+      <soap12:address location="http://appdistriuidas6to.somee.com/WSLP/Serviciows.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

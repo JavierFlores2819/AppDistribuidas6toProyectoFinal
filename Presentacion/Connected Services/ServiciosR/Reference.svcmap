@@ -21,11 +21,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:57686/Serviciows.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://appdistriuidas6to.somee.com/WSLP/Serviciows.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Serviciows.disco" MetadataType="Disco" ID="108b626c-59b1-4330-af49-45f35b886219" SourceId="1" SourceUrl="http://localhost:57686/Serviciows.asmx?disco" />
-    <MetadataFile FileName="Serviciows.wsdl" MetadataType="Wsdl" ID="0b6b68ef-6dac-4cb6-9df5-6492e5b838c1" SourceId="1" SourceUrl="http://localhost:57686/Serviciows.asmx?wsdl" />
+    <MetadataFile FileName="Serviciows1.wsdl" MetadataType="Wsdl" ID="931747ad-b81b-478a-b8a7-6155a97f08be" SourceId="1" SourceUrl="http://appdistriuidas6to.somee.com/WSLP/Serviciows.asmx?wsdl" />
+    <MetadataFile FileName="Serviciows1.disco" MetadataType="Disco" ID="23dc1feb-503a-47f5-937a-23ddf02d22e3" SourceId="1" SourceUrl="http://appdistriuidas6to.somee.com/WSLP/Serviciows.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

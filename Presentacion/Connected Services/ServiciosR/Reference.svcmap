@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2ff89a86-a5a3-46fe-995f-faebb6b28d42" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3266b0d3-7970-4cf2-b3d6-815fdabf8ba7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -21,11 +21,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://appdistriuidas6to.somee.com/WSLP/Serviciows.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://appdistribuidas6to.somee.com/WSLP/Serviciows.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Serviciows1.wsdl" MetadataType="Wsdl" ID="931747ad-b81b-478a-b8a7-6155a97f08be" SourceId="1" SourceUrl="http://appdistriuidas6to.somee.com/WSLP/Serviciows.asmx?wsdl" />
-    <MetadataFile FileName="Serviciows1.disco" MetadataType="Disco" ID="23dc1feb-503a-47f5-937a-23ddf02d22e3" SourceId="1" SourceUrl="http://appdistriuidas6to.somee.com/WSLP/Serviciows.asmx?disco" />
+    <MetadataFile FileName="Serviciows.wsdl" MetadataType="Wsdl" ID="80e1409a-9508-47ce-bcb9-e54d2de74e5b" SourceId="1" SourceUrl="http://appdistribuidas6to.somee.com/WSLP/Serviciows.asmx?wsdl" />
+    <MetadataFile FileName="Serviciows.disco" MetadataType="Disco" ID="403f7db9-97f9-4ac4-908d-c01fc6a772d6" SourceId="1" SourceUrl="http://appdistribuidas6to.somee.com/WSLP/Serviciows.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

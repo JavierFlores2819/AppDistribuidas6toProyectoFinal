@@ -118,6 +118,9 @@
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadSopa.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.NegocioCargarMenuFechaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioCargarBebidaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -178,7 +181,7 @@
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServiciosNuevoPostreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Serviciows1.wsdl" />
+    <None Include="Connected Services\ServiciosR\Serviciows.wsdl" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -199,6 +202,9 @@
     <WCFMetadataStorage Include="Connected Services\ServiciosR\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ServiciosR\Serviciows.disco" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Connected Services\ServiciosR\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -211,7 +217,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiciosR\Serviciows1.disco" />
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{6F3422B9-7F7E-4903-B81B-EA6ECB432545}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{13df61e6-7f73-4a89-8722-8e0ab50c0cb8}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

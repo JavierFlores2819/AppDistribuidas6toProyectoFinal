@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="vTlyNY8oMUdCbRBoYhXetY/p36FqfVGpbqluDUaTZGg=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Yxkr64x0Z/j88+ZDsDxMevXu4rVP8FNBWLCdY34wksI=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ServiciowsSoap">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ServiciowsSoap" contract="ServiciosR.ServiciowsSoap" bindingType="basicHttpBinding" address="http://appdistriuidas6to.somee.com/WSLP/Serviciows.asmx" bindingConfiguration="ServiciowsSoap">
+    <endpoint name="ServiciowsSoap" contract="ServiciosR.ServiciowsSoap" bindingType="basicHttpBinding" address="http://appdistribuidas6to.somee.com/WSLP/Serviciows.asmx" bindingConfiguration="ServiciowsSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://appdistriuidas6to.somee.com/WSLP/Serviciows.asmx</serializedValue>
+          <serializedValue>http://appdistribuidas6to.somee.com/WSLP/Serviciows.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

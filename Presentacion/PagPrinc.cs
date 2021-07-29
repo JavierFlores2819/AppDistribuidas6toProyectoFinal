@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentacion.ServiciosR;
+using Negocio;
 
 namespace Presentacion
 {
@@ -37,7 +38,13 @@ namespace Presentacion
 
         private void PagPrinc_Load(object sender, EventArgs e)
         {
-            cargarMenu();
+           cargarMenu();
+            cargarMenuF();
+        }
+
+        private void cargarMenuF()
+        {
+            dataGridView1.DataSource = ws.NegocioCargarMenuFecha("15/08/2021");
         }
 
         private void cargarMenu()
@@ -45,5 +52,9 @@ namespace Presentacion
             dataGridViewMenu.DataSource = ws.ServicioCargarMenu();
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

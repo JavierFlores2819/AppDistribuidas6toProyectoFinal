@@ -62,5 +62,37 @@ namespace Datos
 
         }
 
+        public static List<EntidadMenuNombres> DatosCargarMenuFecha(string fechaId)
+        {
+            var parsedDate = DateTime.Parse(fechaId);
+            try
+            {
+                List<MENU> listamenu = new List<MENU>();
+                List<EntidadMenuNombres> listamenuNombreEntidad = new List<EntidadMenuNombres>();
+                using (BASEDataContext contexto = new BASEDataContext())
+                {
+                    var result = from c in contexto.MENU
+                                 where c.FECHA_MEN == parsedDate
+                                 select c;
+                    listamenu = result.ToList();
+                }
+                foreach (var item in listamenu)
+                {
+                    listamenuNombreEntidad.Add(new EntidadMenuNombres(
+                        item.ID_MEN,
+                        DatosSopa.DatosObtenerNombreSopa(item.ID_SOP_MEN),
+                        DatosSegundo.DatosObtenerNombreSegundo(item.ID_SEG_MEN),
+                        DatosBebida.DatosObtenerNombreBebida(item.ID_BEB_MEN),
+                        DatosPostre.DatosObtenerNombrePostre(item.ID_POS_MEN),
+                        item.FECHA_MEN
+                        ));
+                }
+                return listamenuNombreEntidad;
+            }
+            catch (Exception) { throw; }
+
+        }
+
+
     }
 }

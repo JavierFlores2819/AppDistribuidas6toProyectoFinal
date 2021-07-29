@@ -31,7 +31,9 @@ namespace Presentacion
         {
             this.dataGridViewMenu = new System.Windows.Forms.DataGridView();
             this.buttonRegisMenu = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewMenu
@@ -41,7 +43,7 @@ namespace Presentacion
             this.dataGridViewMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMenu.Location = new System.Drawing.Point(12, 41);
             this.dataGridViewMenu.Name = "dataGridViewMenu";
-            this.dataGridViewMenu.Size = new System.Drawing.Size(675, 353);
+            this.dataGridViewMenu.Size = new System.Drawing.Size(675, 171);
             this.dataGridViewMenu.TabIndex = 0;
             // 
             // buttonRegisMenu
@@ -54,11 +56,21 @@ namespace Presentacion
             this.buttonRegisMenu.UseVisualStyleBackColor = true;
             this.buttonRegisMenu.Click += new System.EventHandler(this.buttonRegisMenu_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 218);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(675, 150);
+            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // PagPrinc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 403);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonRegisMenu);
             this.Controls.Add(this.dataGridViewMenu);
             this.Name = "PagPrinc";
@@ -66,6 +78,7 @@ namespace Presentacion
             this.Text = "CENTRO DE COMIDA";
             this.Load += new System.EventHandler(this.PagPrinc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -74,6 +87,7 @@ namespace Presentacion
 
         private System.Windows.Forms.DataGridView dataGridViewMenu;
         private System.Windows.Forms.Button buttonRegisMenu;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

@@ -1031,6 +1031,13 @@ namespace Presentacion.ServiciosR {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioCargarMenu", ReplyAction="*")]
         System.Threading.Tasks.Task<Presentacion.ServiciosR.ServicioCargarMenuResponse> ServicioCargarMenuAsync(Presentacion.ServiciosR.ServicioCargarMenuRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento fechaId del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/NegocioCargarMenuFecha", ReplyAction="*")]
+        Presentacion.ServiciosR.NegocioCargarMenuFechaResponse NegocioCargarMenuFecha(Presentacion.ServiciosR.NegocioCargarMenuFechaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/NegocioCargarMenuFecha", ReplyAction="*")]
+        System.Threading.Tasks.Task<Presentacion.ServiciosR.NegocioCargarMenuFechaResponse> NegocioCargarMenuFechaAsync(Presentacion.ServiciosR.NegocioCargarMenuFechaRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ServicioDetalleBebidaObtenerIngredientesResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioDetalleBebidaObtenerIngredientes", ReplyAction="*")]
         Presentacion.ServiciosR.ServicioDetalleBebidaObtenerIngredientesResponse ServicioDetalleBebidaObtenerIngredientes(Presentacion.ServiciosR.ServicioDetalleBebidaObtenerIngredientesRequest request);
@@ -2110,6 +2117,74 @@ namespace Presentacion.ServiciosR {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class NegocioCargarMenuFechaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="NegocioCargarMenuFecha", Namespace="http://tempuri.org/", Order=0)]
+        public Presentacion.ServiciosR.NegocioCargarMenuFechaRequestBody Body;
+        
+        public NegocioCargarMenuFechaRequest() {
+        }
+        
+        public NegocioCargarMenuFechaRequest(Presentacion.ServiciosR.NegocioCargarMenuFechaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class NegocioCargarMenuFechaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string fechaId;
+        
+        public NegocioCargarMenuFechaRequestBody() {
+        }
+        
+        public NegocioCargarMenuFechaRequestBody(string fechaId) {
+            this.fechaId = fechaId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class NegocioCargarMenuFechaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="NegocioCargarMenuFechaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Presentacion.ServiciosR.NegocioCargarMenuFechaResponseBody Body;
+        
+        public NegocioCargarMenuFechaResponse() {
+        }
+        
+        public NegocioCargarMenuFechaResponse(Presentacion.ServiciosR.NegocioCargarMenuFechaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class NegocioCargarMenuFechaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<Presentacion.ServiciosR.EntidadMenuNombres> NegocioCargarMenuFechaResult;
+        
+        public NegocioCargarMenuFechaResponseBody() {
+        }
+        
+        public NegocioCargarMenuFechaResponseBody(System.Collections.Generic.List<Presentacion.ServiciosR.EntidadMenuNombres> NegocioCargarMenuFechaResult) {
+            this.NegocioCargarMenuFechaResult = NegocioCargarMenuFechaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ServicioDetalleBebidaObtenerIngredientesRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicioDetalleBebidaObtenerIngredientes", Namespace="http://tempuri.org/", Order=0)]
@@ -2791,6 +2866,31 @@ namespace Presentacion.ServiciosR {
             Presentacion.ServiciosR.ServicioCargarMenuRequest inValue = new Presentacion.ServiciosR.ServicioCargarMenuRequest();
             inValue.Body = new Presentacion.ServiciosR.ServicioCargarMenuRequestBody();
             return ((Presentacion.ServiciosR.ServiciowsSoap)(this)).ServicioCargarMenuAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Presentacion.ServiciosR.NegocioCargarMenuFechaResponse Presentacion.ServiciosR.ServiciowsSoap.NegocioCargarMenuFecha(Presentacion.ServiciosR.NegocioCargarMenuFechaRequest request) {
+            return base.Channel.NegocioCargarMenuFecha(request);
+        }
+        
+        public System.Collections.Generic.List<Presentacion.ServiciosR.EntidadMenuNombres> NegocioCargarMenuFecha(string fechaId) {
+            Presentacion.ServiciosR.NegocioCargarMenuFechaRequest inValue = new Presentacion.ServiciosR.NegocioCargarMenuFechaRequest();
+            inValue.Body = new Presentacion.ServiciosR.NegocioCargarMenuFechaRequestBody();
+            inValue.Body.fechaId = fechaId;
+            Presentacion.ServiciosR.NegocioCargarMenuFechaResponse retVal = ((Presentacion.ServiciosR.ServiciowsSoap)(this)).NegocioCargarMenuFecha(inValue);
+            return retVal.Body.NegocioCargarMenuFechaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Presentacion.ServiciosR.NegocioCargarMenuFechaResponse> Presentacion.ServiciosR.ServiciowsSoap.NegocioCargarMenuFechaAsync(Presentacion.ServiciosR.NegocioCargarMenuFechaRequest request) {
+            return base.Channel.NegocioCargarMenuFechaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Presentacion.ServiciosR.NegocioCargarMenuFechaResponse> NegocioCargarMenuFechaAsync(string fechaId) {
+            Presentacion.ServiciosR.NegocioCargarMenuFechaRequest inValue = new Presentacion.ServiciosR.NegocioCargarMenuFechaRequest();
+            inValue.Body = new Presentacion.ServiciosR.NegocioCargarMenuFechaRequestBody();
+            inValue.Body.fechaId = fechaId;
+            return ((Presentacion.ServiciosR.ServiciowsSoap)(this)).NegocioCargarMenuFechaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

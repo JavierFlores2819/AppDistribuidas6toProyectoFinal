@@ -1,144 +1,120 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Services;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
 using Entidades;
 using Negocio;
 
-namespace Servicios
+
+namespace ServicioJSON
 {
-    /// <summary>
-    /// Descripción breve de Serviciows
-    /// </summary>
-    [WebService(Namespace = "http://tempuri.org/")]
-    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
-    [System.ComponentModel.ToolboxItem(false)]
-    // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
-    // [System.Web.Script.Services.ScriptService]
-    public class Serviciows : WebService
+    // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "ServicioProyectJSON" en el código, en svc y en el archivo de configuración a la vez.
+    // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione ServicioProyectJSON.svc o ServicioProyectJSON.svc.cs en el Explorador de soluciones e inicie la depuración.
+    public class ServicioProyectJSON : IServicioProyectJSON
     {
-        [WebMethod]
+     
         public int ServiciosNuevoPostre(EntidadPostre e)
         {
             return NegocioPostre.NuevoPostreNegocio(e);
         }
-        [WebMethod]
+     
         public int ServicioNuevoSegundo(EntidadSegundo e)
         {
             return NegocioSegundo.NuevSegundoNegocio(e);
         }
-        [WebMethod]
+      
         public int ServicioNuevoBebida(EntidadBebida e)
         {
             return NegocioBebida.NuevoBebidaNegocio(e);
         }
-        [WebMethod]
+        
         public int ServicioNuevaSopa(EntidadSopa e)
         {
             return NegocioSopa.NuevaSopaNegocio(e);
         }
-        [WebMethod]
+
         public Boolean ServicioNuevoIngrediente(EntidadIngredientes e)
         {
             return NegocioIngredientes.NuevoIngredienteNegocio(e);
         }
-        [WebMethod]
         public int ServiciosNuevoMenu(EntidadMenu e)
         {
             return NegocioMenu.NuevoMenuNegocio(e);
         }
-        [WebMethod]
         public Boolean ServicioNuevoDetalleBebida(EntidadDetalleBebida e)
         {
             return NegocioDetalleBebida.NuevoDetalleBebidaNegocio(e);
         }
-        [WebMethod]
         public Boolean ServicioNuevoDetallePostre(EntidadDetallePostre e)
         {
             return NegocioDetallePostre.NuevoDetallePostreNegocio(e);
         }
-        [WebMethod]
         public Boolean ServicioNuevoDetalleSegundo(EntidadDetalleSegundo e)
         {
             return NegocioDetalleSegundo.NuevoDetalleSegundoNegocio(e);
         }
-        [WebMethod]
         public Boolean ServicioNuevoDetalleSopa(EntidadDetalleSopa e)
         {
 
             return NegocioDetalleSopa.NuevoDetalleSopaNegocio(e);
         }
 
-        [WebMethod]
         public List<EntidadBebida> ServicioCargarBebida()
         {
             return NegocioBebida.NegocioCargarBebida();
         }
 
-        [WebMethod]
         public List<EntidadPostre> ServicioCargarPostre()
         {
             return NegocioPostre.NegocioCargarPostre();
 
         }
 
-        [WebMethod]
         public List<EntidadSegundo> ServicioCargarSegundo()
         {
             return NegocioSegundo.NegocioCargarSegundo();
         }
 
-        [WebMethod]
         public List<EntidadSopa> ServicioCargarSopa()
         {
             return NegocioSopa.NegocioCargarSopa();
         }
 
-        [WebMethod]
         public List<EntidadIngredientes> ServicioCargarIngredientes()
         {
             return NegocioIngredientes.CargarIngredientesNegocio();
         }
 
-        [WebMethod]
         public List<EntidadMenuNombres> ServicioCargarMenu()
         {
             return NegocioMenu.NegocioCargarMenu();
         }
 
-        [WebMethod]
-        public List<EntidadMenuNombres> ServicioCargarMenuFecha(string fechaId)
+        public String ServicioDetalleBebidaObtenerIngredientes(string e)
         {
-            return NegocioMenu.NegocioCargarMenuFecha(fechaId);
+            int s = int.Parse(e);
+            return NegocioDetalleBebida.NegocioDetalleBebidaObtenerIngredientes(s);
         }
 
-        [WebMethod]
-        public String ServicioDetalleBebidaObtenerIngredientes(int e)
+        public String ServicioDetallePostreObtenerIngredientes(string e)
         {
-            return NegocioDetalleBebida.NegocioDetalleBebidaObtenerIngredientes(e);
+            int s = int.Parse(e);
+            return NegocioDetallePostre.NegocioDetallePostreObtenerIngredientes(s);
         }
 
-
-        [WebMethod]
-        public String ServicioDetallePostreObtenerIngredientes(int e)
+        public String ServicioDetalleSegundoObtenerIngredientes(string e)
         {
-            return NegocioDetallePostre.NegocioDetallePostreObtenerIngredientes(e);
+            int s = int.Parse(e);
+            return NegocioDetalleSegundo.NegocioDetalleSegundoObtenerIngredientes(s);
         }
 
-        [WebMethod]
-        public String ServicioDetalleSegundoObtenerIngredientes(int e)
+        public String ServicioDetalleSopaObtenerIngredientes(string e)
         {
-            return NegocioDetalleSegundo.NegocioDetalleSegundoObtenerIngredientes(e);
+            int s = int.Parse(e);
+            return NegocioDetalleSopa.NegocioDetalleSopaObtenerIngredientes(s);
         }
-
-        [WebMethod]
-        public String ServicioDetalleSopaObtenerIngredientes(int e)
-        {
-            return NegocioDetalleSopa.NegocioDetalleSopaObtenerIngredientes(e);
-        }
-
-
 
     }
 }

@@ -314,6 +314,20 @@
           <s:element minOccurs="1" maxOccurs="1" name="FECHA_MEN" type="s:dateTime" />
         </s:sequence>
       </s:complexType>
+      <s:element name="NegocioCargarMenuFecha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fechaId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NegocioCargarMenuFechaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NegocioCargarMenuFechaResult" type="tns:ArrayOfEntidadMenuNombres" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="ServicioDetalleBebidaObtenerIngredientes">
         <s:complexType>
           <s:sequence>
@@ -468,6 +482,12 @@
   <wsdl:message name="ServicioCargarMenuSoapOut">
     <wsdl:part name="parameters" element="tns:ServicioCargarMenuResponse" />
   </wsdl:message>
+  <wsdl:message name="NegocioCargarMenuFechaSoapIn">
+    <wsdl:part name="parameters" element="tns:NegocioCargarMenuFecha" />
+  </wsdl:message>
+  <wsdl:message name="NegocioCargarMenuFechaSoapOut">
+    <wsdl:part name="parameters" element="tns:NegocioCargarMenuFechaResponse" />
+  </wsdl:message>
   <wsdl:message name="ServicioDetalleBebidaObtenerIngredientesSoapIn">
     <wsdl:part name="parameters" element="tns:ServicioDetalleBebidaObtenerIngredientes" />
   </wsdl:message>
@@ -556,6 +576,10 @@
     <wsdl:operation name="ServicioCargarMenu">
       <wsdl:input message="tns:ServicioCargarMenuSoapIn" />
       <wsdl:output message="tns:ServicioCargarMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NegocioCargarMenuFecha">
+      <wsdl:input message="tns:NegocioCargarMenuFechaSoapIn" />
+      <wsdl:output message="tns:NegocioCargarMenuFechaSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ServicioDetalleBebidaObtenerIngredientes">
       <wsdl:input message="tns:ServicioDetalleBebidaObtenerIngredientesSoapIn" />
@@ -713,6 +737,15 @@
     </wsdl:operation>
     <wsdl:operation name="ServicioCargarMenu">
       <soap:operation soapAction="http://tempuri.org/ServicioCargarMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NegocioCargarMenuFecha">
+      <soap:operation soapAction="http://tempuri.org/NegocioCargarMenuFecha" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -903,6 +936,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="NegocioCargarMenuFecha">
+      <soap12:operation soapAction="http://tempuri.org/NegocioCargarMenuFecha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ServicioDetalleBebidaObtenerIngredientes">
       <soap12:operation soapAction="http://tempuri.org/ServicioDetalleBebidaObtenerIngredientes" style="document" />
       <wsdl:input>
@@ -942,10 +984,10 @@
   </wsdl:binding>
   <wsdl:service name="Serviciows">
     <wsdl:port name="ServiciowsSoap" binding="tns:ServiciowsSoap">
-      <soap:address location="http://appdistriuidas6to.somee.com/WSLP/Serviciows.asmx" />
+      <soap:address location="http://appdistribuidas6to.somee.com/WSLP/Serviciows.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiciowsSoap12" binding="tns:ServiciowsSoap12">
-      <soap12:address location="http://appdistriuidas6to.somee.com/WSLP/Serviciows.asmx" />
+      <soap12:address location="http://appdistribuidas6to.somee.com/WSLP/Serviciows.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

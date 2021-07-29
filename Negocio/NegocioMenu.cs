@@ -31,5 +31,14 @@ namespace Negocio
             catch (Exception) { throw; }
         }
 
+        public static List<EntidadMenuNombres> NegocioCargarMenuFecha(string fechaId)
+        {
+            try
+            {
+                return DatosMenu.DatosCargarMenuFecha(fechaId);
+            }
+            catch (Exception) { throw; }
+        }
+
     }
 }

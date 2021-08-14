@@ -57,15 +57,17 @@ namespace Datos
             catch (Exception) { throw; }
         }
 
-        public static String DatosObtenerNombreSopa(int id)
+        public static EntidadSopa DatosObteneSopa(int id)
         {
             try
             {
-                String b = "";
+                EntidadSopa b = new EntidadSopa();
                 using (BASEDataContext contexto = new BASEDataContext())
                 {
                     var a = contexto.SOPA.FirstOrDefault(cc => cc.ID_SOP == id);
-                    b = a.NOM_SOP;
+                    b.ID_SOP= a.ID_SOP;
+                    b.NOM_SOP = a.NOM_SOP;
+                    b.IMG_SOPA = a.IMG_SOPA.ToArray();
                 }
                 return b;
 

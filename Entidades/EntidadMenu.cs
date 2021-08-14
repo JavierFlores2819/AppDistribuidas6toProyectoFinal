@@ -8,6 +8,7 @@ namespace Entidades
 {
     public class EntidadMenu
     {
+        public int CANTIDAD { get; set; }
         public int ID_MEN { get; set; }
         public int ID_SOP_MEN { get; set; }
         public int ID_SEG_MEN { get; set; }
@@ -19,7 +20,7 @@ namespace Entidades
         {
         }
 
-        public EntidadMenu(int iD_MEN, int iD_SOP_MEN, int iD_SEG_MEN, int iD_BEB_MEN, int iD_POS_MEN, DateTime fECHA_MEN)
+        public EntidadMenu(int cANTIDAD, int iD_MEN, int iD_SOP_MEN, int iD_SEG_MEN, int iD_BEB_MEN, int iD_POS_MEN, DateTime fECHA_MEN)
         {
             ID_MEN = iD_MEN;
             ID_SOP_MEN = iD_SOP_MEN;
@@ -27,6 +28,7 @@ namespace Entidades
             ID_BEB_MEN = iD_BEB_MEN;
             ID_POS_MEN = iD_POS_MEN;
             FECHA_MEN = fECHA_MEN;
+            CANTIDAD = cANTIDAD;
         }
     }
 }

@@ -57,15 +57,17 @@ namespace Datos
             catch (Exception) { throw; }
         }
 
-        public static String DatosObtenerNombrePostre(int id)
+        public static EntidadPostre DatosObtenerPostre(int id)
         {
             try
             {
-                String b = "";
+                EntidadPostre b = new EntidadPostre();
                 using (BASEDataContext contexto = new BASEDataContext())
                 {
                     var a = contexto.POSTRE.FirstOrDefault(cc => cc.ID_POS == id);
-                    b = a.NOM_POS;
+                    b.NOM_POS = a.NOM_POS;
+                    b.ID_POS = a.ID_POS;
+                    b.IMG_POSTRE = a.IMG_POSTRE.ToArray();
                 }
                 return b;
 

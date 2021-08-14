@@ -51,7 +51,7 @@ namespace Datos
                 }
                 foreach (var item in listaDETALLE_SEGUNDO)
                 {
-                    b += DatosIngredientes.DatosObtenerIdIngrediente(item.ID_ING_USA) + ", ";
+                    b += DatosIngredientes.DatosObtenerIdIngrediente(item.ID_ING_USA) + " ";
                 }
                 return b;
             }

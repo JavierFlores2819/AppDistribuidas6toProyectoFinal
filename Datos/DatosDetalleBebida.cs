@@ -48,7 +48,7 @@ namespace Datos
                 }
                 foreach (var item in listaDETALLE_BEBIDA)
                 {
-                    b += DatosIngredientes.DatosObtenerIdIngrediente(item.ID_ING_USA) + ", ";
+                    b += DatosIngredientes.DatosObtenerIdIngrediente(item.ID_ING_USA) + " ";
                 }
                 return b;
             }

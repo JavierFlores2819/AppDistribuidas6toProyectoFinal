@@ -33,6 +33,17 @@ namespace Negocio
                 throw;
             }
         }
-    }
+        public static EntidadPostre NegocioObtenerPostre(int id)
+        {
+            try
+            {
+                return DatosPostre.DatosObtenerPostre(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        }
 
 }

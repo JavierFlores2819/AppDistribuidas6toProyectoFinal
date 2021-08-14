@@ -8,6 +8,7 @@ namespace Entidades
 {
    public class EntidadMenuNombres
     {
+        public int CANTIDAD { get; set; }
         public int ID_MEN { get; set; }
         public String NOM_SOP_MEN { get; set; }
         public String NOM_SEG_MEN { get; set; }
@@ -19,7 +20,7 @@ namespace Entidades
         {
         }
 
-        public EntidadMenuNombres(int iD_MEN, String nOM_SOP_MEN, String nOM_SEG_MEN, String nOM_BEB_MEN, String nOM_POS_MEN, DateTime fECHA_MEN)
+        public EntidadMenuNombres(int cANTIDAD ,int iD_MEN, String nOM_SOP_MEN, String nOM_SEG_MEN, String nOM_BEB_MEN, String nOM_POS_MEN, DateTime fECHA_MEN)
         {
             ID_MEN = iD_MEN;
             NOM_SOP_MEN = nOM_SOP_MEN;
@@ -27,6 +28,7 @@ namespace Entidades
             NOM_BEB_MEN = nOM_BEB_MEN;
             NOM_POS_MEN = nOM_POS_MEN;
             FECHA_MEN = fECHA_MEN;
+            CANTIDAD = cANTIDAD;
         }
     }
 }

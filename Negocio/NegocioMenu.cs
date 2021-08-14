@@ -31,7 +31,7 @@ namespace Negocio
             catch (Exception) { throw; }
         }
 
-        public static List<EntidadMenuNombres> NegocioCargarMenuFecha(string fechaId)
+        public static List<EntidadMenuAndroid> NegocioCargarMenuFecha(DateTime fechaId)
         {
             try
             {
@@ -40,5 +40,18 @@ namespace Negocio
             catch (Exception) { throw; }
         }
 
+        public static EntidadMenu NegocioObtenerporIdMenu(int id)
+        {
+            return DatosMenu.ObtenerporIdMenu(id);
+        }
+        public static bool NegocioModificarMenu(EntidadMenu e)
+        {
+            return DatosMenu.ModificarMenu(e);
+        }
+
+        public static Boolean NegocioEliminarMenu(String id)
+        {
+            return DatosMenu.EliminarMenu(id);
+        }
     }
 }

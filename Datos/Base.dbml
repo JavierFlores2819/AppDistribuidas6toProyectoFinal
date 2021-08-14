@@ -27,15 +27,6 @@
       <Association Name="POSTRE_DETALLE_POSTRE" Member="POSTRE" ThisKey="ID_REC_PER" OtherKey="ID_POS" Type="POSTRE" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DETALLE_SOPA" Member="DETALLE_SOPA">
-    <Type Name="DETALLE_SOPA">
-      <Column Name="ID_DET_REC" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_REC_PER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_ING_USA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="INGREDIENTES_DETALLE_SOPA" Member="INGREDIENTES" ThisKey="ID_ING_USA" OtherKey="ID_ING" Type="INGREDIENTES" IsForeignKey="true" />
-      <Association Name="SOPA_DETALLE_SOPA" Member="SOPA" ThisKey="ID_REC_PER" OtherKey="ID_SOP" Type="SOPA" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.DETALLE_SEGUNDO" Member="DETALLE_SEGUNDO">
     <Type Name="DETALLE_SEGUNDO">
       <Column Name="ID_DET_REC" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -45,14 +36,48 @@
       <Association Name="SEGUNDO_DETALLE_SEGUNDO" Member="SEGUNDO" ThisKey="ID_REC_PER" OtherKey="ID_SEG" Type="SEGUNDO" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.DETALLE_SOPA" Member="DETALLE_SOPA">
+    <Type Name="DETALLE_SOPA">
+      <Column Name="ID_DET_REC" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_REC_PER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_ING_USA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="INGREDIENTES_DETALLE_SOPA" Member="INGREDIENTES" ThisKey="ID_ING_USA" OtherKey="ID_ING" Type="INGREDIENTES" IsForeignKey="true" />
+      <Association Name="SOPA_DETALLE_SOPA" Member="SOPA" ThisKey="ID_REC_PER" OtherKey="ID_SOP" Type="SOPA" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.INGREDIENTES" Member="INGREDIENTES">
     <Type Name="INGREDIENTES">
       <Column Name="ID_ING" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="NOM_ING" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="INGREDIENTES_DETALLE_BEBIDA" Member="DETALLE_BEBIDA" ThisKey="ID_ING" OtherKey="ID_ING_USA" Type="DETALLE_BEBIDA" />
       <Association Name="INGREDIENTES_DETALLE_POSTRE" Member="DETALLE_POSTRE" ThisKey="ID_ING" OtherKey="ID_ING_USA" Type="DETALLE_POSTRE" />
-      <Association Name="INGREDIENTES_DETALLE_SOPA" Member="DETALLE_SOPA" ThisKey="ID_ING" OtherKey="ID_ING_USA" Type="DETALLE_SOPA" />
       <Association Name="INGREDIENTES_DETALLE_SEGUNDO" Member="DETALLE_SEGUNDO" ThisKey="ID_ING" OtherKey="ID_ING_USA" Type="DETALLE_SEGUNDO" />
+      <Association Name="INGREDIENTES_DETALLE_SOPA" Member="DETALLE_SOPA" ThisKey="ID_ING" OtherKey="ID_ING_USA" Type="DETALLE_SOPA" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MENU" Member="MENU">
+    <Type Name="MENU">
+      <Column Name="CAN_PED_MEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_MEN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_SOP_MEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_SEG_MEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_BEB_MEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_POS_MEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA_MEN" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="MENU_PEDIDOS" Member="PEDIDOS" ThisKey="ID_MEN" OtherKey="MENU" Type="PEDIDOS" />
+      <Association Name="BEBIDA_MENU" Member="BEBIDA" ThisKey="ID_BEB_MEN" OtherKey="ID_BEB" Type="BEBIDA" IsForeignKey="true" />
+      <Association Name="POSTRE_MENU" Member="POSTRE" ThisKey="ID_POS_MEN" OtherKey="ID_POS" Type="POSTRE" IsForeignKey="true" />
+      <Association Name="SEGUNDO_MENU" Member="SEGUNDO" ThisKey="ID_SEG_MEN" OtherKey="ID_SEG" Type="SEGUNDO" IsForeignKey="true" />
+      <Association Name="SOPA_MENU" Member="SOPA" ThisKey="ID_SOP_MEN" OtherKey="ID_SOP" Type="SOPA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PEDIDOS" Member="PEDIDOS">
+    <Type Name="PEDIDOS">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLIENTE" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="MENU" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MENU_PEDIDOS" Member="MENU1" ThisKey="MENU" OtherKey="ID_MEN" Type="MENU" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.POSTRE" Member="POSTRE">
@@ -62,20 +87,6 @@
       <Column Name="IMG_POSTRE" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Association Name="POSTRE_DETALLE_POSTRE" Member="DETALLE_POSTRE" ThisKey="ID_POS" OtherKey="ID_REC_PER" Type="DETALLE_POSTRE" />
       <Association Name="POSTRE_MENU" Member="MENU" ThisKey="ID_POS" OtherKey="ID_POS_MEN" Type="MENU" />
-    </Type>
-  </Table>
-  <Table Name="dbo.MENU" Member="MENU">
-    <Type Name="MENU">
-      <Column Name="ID_MEN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_SOP_MEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_SEG_MEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_BEB_MEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_POS_MEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FECHA_MEN" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Association Name="BEBIDA_MENU" Member="BEBIDA" ThisKey="ID_BEB_MEN" OtherKey="ID_BEB" Type="BEBIDA" IsForeignKey="true" />
-      <Association Name="POSTRE_MENU" Member="POSTRE" ThisKey="ID_POS_MEN" OtherKey="ID_POS" Type="POSTRE" IsForeignKey="true" />
-      <Association Name="SEGUNDO_MENU" Member="SEGUNDO" ThisKey="ID_SEG_MEN" OtherKey="ID_SEG" Type="SEGUNDO" IsForeignKey="true" />
-      <Association Name="SOPA_MENU" Member="SOPA" ThisKey="ID_SOP_MEN" OtherKey="ID_SOP" Type="SOPA" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.SEGUNDO" Member="SEGUNDO">

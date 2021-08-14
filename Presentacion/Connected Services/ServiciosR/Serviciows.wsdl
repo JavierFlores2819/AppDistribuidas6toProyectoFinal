@@ -115,6 +115,7 @@
       </s:element>
       <s:complexType name="EntidadMenu">
         <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CANTIDAD" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="ID_MEN" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="ID_SOP_MEN" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="ID_SEG_MEN" type="s:int" />
@@ -295,39 +296,53 @@
       <s:element name="ServicioCargarMenuResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ServicioCargarMenuResult" type="tns:ArrayOfEntidadMenuNombres" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioCargarMenuResult" type="tns:ArrayOfEntidadMenu" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfEntidadMenuNombres">
+      <s:complexType name="ArrayOfEntidadMenu">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="EntidadMenuNombres" nillable="true" type="tns:EntidadMenuNombres" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntidadMenu" nillable="true" type="tns:EntidadMenu" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="EntidadMenuNombres">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="ID_MEN" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="NOM_SOP_MEN" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="NOM_SEG_MEN" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="NOM_BEB_MEN" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="NOM_POS_MEN" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="FECHA_MEN" type="s:dateTime" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="NegocioCargarMenuFecha">
+      <s:element name="ServicioCargarMenuFecha">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="fechaId" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="NegocioCargarMenuFechaResponse">
+      <s:element name="ServicioCargarMenuFechaResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NegocioCargarMenuFechaResult" type="tns:ArrayOfEntidadMenuNombres" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioCargarMenuFechaResult" type="tns:ArrayOfEntidadMenuAndroid" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ArrayOfEntidadMenuAndroid">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntidadMenuAndroid" nillable="true" type="tns:EntidadMenuAndroid" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntidadMenuAndroid">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_MEN" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_SOP_MEN" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOM_SOP_MEN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMG_SOP_MEN" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_SEG_MEN" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOM_SEG_MEN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMG_SEG_MEN" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_BEB_MEN" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOM_BEB_MEN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMG_BEB_MEN" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_POS_MEN" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOM_POS_MEN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMG_POS_MEN" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="INGREDIENTES" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FECHA_MEN" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="ServicioDetalleBebidaObtenerIngredientes">
         <s:complexType>
           <s:sequence>
@@ -384,6 +399,131 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ServicioObtenerMenuporId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioObtenerMenuporIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioObtenerMenuporIdResult" type="tns:EntidadMenu" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioModificarMenu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="e" type="tns:EntidadMenu" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioModificarMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioModificarMenuResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioEliminarMenu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioEliminarMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioEliminarMenuResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioObtenerSegundo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioObtenerSegundoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioObtenerSegundoResult" type="tns:EntidadSegundo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioObtenerSopa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioObtenerSopaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioObtenerSopaResult" type="tns:EntidadSopa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioObtenerBebida">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioObtenerBebidaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioObtenerBebidaResult" type="tns:EntidadBebida" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioObtenerPostre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioObtenerPostreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioObtenerPostreResult" type="tns:EntidadPostre" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioCargarPedidos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioCargarPedidosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioCargarPedidosResult" type="tns:ArrayOfEntidadPedido" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEntidadPedido">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntidadPedido" nillable="true" type="tns:EntidadPedido" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntidadPedido">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_PED" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLI_PED" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MENU_PED" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CANT_PED" type="s:int" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ServiciosNuevoPostreSoapIn">
@@ -482,11 +622,11 @@
   <wsdl:message name="ServicioCargarMenuSoapOut">
     <wsdl:part name="parameters" element="tns:ServicioCargarMenuResponse" />
   </wsdl:message>
-  <wsdl:message name="NegocioCargarMenuFechaSoapIn">
-    <wsdl:part name="parameters" element="tns:NegocioCargarMenuFecha" />
+  <wsdl:message name="ServicioCargarMenuFechaSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioCargarMenuFecha" />
   </wsdl:message>
-  <wsdl:message name="NegocioCargarMenuFechaSoapOut">
-    <wsdl:part name="parameters" element="tns:NegocioCargarMenuFechaResponse" />
+  <wsdl:message name="ServicioCargarMenuFechaSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioCargarMenuFechaResponse" />
   </wsdl:message>
   <wsdl:message name="ServicioDetalleBebidaObtenerIngredientesSoapIn">
     <wsdl:part name="parameters" element="tns:ServicioDetalleBebidaObtenerIngredientes" />
@@ -511,6 +651,54 @@
   </wsdl:message>
   <wsdl:message name="ServicioDetalleSopaObtenerIngredientesSoapOut">
     <wsdl:part name="parameters" element="tns:ServicioDetalleSopaObtenerIngredientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioObtenerMenuporIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioObtenerMenuporId" />
+  </wsdl:message>
+  <wsdl:message name="ServicioObtenerMenuporIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioObtenerMenuporIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioModificarMenu" />
+  </wsdl:message>
+  <wsdl:message name="ServicioModificarMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioModificarMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioEliminarMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioEliminarMenu" />
+  </wsdl:message>
+  <wsdl:message name="ServicioEliminarMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioEliminarMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioObtenerSegundoSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioObtenerSegundo" />
+  </wsdl:message>
+  <wsdl:message name="ServicioObtenerSegundoSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioObtenerSegundoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioObtenerSopaSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioObtenerSopa" />
+  </wsdl:message>
+  <wsdl:message name="ServicioObtenerSopaSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioObtenerSopaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioObtenerBebidaSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioObtenerBebida" />
+  </wsdl:message>
+  <wsdl:message name="ServicioObtenerBebidaSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioObtenerBebidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioObtenerPostreSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioObtenerPostre" />
+  </wsdl:message>
+  <wsdl:message name="ServicioObtenerPostreSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioObtenerPostreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioCargarPedidosSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioCargarPedidos" />
+  </wsdl:message>
+  <wsdl:message name="ServicioCargarPedidosSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioCargarPedidosResponse" />
   </wsdl:message>
   <wsdl:portType name="ServiciowsSoap">
     <wsdl:operation name="ServiciosNuevoPostre">
@@ -577,9 +765,9 @@
       <wsdl:input message="tns:ServicioCargarMenuSoapIn" />
       <wsdl:output message="tns:ServicioCargarMenuSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="NegocioCargarMenuFecha">
-      <wsdl:input message="tns:NegocioCargarMenuFechaSoapIn" />
-      <wsdl:output message="tns:NegocioCargarMenuFechaSoapOut" />
+    <wsdl:operation name="ServicioCargarMenuFecha">
+      <wsdl:input message="tns:ServicioCargarMenuFechaSoapIn" />
+      <wsdl:output message="tns:ServicioCargarMenuFechaSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ServicioDetalleBebidaObtenerIngredientes">
       <wsdl:input message="tns:ServicioDetalleBebidaObtenerIngredientesSoapIn" />
@@ -596,6 +784,38 @@
     <wsdl:operation name="ServicioDetalleSopaObtenerIngredientes">
       <wsdl:input message="tns:ServicioDetalleSopaObtenerIngredientesSoapIn" />
       <wsdl:output message="tns:ServicioDetalleSopaObtenerIngredientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerMenuporId">
+      <wsdl:input message="tns:ServicioObtenerMenuporIdSoapIn" />
+      <wsdl:output message="tns:ServicioObtenerMenuporIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarMenu">
+      <wsdl:input message="tns:ServicioModificarMenuSoapIn" />
+      <wsdl:output message="tns:ServicioModificarMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioEliminarMenu">
+      <wsdl:input message="tns:ServicioEliminarMenuSoapIn" />
+      <wsdl:output message="tns:ServicioEliminarMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerSegundo">
+      <wsdl:input message="tns:ServicioObtenerSegundoSoapIn" />
+      <wsdl:output message="tns:ServicioObtenerSegundoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerSopa">
+      <wsdl:input message="tns:ServicioObtenerSopaSoapIn" />
+      <wsdl:output message="tns:ServicioObtenerSopaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerBebida">
+      <wsdl:input message="tns:ServicioObtenerBebidaSoapIn" />
+      <wsdl:output message="tns:ServicioObtenerBebidaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerPostre">
+      <wsdl:input message="tns:ServicioObtenerPostreSoapIn" />
+      <wsdl:output message="tns:ServicioObtenerPostreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioCargarPedidos">
+      <wsdl:input message="tns:ServicioCargarPedidosSoapIn" />
+      <wsdl:output message="tns:ServicioCargarPedidosSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiciowsSoap" type="tns:ServiciowsSoap">
@@ -744,8 +964,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="NegocioCargarMenuFecha">
-      <soap:operation soapAction="http://tempuri.org/NegocioCargarMenuFecha" style="document" />
+    <wsdl:operation name="ServicioCargarMenuFecha">
+      <soap:operation soapAction="http://tempuri.org/ServicioCargarMenuFecha" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -782,6 +1002,78 @@
     </wsdl:operation>
     <wsdl:operation name="ServicioDetalleSopaObtenerIngredientes">
       <soap:operation soapAction="http://tempuri.org/ServicioDetalleSopaObtenerIngredientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerMenuporId">
+      <soap:operation soapAction="http://tempuri.org/ServicioObtenerMenuporId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarMenu">
+      <soap:operation soapAction="http://tempuri.org/ServicioModificarMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioEliminarMenu">
+      <soap:operation soapAction="http://tempuri.org/ServicioEliminarMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerSegundo">
+      <soap:operation soapAction="http://tempuri.org/ServicioObtenerSegundo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerSopa">
+      <soap:operation soapAction="http://tempuri.org/ServicioObtenerSopa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerBebida">
+      <soap:operation soapAction="http://tempuri.org/ServicioObtenerBebida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerPostre">
+      <soap:operation soapAction="http://tempuri.org/ServicioObtenerPostre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioCargarPedidos">
+      <soap:operation soapAction="http://tempuri.org/ServicioCargarPedidos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -936,8 +1228,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="NegocioCargarMenuFecha">
-      <soap12:operation soapAction="http://tempuri.org/NegocioCargarMenuFecha" style="document" />
+    <wsdl:operation name="ServicioCargarMenuFecha">
+      <soap12:operation soapAction="http://tempuri.org/ServicioCargarMenuFecha" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -974,6 +1266,78 @@
     </wsdl:operation>
     <wsdl:operation name="ServicioDetalleSopaObtenerIngredientes">
       <soap12:operation soapAction="http://tempuri.org/ServicioDetalleSopaObtenerIngredientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerMenuporId">
+      <soap12:operation soapAction="http://tempuri.org/ServicioObtenerMenuporId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioModificarMenu">
+      <soap12:operation soapAction="http://tempuri.org/ServicioModificarMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioEliminarMenu">
+      <soap12:operation soapAction="http://tempuri.org/ServicioEliminarMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerSegundo">
+      <soap12:operation soapAction="http://tempuri.org/ServicioObtenerSegundo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerSopa">
+      <soap12:operation soapAction="http://tempuri.org/ServicioObtenerSopa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerBebida">
+      <soap12:operation soapAction="http://tempuri.org/ServicioObtenerBebida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerPostre">
+      <soap12:operation soapAction="http://tempuri.org/ServicioObtenerPostre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioCargarPedidos">
+      <soap12:operation soapAction="http://tempuri.org/ServicioCargarPedidos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

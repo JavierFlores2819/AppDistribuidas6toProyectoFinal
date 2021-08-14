@@ -8,8 +8,20 @@ using Datos;
 
 namespace Negocio
 {
-   public class NegocioSegundo
+    public class NegocioSegundo
     {
+        public static EntidadSegundo NegocioObtenerSegundo(int id)
+        {
+            try
+            {
+                return DatosSegundo.DatosObtenerSegundo(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         public static int NuevSegundoNegocio(EntidadSegundo e)
         {
             try

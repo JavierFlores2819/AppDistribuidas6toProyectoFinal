@@ -14,22 +14,22 @@ namespace ServicioJSON
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione ServicioProyectJSON.svc o ServicioProyectJSON.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class ServicioProyectJSON : IServicioProyectJSON
     {
-     
+
         public int ServiciosNuevoPostre(EntidadPostre e)
         {
             return NegocioPostre.NuevoPostreNegocio(e);
         }
-     
+
         public int ServicioNuevoSegundo(EntidadSegundo e)
         {
             return NegocioSegundo.NuevSegundoNegocio(e);
         }
-      
+
         public int ServicioNuevoBebida(EntidadBebida e)
         {
             return NegocioBebida.NuevoBebidaNegocio(e);
         }
-        
+
         public int ServicioNuevaSopa(EntidadSopa e)
         {
             return NegocioSopa.NuevaSopaNegocio(e);
@@ -116,5 +116,55 @@ namespace ServicioJSON
             return NegocioDetalleSopa.NegocioDetalleSopaObtenerIngredientes(s);
         }
 
+        public List<EntidadMenuAndroid> ServicioCargarMenuFecha(string id)
+        {
+            DateTime s = DateTime.ParseExact(id, "dd/MM/yyyy", null);
+            return NegocioMenu.NegocioCargarMenuFecha(s);
+        }
+
+        public int ServicioNuevoPedido(EntidadPedido e)
+        {
+            return NegocioPedido.NegocioNuevoPedido(e);
+        }
+
+        public List<EntidadPedido> ServicioCargarPedidos(string id)
+        {
+            return NegocioPedido.NegocioCargarPedidos(id);
+        }
+
+        public EntidadMenu ServicioObtenerMenuporId(int id)
+        {
+            return NegocioMenu.NegocioObtenerporIdMenu(id);
+        }
+
+        public bool ServicioModificarMenu(EntidadMenu e)
+        {
+            return NegocioMenu.NegocioModificarMenu(e);
+        }
+
+        public Boolean ServicioEliminarMenu(String id)
+        {
+            return NegocioMenu.NegocioEliminarMenu(id);
+        }
+
+        public EntidadSegundo ServicioObtenerSegundo(int id)
+        {
+            return NegocioSegundo.NegocioObtenerSegundo(id);
+        }
+
+        public EntidadSopa ServicioObtenerSopa(int id)
+        {
+            return NegocioSopa.NegocioObtenerSopa(id);
+        }
+
+        public EntidadBebida ServicioObtenerBebida(int id)
+        {
+            return NegocioBebida.NegocioObtenerBebida(id);
+        }
+
+        public EntidadPostre ServicioObtenerPostre(int id)
+        {
+            return NegocioPostre.NegocioObtenerPostre(id);
+        }
     }
 }

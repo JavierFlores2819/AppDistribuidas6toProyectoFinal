@@ -65,6 +65,12 @@
     <Compile Include="PagPrinc.Designer.cs">
       <DependentUpon>PagPrinc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos.Designer.cs">
+      <DependentUpon>Pedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Platos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PagPrinc.resx">
       <DependentUpon>PagPrinc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos.resx">
+      <DependentUpon>Pedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Platos.resx">
       <DependentUpon>Platos.cs</DependentUpon>
@@ -106,7 +115,13 @@
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadIngredientes.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadMenuNombres.datasource">
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadMenu.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadMenuAndroid.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadPedido.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadPostre.datasource">
@@ -118,16 +133,19 @@
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadSopa.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.NegocioCargarMenuFechaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioCargarBebidaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioCargarIngredientesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioCargarMenuFechaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioCargarMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioCargarPedidosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioCargarPostreResponse.datasource">
@@ -149,6 +167,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioDetalleSopaObtenerIngredientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioEliminarMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioModificarMenuResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioNuevaSopaResponse.datasource">
@@ -173,6 +197,21 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioNuevoSegundoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerBebidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerMenuporIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerPostreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerSegundoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerSopaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServiciosNuevoMenuResponse.datasource">

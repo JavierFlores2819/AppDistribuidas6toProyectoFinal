@@ -8,7 +8,7 @@ using Datos;
 
 namespace Negocio
 {
-  public class NegocioBebida
+    public class NegocioBebida
     {
         public static int NuevoBebidaNegocio(EntidadBebida e)
         {
@@ -35,5 +35,17 @@ namespace Negocio
 
         }
 
+        public static EntidadBebida NegocioObtenerBebida(int id)
+        {
+            try
+            {
+                return DatosBebida.DatosObtenerBebida(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

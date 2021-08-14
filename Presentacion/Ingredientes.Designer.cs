@@ -34,6 +34,7 @@ namespace Presentacion
             this.buttonGuardarIngrediente = new System.Windows.Forms.Button();
             this.buttonCnacelarIngrediente = new System.Windows.Forms.Button();
             this.dataGridViewIngredeintes = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIngredeintes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@ namespace Presentacion
             // 
             // buttonGuardarIngrediente
             // 
-            this.buttonGuardarIngrediente.Location = new System.Drawing.Point(40, 189);
+            this.buttonGuardarIngrediente.Location = new System.Drawing.Point(86, 189);
             this.buttonGuardarIngrediente.Name = "buttonGuardarIngrediente";
             this.buttonGuardarIngrediente.Size = new System.Drawing.Size(69, 23);
             this.buttonGuardarIngrediente.TabIndex = 2;
@@ -65,7 +66,7 @@ namespace Presentacion
             // 
             // buttonCnacelarIngrediente
             // 
-            this.buttonCnacelarIngrediente.Location = new System.Drawing.Point(115, 189);
+            this.buttonCnacelarIngrediente.Location = new System.Drawing.Point(161, 189);
             this.buttonCnacelarIngrediente.Name = "buttonCnacelarIngrediente";
             this.buttonCnacelarIngrediente.Size = new System.Drawing.Size(69, 23);
             this.buttonCnacelarIngrediente.TabIndex = 3;
@@ -83,11 +84,22 @@ namespace Presentacion
             this.dataGridViewIngredeintes.Size = new System.Drawing.Size(218, 132);
             this.dataGridViewIngredeintes.TabIndex = 4;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(5, 189);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Ingredientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(242, 224);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridViewIngredeintes);
             this.Controls.Add(this.buttonCnacelarIngrediente);
             this.Controls.Add(this.buttonGuardarIngrediente);
@@ -110,5 +122,6 @@ namespace Presentacion
         private System.Windows.Forms.Button buttonGuardarIngrediente;
         private System.Windows.Forms.Button buttonCnacelarIngrediente;
         private System.Windows.Forms.DataGridView dataGridViewIngredeintes;
+        private System.Windows.Forms.Button button1;
     }
 }

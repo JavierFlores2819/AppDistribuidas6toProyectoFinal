@@ -50,7 +50,7 @@ namespace Datos
                 }
                 foreach (var item in listaDETALLE_SOPA)
                 {
-                    b += DatosIngredientes.DatosObtenerIdIngrediente(item.ID_ING_USA) + ", ";
+                    b += DatosIngredientes.DatosObtenerIdIngrediente(item.ID_ING_USA) + " ";
                 }
                 return b;
             }

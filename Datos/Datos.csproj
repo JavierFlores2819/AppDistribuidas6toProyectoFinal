@@ -54,6 +54,7 @@
     <Compile Include="DatosDetalleSopa.cs" />
     <Compile Include="DatosIngredientes.cs" />
     <Compile Include="DatosMenu.cs" />
+    <Compile Include="DatosPedido.cs" />
     <Compile Include="DatosPostre.cs" />
     <Compile Include="DatosSegundo.cs" />
     <Compile Include="DatosSopa.cs" />

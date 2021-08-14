@@ -7,17 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
 using Presentacion.ServiciosR;
-using Negocio;
+
 
 namespace Presentacion
 {
     public partial class PagPrinc : Form
     {
         ServiciowsSoapClient ws = new ServiciowsSoapClient();
+        List<ServiciosR.EntidadMenu> entidadMenuDatos = new List<ServiciosR.EntidadMenu>();
         public PagPrinc()
         {
             InitializeComponent();
+            dataGridViewMenu.Columns.Add(
+            new DataGridViewButtonColumn()
+            {
+                HeaderText = "PEDIDOS",
+                Text = "VER",
+                UseColumnTextForButtonValue = true
+            });
         }
 
         private void buttonRegisMenu_Click(object sender, EventArgs e)
@@ -38,22 +47,50 @@ namespace Presentacion
 
         private void PagPrinc_Load(object sender, EventArgs e)
         {
-           cargarMenu();
-            cargarMenuF();
+            cargarMenu();
         }
 
-        private void cargarMenuF()
-        {
-            dataGridView1.DataSource = ws.NegocioCargarMenuFecha("15/08/2021");
-        }
+
 
         private void cargarMenu()
         {
-            dataGridViewMenu.DataSource = ws.ServicioCargarMenu();
+            List<EntidadMenuNombres> e = new List<EntidadMenuNombres>();
+            entidadMenuDatos = ws.ServicioCargarMenu();
+            
+            dataGridViewMenu.DataSource =e;
+            dataGridViewMenu.Columns[1].HeaderText = "DEMANDA";
+            dataGridViewMenu.Columns[2].HeaderText = "ID";
+            dataGridViewMenu.Columns[3].HeaderText = "SOPA";
+            dataGridViewMenu.Columns[4].HeaderText = "SEGUNDO";
+            dataGridViewMenu.Columns[5].HeaderText = "BEBIDA";
+            dataGridViewMenu.Columns[6].HeaderText = "POSTRE";
+            dataGridViewMenu.Columns[7].HeaderText = "FECHA";
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void buttonModificar_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void dataGridViewMenu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex != 0)
+            {
+                var id = Convert.ToInt32(dataGridViewMenu.Rows[e.RowIndex].Cells["ID_MEN"].Value.ToString());
+                MessageBox.Show(id.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dataGridViewMenu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                var id =dataGridViewMenu.Rows[e.RowIndex].Cells["ID_MEN"].Value.ToString();
+                Pedidos a = new Pedidos(id);
+                a.Show();
+                this.Hide();
+                a.FormClosed += new FormClosedEventHandler(form_FormClosed);
+            }
 
         }
     }

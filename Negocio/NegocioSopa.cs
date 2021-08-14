@@ -32,5 +32,16 @@ namespace Negocio
                 throw;
             }
         }
-    }
+        public static EntidadSopa NegocioObtenerSopa(int id)
+        {
+            try
+            {
+                return DatosSopa.DatosObteneSopa(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        }
 }

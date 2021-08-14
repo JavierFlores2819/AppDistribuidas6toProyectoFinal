@@ -58,15 +58,17 @@ namespace Datos
             catch (Exception) { throw; }
         }
 
-        public static String DatosObtenerNombreBebida(int id)
+        public static EntidadBebida DatosObtenerBebida(int id)
         {
             try
             {
-                String b = "";
+                EntidadBebida b = new EntidadBebida();
                 using (BASEDataContext contexto = new BASEDataContext())
                 {
                     var a = contexto.BEBIDA.FirstOrDefault(cc => cc.ID_BEB == id);
-                    b = a.NOM_BEB;
+                    b.NOM_BEB= a.NOM_BEB;
+                    b.ID_BEB = a.ID_BEB;
+                    b.IMG_BEBIDA = a.IMG_BEBIDA.ToArray();
                 }
                 return b;
 

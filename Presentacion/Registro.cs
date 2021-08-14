@@ -31,7 +31,10 @@ namespace Presentacion
 
         private void form_FormClosed(object sender, FormClosedEventArgs e)
         {
-            llenarCombobox();
+            llenarComboBebida();
+            llenarComboPostre();
+            llenarComboSegundo();
+            llenarComboSopa();
             this.Show();
         }
 
@@ -64,76 +67,138 @@ namespace Presentacion
 
         private void buttonRegistra_Click(object sender, EventArgs e)
         {
-            EntidadMenu m = new EntidadMenu();
-            m.ID_BEB_MEN = int.Parse(comboBoxBebida.SelectedValue.ToString());
-            m.ID_POS_MEN = int.Parse(comboBoxPostre.SelectedValue.ToString());
-            m.ID_SEG_MEN = int.Parse(comboBoxSegundo.SelectedValue.ToString());
-            m.ID_SOP_MEN = int.Parse(comboBoxSopa.SelectedValue.ToString());
-            m.FECHA_MEN = dateTimePickerFecha.Value;
-            ws.ServiciosNuevoMenu(m);
-            llenarCombobox();
-            MessageBox.Show("hecho");
-           
+            crearMenu();
+
+        }
+
+        private void crearMenu()
+        {
+            if (validarDatos())
+            {
+                EntidadMenu m = new EntidadMenu();
+                m.CANTIDAD = 0;
+                m.ID_BEB_MEN = int.Parse(comboBoxBebida.Text);
+                m.ID_POS_MEN = int.Parse(comboBoxPostre.Text);
+                m.ID_SEG_MEN = int.Parse(comboBoxSegundo.Text);
+                m.ID_SOP_MEN = int.Parse(comboBoxSopa.Text);
+                m.FECHA_MEN = DateTime.Parse(dateTimePickerFecha.Value.ToShortDateString());
+                ws.ServiciosNuevoMenu(m);
+                MessageBox.Show("hecho");
+                this.Close();
+            }
+
+        }
+        private Boolean validarDatos()
+        {
+            if (comboBoxSopa.SelectedIndex != 0 && comboBoxSegundo.SelectedIndex != 0
+                && comboBoxBebida.SelectedIndex != 0 && comboBoxPostre.SelectedIndex != 0)
+            {
+
+            }
+            MessageBox.Show("selecione un valor", "hecho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return false;
         }
 
         private void Registro_Load(object sender, EventArgs e)
         {
-            llenarCombobox();
+            llenarComboBebida();
+            llenarComboPostre();
+            llenarComboSegundo();
+            llenarComboSopa();
         }
 
-        private void llenarCombobox()
+        public void llenarComboSopa()
         {
-            comboBoxSopa.DataSource = ws.ServicioCargarSopa();
-            comboBoxSopa.DisplayMember = "NOM_SOP";
-            comboBoxSopa.ValueMember = "ID_SOP";
-            comboBoxSopa.Text = "Seleccione un opción:";
-            comboBoxBebida.DataSource = ws.ServicioCargarBebida();
-            comboBoxBebida.DisplayMember = "NOM_BEB";
-            comboBoxBebida.ValueMember = "ID_BEB";
-            comboBoxBebida.Text = "Seleccione un opción:";
-            comboBoxPostre.DataSource = ws.ServicioCargarPostre();
-            comboBoxPostre.DisplayMember = "NOM_POS";
-            comboBoxPostre.ValueMember = "ID_POS";
-            comboBoxPostre.Text = "Seleccione un opción:";
-            comboBoxSegundo.DataSource = ws.ServicioCargarSegundo();
-            comboBoxSegundo.DisplayMember = "NOM_SEG";
-            comboBoxSegundo.ValueMember = "ID_SEG";
-            comboBoxSegundo.Text = "Seleccione un opción:";
+            comboBoxSopa.Items.Clear();
+            comboBoxSopa.Items.Insert(0, "Seleccione un opción:");
+            comboBoxSopa.SelectedIndex = 0;
+            //llenarcombo sopa
+            foreach (EntidadSopa i in ws.ServicioCargarSopa())
+            {
+                comboBoxSopa.Items.Insert(i.ID_SOP, i.NOM_SOP);
+            }
+
+        }
+
+        private void llenarComboSegundo()
+        {
+            //llenar combo segundo
+
+            comboBoxSegundo.Items.Clear();
+            comboBoxSegundo.Items.Insert(0, "Seleccione un opción:");
+            comboBoxSegundo.SelectedIndex = 0;
+            foreach (EntidadSegundo i in ws.ServicioCargarSegundo())
+            {
+                comboBoxSegundo.Items.Insert(i.ID_SEG, i.NOM_SEG);
+            }
+        }
+        private void llenarComboBebida()
+        {
+            //llenar combo bebida
+            comboBoxBebida.Items.Clear();
+            comboBoxBebida.Items.Insert(0, "Seleccione un opción:");
+            comboBoxBebida.SelectedIndex = 0;
+            foreach (EntidadBebida i in ws.ServicioCargarBebida())
+            {
+                comboBoxBebida.Items.Insert(i.ID_BEB, i.NOM_BEB);
+            }
+        }
+        private void llenarComboPostre()
+        {
+            //llenar combo postre
+            comboBoxPostre.Items.Clear();
+            comboBoxPostre.Items.Insert(0, "Seleccione un opción:");
+            comboBoxPostre.SelectedIndex = 0;
+            foreach (EntidadPostre i in ws.ServicioCargarPostre())
+            {
+                comboBoxPostre.Items.Insert(i.ID_POS, i.NOM_POS);
+            }
         }
 
         private void buttonCancelReg_Click(object sender, EventArgs e)
         {
-
+            comboBoxSopa.SelectedIndex = 0;
+            comboBoxSegundo.SelectedIndex = 0;
+            comboBoxBebida.SelectedIndex = 0;
+            comboBoxPostre.SelectedIndex = 0;
+            dateTimePickerFecha.Refresh();
         }
 
         private void comboBoxPostre_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            int a = int.Parse(comboBoxPostre.SelectedValue.ToString());
-            textBoxPostreIngrediente.Text = $"POSTRE/ENTRADA: {ws.ServicioDetallePostreObtenerIngredientes(a)} {Environment.NewLine}";
-
+            int a = comboBoxPostre.SelectedIndex;
+            string b = ws.ServicioDetallePostreObtenerIngredientes(a);
+            textBoxPostreIngrediente.Text = $"POSTRE/ENTRADA: {b} {Environment.NewLine}";
         }
 
         private void comboBoxSopa_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            int b = int.Parse(comboBoxSopa.SelectedValue.ToString());
-            textBoxSopaIngrediente.Text = $"SOPA: {ws.ServicioDetalleSopaObtenerIngredientes(b)} {Environment.NewLine }";
-
+            int a = comboBoxSopa.SelectedIndex;
+            string b = ws.ServicioDetalleSopaObtenerIngredientes(a);
+            textBoxSopaIngrediente.Text = $"SOPA: {b} {Environment.NewLine }";
         }
 
         private void comboBoxBebida_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            int c = int.Parse(comboBoxBebida.SelectedValue.ToString());
-            textBoxBebidaIngrediente.Text = $"BEBIDA: {ws.ServicioDetalleBebidaObtenerIngredientes(c)} {Environment.NewLine }";
-
+            int a = comboBoxBebida.SelectedIndex;
+            string b = ws.ServicioDetalleBebidaObtenerIngredientes(a);
+            textBoxBebidaIngrediente.Text = $"BEBIDA: {b} {Environment.NewLine }";
         }
 
         private void comboBoxSegundo_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            int d = int.Parse(comboBoxSegundo.SelectedValue.ToString());
-            textBoxSegundoIngrediente.Text = $"SEGUNDO: {ws.ServicioDetalleSegundoObtenerIngredientes(d)} { Environment.NewLine }";
-
+            int a = comboBoxSegundo.SelectedIndex;
+            string b = ws.ServicioDetalleSegundoObtenerIngredientes(a);
+            textBoxSegundoIngrediente.Text = $"SEGUNDO: {b} { Environment.NewLine }";
         }
 
-
+        private void dateTimePickerFecha_ValueChanged(object sender, EventArgs e)
+        {
+            if (dateTimePickerFecha.Value.Day < DateTime.Now.Day || dateTimePickerFecha.Value > DateTime.Now.AddDays(3))
+            {
+                MessageBox.Show("Por favor seleccione una fecha entre el dia de hoy o 3 dias como maximo", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dateTimePickerFecha.ResetText();
+            }
+        }
     }
 }

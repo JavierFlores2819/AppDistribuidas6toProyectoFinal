@@ -57,15 +57,17 @@ namespace Datos
 
         }
 
-        public static String DatosObtenerNombreSegundo(int id)
+        public static EntidadSegundo DatosObtenerSegundo(int id)
         {
             try
             {
-                String b = "";
+                EntidadSegundo b = new EntidadSegundo();
                 using (BASEDataContext contexto = new BASEDataContext())
                 {
                     var a = contexto.SEGUNDO.FirstOrDefault(cc => cc.ID_SEG == id);
-                    b = a.NOM_SEG;
+                    b.ID_SEG = a.ID_SEG;
+                    b.NOM_SEG = a.NOM_SEG;
+                    b.IMG_Segundo = a.IMG_SEGUNDO.ToArray();
                 }
                 return b;
 

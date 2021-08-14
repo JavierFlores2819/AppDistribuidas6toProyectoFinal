@@ -166,6 +166,7 @@ namespace Presentacion
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
             this.dateTimePickerFecha.Size = new System.Drawing.Size(157, 20);
             this.dateTimePickerFecha.TabIndex = 7;
+            this.dateTimePickerFecha.ValueChanged += new System.EventHandler(this.dateTimePickerFecha_ValueChanged);
             // 
             // buttonSopa
             // 
@@ -291,11 +292,6 @@ namespace Presentacion
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBoxSopa;
-        private System.Windows.Forms.ComboBox comboBoxSegundo;
-        private System.Windows.Forms.ComboBox comboBoxPostre;
-        private System.Windows.Forms.ComboBox comboBoxBebida;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -303,7 +299,6 @@ namespace Presentacion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonCancelReg;
         private System.Windows.Forms.Button buttonRegistra;
-        private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
         private System.Windows.Forms.Button buttonSopa;
         private System.Windows.Forms.Button buttonPostre;
         private System.Windows.Forms.Button buttonBebida;
@@ -313,5 +308,10 @@ namespace Presentacion
         private System.Windows.Forms.TextBox textBoxSopaIngrediente;
         private System.Windows.Forms.TextBox textBoxBebidaIngrediente;
         private System.Windows.Forms.TextBox textBoxSegundoIngrediente;
+        public System.Windows.Forms.ComboBox comboBoxSopa;
+        public System.Windows.Forms.ComboBox comboBoxSegundo;
+        public System.Windows.Forms.ComboBox comboBoxPostre;
+        public System.Windows.Forms.ComboBox comboBoxBebida;
+        public System.Windows.Forms.DateTimePicker dateTimePickerFecha;
     }
 }

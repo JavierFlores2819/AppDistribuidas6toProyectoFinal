@@ -47,7 +47,9 @@
     <Compile Include="EntidadDetalleSegundo.cs" />
     <Compile Include="EntidadDetalleSopa.cs" />
     <Compile Include="EntidadMenu.cs" />
+    <Compile Include="EntidadMenuAndroid.cs" />
     <Compile Include="EntidadMenuNombres.cs" />
+    <Compile Include="EntidadPedido.cs" />
     <Compile Include="EntidadPostre.cs" />
     <Compile Include="EntidadIngredientes.cs" />
     <Compile Include="EntidadSegundo.cs" />

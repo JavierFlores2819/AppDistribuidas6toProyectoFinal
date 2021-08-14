@@ -108,9 +108,10 @@ namespace Servicios
         }
 
         [WebMethod]
-        public List<EntidadMenuNombres> ServicioCargarMenuFecha(string fechaId)
+        public List<EntidadMenuAndroid> ServicioCargarMenuFecha(String fechaId)
         {
-            return NegocioMenu.NegocioCargarMenuFecha(fechaId);
+            DateTime s = DateTime.ParseExact(fechaId, "dd/MM/yyyy", null);
+            return NegocioMenu.NegocioCargarMenuFecha(s);
         }
 
         [WebMethod]
@@ -138,7 +139,49 @@ namespace Servicios
             return NegocioDetalleSopa.NegocioDetalleSopaObtenerIngredientes(e);
         }
 
+        [WebMethod]
+        public EntidadMenu ServicioObtenerMenuporId(int id)
+        {
+            return NegocioMenu.NegocioObtenerporIdMenu(id);
+        }
 
+        [WebMethod]
+        public bool ServicioModificarMenu(EntidadMenu e)
+        {
+            return NegocioMenu.NegocioModificarMenu(e);
+        }
+
+        [WebMethod]
+        public Boolean ServicioEliminarMenu(String id)
+        {
+            return NegocioMenu.NegocioEliminarMenu(id);
+        }
+        [WebMethod]
+        public  EntidadSegundo ServicioObtenerSegundo(int id)
+        {
+            return NegocioSegundo.NegocioObtenerSegundo(id);
+        }
+        [WebMethod]
+        public  EntidadSopa ServicioObtenerSopa(int id)
+        {
+            return NegocioSopa.NegocioObtenerSopa(id);
+        }
+        [WebMethod]
+        public  EntidadBebida ServicioObtenerBebida(int id)
+        {
+            return NegocioBebida.NegocioObtenerBebida(id);
+        }
+        [WebMethod]
+        public  EntidadPostre ServicioObtenerPostre(int id)
+        {
+            return NegocioPostre.NegocioObtenerPostre(id);
+        }
+
+        [WebMethod]
+        public List<EntidadPedido> ServicioCargarPedidos(string id)
+        {
+            return NegocioPedido.NegocioCargarPedidos(id);
+        }
 
     }
 }

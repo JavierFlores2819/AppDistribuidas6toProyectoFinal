@@ -33,5 +33,18 @@ namespace Negocio
                 throw;
             }
         }
+
+        public static Boolean NegocioEliminarIngrediente(String id)
+        {
+            try
+            {
+                return DatosIngredientes.EliminarIngrediente(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
     }
 }

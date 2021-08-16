@@ -77,5 +77,24 @@ namespace Datos
 
         }
 
+        public static Boolean EliminarIngrediente(String id)
+        {
+            try
+            {
+                int id1 = int.Parse(id);
+                using (BASEDataContext contexto = new BASEDataContext())
+                {
+                    var casos = contexto.INGREDIENTES.FirstOrDefault(cc => cc.ID_ING== id1);
+                    contexto.INGREDIENTES.DeleteOnSubmit(casos);
+                    contexto.SubmitChanges();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }

@@ -34,6 +34,7 @@ namespace Datos
         {
             try
             {
+                byte[] ARRAY = new byte[] { };
                 List<POSTRE> listaPOSTRE = new List<POSTRE>();
                 List<EntidadPostre> listaEntidadPOSTRE = new List<EntidadPostre>();
 
@@ -48,7 +49,7 @@ namespace Datos
                     listaEntidadPOSTRE.Add(new EntidadPostre(
                         item.ID_POS,
                         item.NOM_POS,
-                        item.IMG_POSTRE.ToArray()
+                       ARRAY
                         )
                         );
                 }
@@ -78,6 +79,30 @@ namespace Datos
             }
 
         }
+
+        public static EntidadPostre DatosObtenerPostreWindows(int id)
+        {
+            try
+            {
+                byte[] ARRAY = new byte[] { };
+                EntidadPostre b = new EntidadPostre();
+                using (BASEDataContext contexto = new BASEDataContext())
+                {
+                    var a = contexto.POSTRE.FirstOrDefault(cc => cc.ID_POS == id);
+                    b.NOM_POS = a.NOM_POS;
+                    b.ID_POS = a.ID_POS;
+                    b.IMG_POSTRE = ARRAY;
+                }
+                return b;
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+        }
+
 
     }
 }

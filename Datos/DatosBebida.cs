@@ -35,6 +35,7 @@ namespace Datos
         {
             try
             {
+                byte[] ARRAY = new byte[] { };
                 List<BEBIDA> listaBEBIDA = new List<BEBIDA>();
                 List<EntidadBebida> listaEntidadBEBIDA = new List<EntidadBebida>();
 
@@ -49,7 +50,7 @@ namespace Datos
                     listaEntidadBEBIDA.Add(new EntidadBebida(
                         item.ID_BEB,
                         item.NOM_BEB,
-                        item.IMG_BEBIDA.ToArray()
+                       ARRAY
                         )
                         );
                 }
@@ -66,9 +67,31 @@ namespace Datos
                 using (BASEDataContext contexto = new BASEDataContext())
                 {
                     var a = contexto.BEBIDA.FirstOrDefault(cc => cc.ID_BEB == id);
-                    b.NOM_BEB= a.NOM_BEB;
+                    b.NOM_BEB = a.NOM_BEB;
                     b.ID_BEB = a.ID_BEB;
                     b.IMG_BEBIDA = a.IMG_BEBIDA.ToArray();
+                }
+                return b;
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+        }
+        public static EntidadBebida DatosObtenerBebidaWindows(int id)
+        {
+            try
+            {
+                byte[] ARRAY = new byte[] { };
+                EntidadBebida b = new EntidadBebida();
+                using (BASEDataContext contexto = new BASEDataContext())
+                {
+                    var a = contexto.BEBIDA.FirstOrDefault(cc => cc.ID_BEB == id);
+                    b.NOM_BEB = a.NOM_BEB;
+                    b.ID_BEB = a.ID_BEB;
+                    b.IMG_BEBIDA = ARRAY;
                 }
                 return b;
 

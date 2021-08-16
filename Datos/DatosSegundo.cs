@@ -35,7 +35,7 @@ namespace Datos
             {
                 List<SEGUNDO> listaSEGUNDO = new List<SEGUNDO>();
                 List<EntidadSegundo> listaEntidadSegundo = new List<EntidadSegundo>();
-
+                byte[] ARRAY = new byte[] { };
                 using (BASEDataContext contexto = new BASEDataContext())
                 {
                     var result = from c in contexto.SEGUNDO
@@ -47,7 +47,7 @@ namespace Datos
                     listaEntidadSegundo.Add(new EntidadSegundo(
                         item.ID_SEG,
                         item.NOM_SEG,
-                        item.IMG_SEGUNDO.ToArray()
+                      ARRAY
                         )
                         );
                 }
@@ -56,7 +56,6 @@ namespace Datos
             catch (Exception) { throw; }
 
         }
-
         public static EntidadSegundo DatosObtenerSegundo(int id)
         {
             try
@@ -68,6 +67,28 @@ namespace Datos
                     b.ID_SEG = a.ID_SEG;
                     b.NOM_SEG = a.NOM_SEG;
                     b.IMG_Segundo = a.IMG_SEGUNDO.ToArray();
+                }
+                return b;
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+        }
+        public static EntidadSegundo DatosObtenerSegundoWindows(int id)
+        {
+            try
+            {
+                byte[] ARRAY = new byte[] { };
+                EntidadSegundo b = new EntidadSegundo();
+                using (BASEDataContext contexto = new BASEDataContext())
+                {
+                    var a = contexto.SEGUNDO.FirstOrDefault(cc => cc.ID_SEG == id);
+                    b.ID_SEG = a.ID_SEG;
+                    b.NOM_SEG = a.NOM_SEG;
+                    b.IMG_Segundo = ARRAY;
                 }
                 return b;
 

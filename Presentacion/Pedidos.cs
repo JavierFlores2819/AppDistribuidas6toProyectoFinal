@@ -13,23 +13,33 @@ namespace Presentacion
 {
     public partial class Pedidos : Form
     {
-       
 
-        ServiciowsSoapClient ws = new ServiciowsSoapClient();
+        string a;
+       ServiciowsSoapClient ws = new ServiciowsSoapClient();
         public Pedidos(string id)
         {
             InitializeComponent();
-            cargarDatos(id);
+          a = id;
+           
         }
 
         private void Pedidos_Load(object sender, EventArgs e)
         {
-            
+            cargarDatos(a);
         }
 
         private void cargarDatos(string id)
         {
             dataGridView1.DataSource = ws.ServicioCargarPedidos(id);
+            dataGridView1.Columns[0].HeaderText = "#";
+            dataGridView1.Columns[1].HeaderText = "CLIENTE";
+            dataGridView1.Columns[2].HeaderText = "MENU";
+            dataGridView1.Columns[3].HeaderText = "CANTIDAD";
+        }
+
+        private void timerData_Tick(object sender, EventArgs e)
+        {
+            cargarDatos(a);
         }
     }
 }

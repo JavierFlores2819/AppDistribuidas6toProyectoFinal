@@ -10,6 +10,29 @@ namespace Negocio
 {
     public class NegocioSegundo
     {
+
+        public static int NuevSegundoNegocio(EntidadSegundo e)
+        {
+            try
+            {
+                return DatosSegundo.NuevoSegundo(e);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public static List<EntidadSegundo> NegocioCargarSegundo()
+        {
+            try
+            {
+                return DatosSegundo.DatosCargarSegundo();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public static EntidadSegundo NegocioObtenerSegundo(int id)
         {
             try
@@ -22,29 +45,17 @@ namespace Negocio
                 throw;
             }
         }
-        public static int NuevSegundoNegocio(EntidadSegundo e)
+        public static EntidadSegundo NegocioObtenerSegundoWindows(int id)
         {
             try
             {
-                return DatosSegundo.NuevoSegundo(e);
+                return DatosSegundo.DatosObtenerSegundoWindows(id);
             }
             catch (Exception)
             {
+
                 throw;
             }
-        }
-
-        public static List<EntidadSegundo> NegocioCargarSegundo()
-        {
-            try
-            {
-                return DatosSegundo.DatosCargarSegundo();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
         }
     }
 }

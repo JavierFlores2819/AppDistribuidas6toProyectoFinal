@@ -121,6 +121,9 @@
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadMenuAndroid.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadMenuNombres.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadPedido.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -169,6 +172,9 @@
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioDetalleSopaObtenerIngredientesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioEliminarIngredienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioEliminarMenuResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -202,16 +208,25 @@
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerBebidaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerBebidaWindowsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerMenuporIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerPostreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerPostreWindowsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerSegundoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerSopaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerSopaWindowsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServiciosNuevoMenuResponse.datasource">
@@ -254,16 +269,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Entidades\Entidades.csproj">
-      <Project>{6F3422B9-7F7E-4903-B81B-EA6ECB432545}</Project>
-      <Name>Entidades</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Negocio\Negocio.csproj">
-      <Project>{13df61e6-7f73-4a89-8722-8e0ab50c0cb8}</Project>
-      <Name>Negocio</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

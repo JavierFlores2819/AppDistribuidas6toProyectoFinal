@@ -809,6 +809,144 @@ namespace Presentacion.ServiciosR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntidadMenuNombres", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class EntidadMenuNombres : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int CANTIDADField;
+        
+        private int ID_MENField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOM_SOP_MENField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOM_SEG_MENField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOM_BEB_MENField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOM_POS_MENField;
+        
+        private System.DateTime FECHA_MENField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int CANTIDAD {
+            get {
+                return this.CANTIDADField;
+            }
+            set {
+                if ((this.CANTIDADField.Equals(value) != true)) {
+                    this.CANTIDADField = value;
+                    this.RaisePropertyChanged("CANTIDAD");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int ID_MEN {
+            get {
+                return this.ID_MENField;
+            }
+            set {
+                if ((this.ID_MENField.Equals(value) != true)) {
+                    this.ID_MENField = value;
+                    this.RaisePropertyChanged("ID_MEN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string NOM_SOP_MEN {
+            get {
+                return this.NOM_SOP_MENField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOM_SOP_MENField, value) != true)) {
+                    this.NOM_SOP_MENField = value;
+                    this.RaisePropertyChanged("NOM_SOP_MEN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string NOM_SEG_MEN {
+            get {
+                return this.NOM_SEG_MENField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOM_SEG_MENField, value) != true)) {
+                    this.NOM_SEG_MENField = value;
+                    this.RaisePropertyChanged("NOM_SEG_MEN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string NOM_BEB_MEN {
+            get {
+                return this.NOM_BEB_MENField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOM_BEB_MENField, value) != true)) {
+                    this.NOM_BEB_MENField = value;
+                    this.RaisePropertyChanged("NOM_BEB_MEN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string NOM_POS_MEN {
+            get {
+                return this.NOM_POS_MENField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOM_POS_MENField, value) != true)) {
+                    this.NOM_POS_MENField = value;
+                    this.RaisePropertyChanged("NOM_POS_MEN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime FECHA_MEN {
+            get {
+                return this.FECHA_MENField;
+            }
+            set {
+                if ((this.FECHA_MENField.Equals(value) != true)) {
+                    this.FECHA_MENField = value;
+                    this.RaisePropertyChanged("FECHA_MEN");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EntidadMenuAndroid", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class EntidadMenuAndroid : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1366,6 +1504,34 @@ namespace Presentacion.ServiciosR {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioCargarPedidos", ReplyAction="*")]
         System.Threading.Tasks.Task<Presentacion.ServiciosR.ServicioCargarPedidosResponse> ServicioCargarPedidosAsync(Presentacion.ServiciosR.ServicioCargarPedidosRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ServicioObtenerSopaWindowsResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioObtenerSopaWindows", ReplyAction="*")]
+        Presentacion.ServiciosR.ServicioObtenerSopaWindowsResponse ServicioObtenerSopaWindows(Presentacion.ServiciosR.ServicioObtenerSopaWindowsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioObtenerSopaWindows", ReplyAction="*")]
+        System.Threading.Tasks.Task<Presentacion.ServiciosR.ServicioObtenerSopaWindowsResponse> ServicioObtenerSopaWindowsAsync(Presentacion.ServiciosR.ServicioObtenerSopaWindowsRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ServicioObtenerBebidaWindowsResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioObtenerBebidaWindows", ReplyAction="*")]
+        Presentacion.ServiciosR.ServicioObtenerBebidaWindowsResponse ServicioObtenerBebidaWindows(Presentacion.ServiciosR.ServicioObtenerBebidaWindowsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioObtenerBebidaWindows", ReplyAction="*")]
+        System.Threading.Tasks.Task<Presentacion.ServiciosR.ServicioObtenerBebidaWindowsResponse> ServicioObtenerBebidaWindowsAsync(Presentacion.ServiciosR.ServicioObtenerBebidaWindowsRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ServicioObtenerPostreWindowsResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioObtenerPostreWindows", ReplyAction="*")]
+        Presentacion.ServiciosR.ServicioObtenerPostreWindowsResponse ServicioObtenerPostreWindows(Presentacion.ServiciosR.ServicioObtenerPostreWindowsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioObtenerPostreWindows", ReplyAction="*")]
+        System.Threading.Tasks.Task<Presentacion.ServiciosR.ServicioObtenerPostreWindowsResponse> ServicioObtenerPostreWindowsAsync(Presentacion.ServiciosR.ServicioObtenerPostreWindowsRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento id del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioEliminarIngrediente", ReplyAction="*")]
+        Presentacion.ServiciosR.ServicioEliminarIngredienteResponse ServicioEliminarIngrediente(Presentacion.ServiciosR.ServicioEliminarIngredienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioEliminarIngrediente", ReplyAction="*")]
+        System.Threading.Tasks.Task<Presentacion.ServiciosR.ServicioEliminarIngredienteResponse> ServicioEliminarIngredienteAsync(Presentacion.ServiciosR.ServicioEliminarIngredienteRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2404,12 +2570,12 @@ namespace Presentacion.ServiciosR {
     public partial class ServicioCargarMenuResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public System.Collections.Generic.List<Presentacion.ServiciosR.EntidadMenu> ServicioCargarMenuResult;
+        public System.Collections.Generic.List<Presentacion.ServiciosR.EntidadMenuNombres> ServicioCargarMenuResult;
         
         public ServicioCargarMenuResponseBody() {
         }
         
-        public ServicioCargarMenuResponseBody(System.Collections.Generic.List<Presentacion.ServiciosR.EntidadMenu> ServicioCargarMenuResult) {
+        public ServicioCargarMenuResponseBody(System.Collections.Generic.List<Presentacion.ServiciosR.EntidadMenuNombres> ServicioCargarMenuResult) {
             this.ServicioCargarMenuResult = ServicioCargarMenuResult;
         }
     }
@@ -3298,6 +3464,278 @@ namespace Presentacion.ServiciosR {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicioObtenerSopaWindowsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicioObtenerSopaWindows", Namespace="http://tempuri.org/", Order=0)]
+        public Presentacion.ServiciosR.ServicioObtenerSopaWindowsRequestBody Body;
+        
+        public ServicioObtenerSopaWindowsRequest() {
+        }
+        
+        public ServicioObtenerSopaWindowsRequest(Presentacion.ServiciosR.ServicioObtenerSopaWindowsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServicioObtenerSopaWindowsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public ServicioObtenerSopaWindowsRequestBody() {
+        }
+        
+        public ServicioObtenerSopaWindowsRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicioObtenerSopaWindowsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicioObtenerSopaWindowsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Presentacion.ServiciosR.ServicioObtenerSopaWindowsResponseBody Body;
+        
+        public ServicioObtenerSopaWindowsResponse() {
+        }
+        
+        public ServicioObtenerSopaWindowsResponse(Presentacion.ServiciosR.ServicioObtenerSopaWindowsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServicioObtenerSopaWindowsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Presentacion.ServiciosR.EntidadSopa ServicioObtenerSopaWindowsResult;
+        
+        public ServicioObtenerSopaWindowsResponseBody() {
+        }
+        
+        public ServicioObtenerSopaWindowsResponseBody(Presentacion.ServiciosR.EntidadSopa ServicioObtenerSopaWindowsResult) {
+            this.ServicioObtenerSopaWindowsResult = ServicioObtenerSopaWindowsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicioObtenerBebidaWindowsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicioObtenerBebidaWindows", Namespace="http://tempuri.org/", Order=0)]
+        public Presentacion.ServiciosR.ServicioObtenerBebidaWindowsRequestBody Body;
+        
+        public ServicioObtenerBebidaWindowsRequest() {
+        }
+        
+        public ServicioObtenerBebidaWindowsRequest(Presentacion.ServiciosR.ServicioObtenerBebidaWindowsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServicioObtenerBebidaWindowsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public ServicioObtenerBebidaWindowsRequestBody() {
+        }
+        
+        public ServicioObtenerBebidaWindowsRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicioObtenerBebidaWindowsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicioObtenerBebidaWindowsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Presentacion.ServiciosR.ServicioObtenerBebidaWindowsResponseBody Body;
+        
+        public ServicioObtenerBebidaWindowsResponse() {
+        }
+        
+        public ServicioObtenerBebidaWindowsResponse(Presentacion.ServiciosR.ServicioObtenerBebidaWindowsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServicioObtenerBebidaWindowsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Presentacion.ServiciosR.EntidadBebida ServicioObtenerBebidaWindowsResult;
+        
+        public ServicioObtenerBebidaWindowsResponseBody() {
+        }
+        
+        public ServicioObtenerBebidaWindowsResponseBody(Presentacion.ServiciosR.EntidadBebida ServicioObtenerBebidaWindowsResult) {
+            this.ServicioObtenerBebidaWindowsResult = ServicioObtenerBebidaWindowsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicioObtenerPostreWindowsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicioObtenerPostreWindows", Namespace="http://tempuri.org/", Order=0)]
+        public Presentacion.ServiciosR.ServicioObtenerPostreWindowsRequestBody Body;
+        
+        public ServicioObtenerPostreWindowsRequest() {
+        }
+        
+        public ServicioObtenerPostreWindowsRequest(Presentacion.ServiciosR.ServicioObtenerPostreWindowsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServicioObtenerPostreWindowsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public ServicioObtenerPostreWindowsRequestBody() {
+        }
+        
+        public ServicioObtenerPostreWindowsRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicioObtenerPostreWindowsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicioObtenerPostreWindowsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Presentacion.ServiciosR.ServicioObtenerPostreWindowsResponseBody Body;
+        
+        public ServicioObtenerPostreWindowsResponse() {
+        }
+        
+        public ServicioObtenerPostreWindowsResponse(Presentacion.ServiciosR.ServicioObtenerPostreWindowsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServicioObtenerPostreWindowsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Presentacion.ServiciosR.EntidadPostre ServicioObtenerPostreWindowsResult;
+        
+        public ServicioObtenerPostreWindowsResponseBody() {
+        }
+        
+        public ServicioObtenerPostreWindowsResponseBody(Presentacion.ServiciosR.EntidadPostre ServicioObtenerPostreWindowsResult) {
+            this.ServicioObtenerPostreWindowsResult = ServicioObtenerPostreWindowsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicioEliminarIngredienteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicioEliminarIngrediente", Namespace="http://tempuri.org/", Order=0)]
+        public Presentacion.ServiciosR.ServicioEliminarIngredienteRequestBody Body;
+        
+        public ServicioEliminarIngredienteRequest() {
+        }
+        
+        public ServicioEliminarIngredienteRequest(Presentacion.ServiciosR.ServicioEliminarIngredienteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServicioEliminarIngredienteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string id;
+        
+        public ServicioEliminarIngredienteRequestBody() {
+        }
+        
+        public ServicioEliminarIngredienteRequestBody(string id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicioEliminarIngredienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicioEliminarIngredienteResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Presentacion.ServiciosR.ServicioEliminarIngredienteResponseBody Body;
+        
+        public ServicioEliminarIngredienteResponse() {
+        }
+        
+        public ServicioEliminarIngredienteResponse(Presentacion.ServiciosR.ServicioEliminarIngredienteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServicioEliminarIngredienteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool ServicioEliminarIngredienteResult;
+        
+        public ServicioEliminarIngredienteResponseBody() {
+        }
+        
+        public ServicioEliminarIngredienteResponseBody(bool ServicioEliminarIngredienteResult) {
+            this.ServicioEliminarIngredienteResult = ServicioEliminarIngredienteResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiciowsSoapChannel : Presentacion.ServiciosR.ServiciowsSoap, System.ServiceModel.IClientChannel {
     }
@@ -3695,7 +4133,7 @@ namespace Presentacion.ServiciosR {
             return base.Channel.ServicioCargarMenu(request);
         }
         
-        public System.Collections.Generic.List<Presentacion.ServiciosR.EntidadMenu> ServicioCargarMenu() {
+        public System.Collections.Generic.List<Presentacion.ServiciosR.EntidadMenuNombres> ServicioCargarMenu() {
             Presentacion.ServiciosR.ServicioCargarMenuRequest inValue = new Presentacion.ServiciosR.ServicioCargarMenuRequest();
             inValue.Body = new Presentacion.ServiciosR.ServicioCargarMenuRequestBody();
             Presentacion.ServiciosR.ServicioCargarMenuResponse retVal = ((Presentacion.ServiciosR.ServiciowsSoap)(this)).ServicioCargarMenu(inValue);
@@ -4036,6 +4474,106 @@ namespace Presentacion.ServiciosR {
             inValue.Body = new Presentacion.ServiciosR.ServicioCargarPedidosRequestBody();
             inValue.Body.id = id;
             return ((Presentacion.ServiciosR.ServiciowsSoap)(this)).ServicioCargarPedidosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Presentacion.ServiciosR.ServicioObtenerSopaWindowsResponse Presentacion.ServiciosR.ServiciowsSoap.ServicioObtenerSopaWindows(Presentacion.ServiciosR.ServicioObtenerSopaWindowsRequest request) {
+            return base.Channel.ServicioObtenerSopaWindows(request);
+        }
+        
+        public Presentacion.ServiciosR.EntidadSopa ServicioObtenerSopaWindows(int id) {
+            Presentacion.ServiciosR.ServicioObtenerSopaWindowsRequest inValue = new Presentacion.ServiciosR.ServicioObtenerSopaWindowsRequest();
+            inValue.Body = new Presentacion.ServiciosR.ServicioObtenerSopaWindowsRequestBody();
+            inValue.Body.id = id;
+            Presentacion.ServiciosR.ServicioObtenerSopaWindowsResponse retVal = ((Presentacion.ServiciosR.ServiciowsSoap)(this)).ServicioObtenerSopaWindows(inValue);
+            return retVal.Body.ServicioObtenerSopaWindowsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Presentacion.ServiciosR.ServicioObtenerSopaWindowsResponse> Presentacion.ServiciosR.ServiciowsSoap.ServicioObtenerSopaWindowsAsync(Presentacion.ServiciosR.ServicioObtenerSopaWindowsRequest request) {
+            return base.Channel.ServicioObtenerSopaWindowsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Presentacion.ServiciosR.ServicioObtenerSopaWindowsResponse> ServicioObtenerSopaWindowsAsync(int id) {
+            Presentacion.ServiciosR.ServicioObtenerSopaWindowsRequest inValue = new Presentacion.ServiciosR.ServicioObtenerSopaWindowsRequest();
+            inValue.Body = new Presentacion.ServiciosR.ServicioObtenerSopaWindowsRequestBody();
+            inValue.Body.id = id;
+            return ((Presentacion.ServiciosR.ServiciowsSoap)(this)).ServicioObtenerSopaWindowsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Presentacion.ServiciosR.ServicioObtenerBebidaWindowsResponse Presentacion.ServiciosR.ServiciowsSoap.ServicioObtenerBebidaWindows(Presentacion.ServiciosR.ServicioObtenerBebidaWindowsRequest request) {
+            return base.Channel.ServicioObtenerBebidaWindows(request);
+        }
+        
+        public Presentacion.ServiciosR.EntidadBebida ServicioObtenerBebidaWindows(int id) {
+            Presentacion.ServiciosR.ServicioObtenerBebidaWindowsRequest inValue = new Presentacion.ServiciosR.ServicioObtenerBebidaWindowsRequest();
+            inValue.Body = new Presentacion.ServiciosR.ServicioObtenerBebidaWindowsRequestBody();
+            inValue.Body.id = id;
+            Presentacion.ServiciosR.ServicioObtenerBebidaWindowsResponse retVal = ((Presentacion.ServiciosR.ServiciowsSoap)(this)).ServicioObtenerBebidaWindows(inValue);
+            return retVal.Body.ServicioObtenerBebidaWindowsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Presentacion.ServiciosR.ServicioObtenerBebidaWindowsResponse> Presentacion.ServiciosR.ServiciowsSoap.ServicioObtenerBebidaWindowsAsync(Presentacion.ServiciosR.ServicioObtenerBebidaWindowsRequest request) {
+            return base.Channel.ServicioObtenerBebidaWindowsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Presentacion.ServiciosR.ServicioObtenerBebidaWindowsResponse> ServicioObtenerBebidaWindowsAsync(int id) {
+            Presentacion.ServiciosR.ServicioObtenerBebidaWindowsRequest inValue = new Presentacion.ServiciosR.ServicioObtenerBebidaWindowsRequest();
+            inValue.Body = new Presentacion.ServiciosR.ServicioObtenerBebidaWindowsRequestBody();
+            inValue.Body.id = id;
+            return ((Presentacion.ServiciosR.ServiciowsSoap)(this)).ServicioObtenerBebidaWindowsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Presentacion.ServiciosR.ServicioObtenerPostreWindowsResponse Presentacion.ServiciosR.ServiciowsSoap.ServicioObtenerPostreWindows(Presentacion.ServiciosR.ServicioObtenerPostreWindowsRequest request) {
+            return base.Channel.ServicioObtenerPostreWindows(request);
+        }
+        
+        public Presentacion.ServiciosR.EntidadPostre ServicioObtenerPostreWindows(int id) {
+            Presentacion.ServiciosR.ServicioObtenerPostreWindowsRequest inValue = new Presentacion.ServiciosR.ServicioObtenerPostreWindowsRequest();
+            inValue.Body = new Presentacion.ServiciosR.ServicioObtenerPostreWindowsRequestBody();
+            inValue.Body.id = id;
+            Presentacion.ServiciosR.ServicioObtenerPostreWindowsResponse retVal = ((Presentacion.ServiciosR.ServiciowsSoap)(this)).ServicioObtenerPostreWindows(inValue);
+            return retVal.Body.ServicioObtenerPostreWindowsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Presentacion.ServiciosR.ServicioObtenerPostreWindowsResponse> Presentacion.ServiciosR.ServiciowsSoap.ServicioObtenerPostreWindowsAsync(Presentacion.ServiciosR.ServicioObtenerPostreWindowsRequest request) {
+            return base.Channel.ServicioObtenerPostreWindowsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Presentacion.ServiciosR.ServicioObtenerPostreWindowsResponse> ServicioObtenerPostreWindowsAsync(int id) {
+            Presentacion.ServiciosR.ServicioObtenerPostreWindowsRequest inValue = new Presentacion.ServiciosR.ServicioObtenerPostreWindowsRequest();
+            inValue.Body = new Presentacion.ServiciosR.ServicioObtenerPostreWindowsRequestBody();
+            inValue.Body.id = id;
+            return ((Presentacion.ServiciosR.ServiciowsSoap)(this)).ServicioObtenerPostreWindowsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Presentacion.ServiciosR.ServicioEliminarIngredienteResponse Presentacion.ServiciosR.ServiciowsSoap.ServicioEliminarIngrediente(Presentacion.ServiciosR.ServicioEliminarIngredienteRequest request) {
+            return base.Channel.ServicioEliminarIngrediente(request);
+        }
+        
+        public bool ServicioEliminarIngrediente(string id) {
+            Presentacion.ServiciosR.ServicioEliminarIngredienteRequest inValue = new Presentacion.ServiciosR.ServicioEliminarIngredienteRequest();
+            inValue.Body = new Presentacion.ServiciosR.ServicioEliminarIngredienteRequestBody();
+            inValue.Body.id = id;
+            Presentacion.ServiciosR.ServicioEliminarIngredienteResponse retVal = ((Presentacion.ServiciosR.ServiciowsSoap)(this)).ServicioEliminarIngrediente(inValue);
+            return retVal.Body.ServicioEliminarIngredienteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Presentacion.ServiciosR.ServicioEliminarIngredienteResponse> Presentacion.ServiciosR.ServiciowsSoap.ServicioEliminarIngredienteAsync(Presentacion.ServiciosR.ServicioEliminarIngredienteRequest request) {
+            return base.Channel.ServicioEliminarIngredienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Presentacion.ServiciosR.ServicioEliminarIngredienteResponse> ServicioEliminarIngredienteAsync(string id) {
+            Presentacion.ServiciosR.ServicioEliminarIngredienteRequest inValue = new Presentacion.ServiciosR.ServicioEliminarIngredienteRequest();
+            inValue.Body = new Presentacion.ServiciosR.ServicioEliminarIngredienteRequestBody();
+            inValue.Body.id = id;
+            return ((Presentacion.ServiciosR.ServiciowsSoap)(this)).ServicioEliminarIngredienteAsync(inValue);
         }
     }
 }

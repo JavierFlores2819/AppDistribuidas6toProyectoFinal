@@ -64,13 +64,10 @@ namespace Datos
                 using (BASEDataContext contexto = new BASEDataContext())
                 {
                     var m = contexto.MENU.FirstOrDefault(cc => cc.ID_MEN == e.ID_MEN);
-                    m.ID_MEN = e.ID_MEN;
-                    m.CAN_PED_MEN = e.CANTIDAD;
                     m.ID_SOP_MEN = e.ID_SOP_MEN;
                     m.ID_SEG_MEN = e.ID_SEG_MEN;
                     m.ID_BEB_MEN = e.ID_BEB_MEN;
-                    m.ID_POS_MEN = e.ID_POS_MEN;
-                    m.FECHA_MEN = e.FECHA_MEN;
+                    m.ID_POS_MEN = e.ID_POS_MEN;                  
                     contexto.SubmitChanges();
                 }
                 return true;
@@ -85,8 +82,9 @@ namespace Datos
                 using (BASEDataContext contexto = new BASEDataContext())
                 {
                     var c = contexto.MENU.FirstOrDefault(cc => cc.ID_MEN == id1);
-                    contexto.MENU.DeleteOnSubmit(c);
+                    contexto.MENU.DeleteOnSubmit(c);     
                     contexto.SubmitChanges();
+                    EliminarMenuPedidos(id);
                     return true;
                 }
             }
@@ -95,7 +93,34 @@ namespace Datos
                 return false;
             }
         }
-        public static List<EntidadMenuNombres> DatosCargarMenu()
+
+        public static Boolean EliminarMenuPedidos(String id) {
+            try
+            {
+                int id1 = int.Parse(id);
+                using (BASEDataContext contexto = new BASEDataContext())
+                {
+
+                    var result = from c in contexto.PEDIDOS
+                                 where c.MENU == id1
+                                 select c;
+
+                    foreach (var item in result.ToList())
+                    {
+                        contexto.PEDIDOS.DeleteOnSubmit(item);
+                        contexto.SubmitChanges();
+                    }
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        
+
+            public static List<EntidadMenuNombres> DatosCargarMenu()
         {
             try
             {
@@ -112,10 +137,10 @@ namespace Datos
                     listamenuNombreEntidad.Add(new EntidadMenuNombres(
                         item.CAN_PED_MEN,
                         item.ID_MEN,
-                        DatosSopa.DatosObteneSopa(item.ID_SOP_MEN).NOM_SOP,
-                        DatosSegundo.DatosObtenerSegundo(item.ID_SEG_MEN).NOM_SEG,
-                        DatosBebida.DatosObtenerBebida(item.ID_BEB_MEN).NOM_BEB,
-                        DatosPostre.DatosObtenerPostre(item.ID_POS_MEN).NOM_POS,
+                        DatosSopa.DatosObteneSopaWindows(item.ID_SOP_MEN).NOM_SOP,
+                        DatosSegundo.DatosObtenerSegundoWindows(item.ID_SEG_MEN).NOM_SEG,
+                        DatosBebida.DatosObtenerBebidaWindows(item.ID_BEB_MEN).NOM_BEB,
+                        DatosPostre.DatosObtenerPostreWindows(item.ID_POS_MEN).NOM_POS,
                         item.FECHA_MEN
                         ));
                 }

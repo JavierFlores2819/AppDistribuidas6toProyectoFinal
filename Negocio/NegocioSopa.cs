@@ -13,7 +13,7 @@ namespace Negocio
         {
             try
             {
-               return DatosSopa.NuevaSopa(e);
+                return DatosSopa.NuevaSopa(e);
             }
             catch (Exception)
             {
@@ -43,5 +43,16 @@ namespace Negocio
                 throw;
             }
         }
+        public static EntidadSopa NegocioObtenerSopaWindows(int id)
+        {
+            try
+            {
+                return DatosSopa.DatosObteneSopaWindows(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
+    }
 }

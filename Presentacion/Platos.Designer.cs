@@ -43,25 +43,26 @@ namespace Presentacion
             // labelPlato
             // 
             this.labelPlato.AutoSize = true;
-            this.labelPlato.Location = new System.Drawing.Point(12, 14);
+            this.labelPlato.Location = new System.Drawing.Point(4, 5);
             this.labelPlato.Name = "labelPlato";
-            this.labelPlato.Size = new System.Drawing.Size(31, 13);
+            this.labelPlato.Size = new System.Drawing.Size(33, 12);
             this.labelPlato.TabIndex = 0;
             this.labelPlato.Text = "Plato";
             // 
             // textBoxNombrePlato
             // 
-            this.textBoxNombrePlato.Location = new System.Drawing.Point(12, 30);
+            this.textBoxNombrePlato.Location = new System.Drawing.Point(6, 21);
             this.textBoxNombrePlato.Name = "textBoxNombrePlato";
-            this.textBoxNombrePlato.Size = new System.Drawing.Size(203, 20);
+            this.textBoxNombrePlato.Size = new System.Drawing.Size(181, 20);
             this.textBoxNombrePlato.TabIndex = 1;
+            this.textBoxNombrePlato.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNombrePlato_KeyPress);
             // 
             // imgPlato
             // 
             this.imgPlato.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgPlato.Location = new System.Drawing.Point(58, 56);
+            this.imgPlato.Location = new System.Drawing.Point(48, 47);
             this.imgPlato.Name = "imgPlato";
-            this.imgPlato.Size = new System.Drawing.Size(100, 90);
+            this.imgPlato.Size = new System.Drawing.Size(97, 89);
             this.imgPlato.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgPlato.TabIndex = 2;
             this.imgPlato.TabStop = false;
@@ -70,17 +71,17 @@ namespace Presentacion
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 159);
+            this.label2.Location = new System.Drawing.Point(191, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.Size = new System.Drawing.Size(75, 12);
             this.label2.TabIndex = 3;
             this.label2.Text = "Ingredientes";
             // 
             // buttonGuarPla
             // 
-            this.buttonGuarPla.Location = new System.Drawing.Point(33, 290);
+            this.buttonGuarPla.Location = new System.Drawing.Point(13, 153);
             this.buttonGuarPla.Name = "buttonGuarPla";
-            this.buttonGuarPla.Size = new System.Drawing.Size(75, 23);
+            this.buttonGuarPla.Size = new System.Drawing.Size(78, 21);
             this.buttonGuarPla.TabIndex = 5;
             this.buttonGuarPla.Text = "Guardar";
             this.buttonGuarPla.UseVisualStyleBackColor = true;
@@ -88,18 +89,19 @@ namespace Presentacion
             // 
             // buttonCancelP
             // 
-            this.buttonCancelP.Location = new System.Drawing.Point(114, 290);
+            this.buttonCancelP.Location = new System.Drawing.Point(97, 153);
             this.buttonCancelP.Name = "buttonCancelP";
-            this.buttonCancelP.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelP.Size = new System.Drawing.Size(78, 21);
             this.buttonCancelP.TabIndex = 6;
             this.buttonCancelP.Text = "Cancelar";
             this.buttonCancelP.UseVisualStyleBackColor = true;
+            this.buttonCancelP.Click += new System.EventHandler(this.buttonCancelP_Click);
             // 
             // buttonIngredientes
             // 
-            this.buttonIngredientes.Location = new System.Drawing.Point(187, 190);
+            this.buttonIngredientes.Location = new System.Drawing.Point(354, 21);
             this.buttonIngredientes.Name = "buttonIngredientes";
-            this.buttonIngredientes.Size = new System.Drawing.Size(28, 23);
+            this.buttonIngredientes.Size = new System.Drawing.Size(24, 20);
             this.buttonIngredientes.TabIndex = 7;
             this.buttonIngredientes.Text = "...";
             this.buttonIngredientes.UseVisualStyleBackColor = true;
@@ -108,16 +110,16 @@ namespace Presentacion
             // checkedListBoxIngrediente
             // 
             this.checkedListBoxIngrediente.FormattingEnabled = true;
-            this.checkedListBoxIngrediente.Location = new System.Drawing.Point(12, 175);
+            this.checkedListBoxIngrediente.Location = new System.Drawing.Point(193, 21);
             this.checkedListBoxIngrediente.Name = "checkedListBoxIngrediente";
-            this.checkedListBoxIngrediente.Size = new System.Drawing.Size(159, 94);
+            this.checkedListBoxIngrediente.Size = new System.Drawing.Size(155, 169);
             this.checkedListBoxIngrediente.TabIndex = 8;
             // 
             // Platos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(227, 319);
+            this.ClientSize = new System.Drawing.Size(386, 203);
             this.Controls.Add(this.checkedListBoxIngrediente);
             this.Controls.Add(this.buttonIngredientes);
             this.Controls.Add(this.buttonCancelP);
@@ -126,9 +128,10 @@ namespace Presentacion
             this.Controls.Add(this.imgPlato);
             this.Controls.Add(this.textBoxNombrePlato);
             this.Controls.Add(this.labelPlato);
+            this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Platos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Platos";
+            this.Text = "PLATOS";
             this.Load += new System.EventHandler(this.Platos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgPlato)).EndInit();
             this.ResumeLayout(false);

@@ -29,12 +29,16 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewMenu = new System.Windows.Forms.DataGridView();
             this.buttonRegisMenu = new System.Windows.Forms.Button();
             this.buttonModificar = new System.Windows.Forms.Button();
+            this.ActualizarData = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,13 +70,12 @@ namespace Presentacion
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewMenu.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewMenu.GridColor = System.Drawing.SystemColors.WindowFrame;
             this.dataGridViewMenu.Location = new System.Drawing.Point(12, 41);
             this.dataGridViewMenu.Name = "dataGridViewMenu";
             this.dataGridViewMenu.ReadOnly = true;
             this.dataGridViewMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridViewMenu.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridViewMenu.Size = new System.Drawing.Size(635, 241);
+            this.dataGridViewMenu.Size = new System.Drawing.Size(694, 241);
             this.dataGridViewMenu.TabIndex = 0;
             this.dataGridViewMenu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMenu_CellClick);
             this.dataGridViewMenu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMenu_CellContentClick);
@@ -80,7 +83,7 @@ namespace Presentacion
             // buttonRegisMenu
             // 
             this.buttonRegisMenu.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRegisMenu.Location = new System.Drawing.Point(553, 12);
+            this.buttonRegisMenu.Location = new System.Drawing.Point(607, 12);
             this.buttonRegisMenu.Name = "buttonRegisMenu";
             this.buttonRegisMenu.Size = new System.Drawing.Size(99, 23);
             this.buttonRegisMenu.TabIndex = 1;
@@ -91,7 +94,7 @@ namespace Presentacion
             // buttonModificar
             // 
             this.buttonModificar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonModificar.Location = new System.Drawing.Point(577, 288);
+            this.buttonModificar.Location = new System.Drawing.Point(631, 288);
             this.buttonModificar.Name = "buttonModificar";
             this.buttonModificar.Size = new System.Drawing.Size(75, 23);
             this.buttonModificar.TabIndex = 2;
@@ -99,11 +102,37 @@ namespace Presentacion
             this.buttonModificar.UseVisualStyleBackColor = true;
             this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
             // 
+            // ActualizarData
+            // 
+            this.ActualizarData.Enabled = true;
+            this.ActualizarData.Interval = 1000;
+            this.ActualizarData.Tick += new System.EventHandler(this.ActualizarData_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(584, 292);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "#";
+            // 
+            // textBoxID
+            // 
+            this.textBoxID.Location = new System.Drawing.Point(604, 289);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.ReadOnly = true;
+            this.textBoxID.Size = new System.Drawing.Size(21, 20);
+            this.textBoxID.TabIndex = 8;
+            // 
             // PagPrinc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 318);
+            this.ClientSize = new System.Drawing.Size(718, 318);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.buttonModificar);
             this.Controls.Add(this.buttonRegisMenu);
             this.Controls.Add(this.dataGridViewMenu);
@@ -113,6 +142,7 @@ namespace Presentacion
             this.Load += new System.EventHandler(this.PagPrinc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenu)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -121,6 +151,9 @@ namespace Presentacion
         private System.Windows.Forms.DataGridView dataGridViewMenu;
         private System.Windows.Forms.Button buttonRegisMenu;
         private System.Windows.Forms.Button buttonModificar;
+        private System.Windows.Forms.Timer ActualizarData;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxID;
     }
 }
 

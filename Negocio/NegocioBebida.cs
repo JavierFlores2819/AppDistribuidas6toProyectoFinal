@@ -47,5 +47,17 @@ namespace Negocio
                 throw;
             }
         }
+        public static EntidadBebida NegocioObtenerBebidaWindows(int id)
+        {
+            try
+            {
+                return DatosBebida.DatosObtenerBebidaWindows(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

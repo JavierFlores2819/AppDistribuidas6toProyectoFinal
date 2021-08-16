@@ -17,6 +17,10 @@ namespace Presentacion
         public Registro()
         {
             InitializeComponent();
+            llenarComboBebida();
+            llenarComboPostre();
+            llenarComboSegundo();
+            llenarComboSopa();
         }
 
         private void buttonSopa_Click(object sender, EventArgs e)
@@ -36,6 +40,10 @@ namespace Presentacion
             llenarComboSegundo();
             llenarComboSopa();
             this.Show();
+        }
+        private void buttonCancelReg_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void buttonSegund_Click(object sender, EventArgs e)
@@ -70,41 +78,134 @@ namespace Presentacion
             crearMenu();
 
         }
+        private void dateTimePickerFecha_ValueChanged(object sender, EventArgs e)
+        {
+
+            if (dateTimePickerFecha.Value.Day < DateTime.Now.Day || dateTimePickerFecha.Value.Day > DateTime.Now.AddDays(3).Day)
+            {
+                MessageBox.Show("Seleccione una fecha entre hoy y 3 dias como máximo.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dateTimePickerFecha.ResetText();
+            }
+        }
+
+        private void comboBoxSopa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxSopa.SelectedIndex > 0)
+            {
+                int a = comboBoxSopa.SelectedIndex;
+                string b = ws.ServicioDetalleSopaObtenerIngredientes(a);
+                textBoxSopaIngrediente.Text = $"SOPA: {b} {Environment.NewLine }";
+            }
+            else
+            {
+                textBoxSopaIngrediente.Text = "";
+            }
+
+        }
+
+        private void comboBoxSegundo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxSegundo.SelectedIndex > 0)
+            {
+                int a = comboBoxSegundo.SelectedIndex;
+                string b = ws.ServicioDetalleSegundoObtenerIngredientes(a);
+                textBoxSegundoIngrediente.Text = $"SEGUNDO: {b} { Environment.NewLine }";
+            }
+            else
+            {
+                textBoxSegundoIngrediente.Text = "";
+            }
+
+        }
+
+        private void comboBoxBebida_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxBebida.SelectedIndex > 0)
+            {
+                int a = comboBoxBebida.SelectedIndex;
+                string b = ws.ServicioDetalleBebidaObtenerIngredientes(a);
+                textBoxBebidaIngrediente.Text = $"BEBIDA: {b} {Environment.NewLine }";
+            }
+            else
+            {
+                textBoxBebidaIngrediente.Text = "";
+            }
+
+        }
+
+        private void comboBoxPostre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxPostre.SelectedIndex > 0)
+            {
+                int a = comboBoxPostre.SelectedIndex;
+                string b = ws.ServicioDetallePostreObtenerIngredientes(a);
+                textBoxPostreIngrediente.Text = $"POSTRE/ENTRADA: {b} {Environment.NewLine}";
+            }
+            else
+            {
+                textBoxPostreIngrediente.Text = "";
+            }
+
+        }
+
+        private void dateTimePickerFecha_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
 
         private void crearMenu()
         {
             if (validarDatos())
             {
-                EntidadMenu m = new EntidadMenu();
-                m.CANTIDAD = 0;
-                m.ID_BEB_MEN = int.Parse(comboBoxBebida.Text);
-                m.ID_POS_MEN = int.Parse(comboBoxPostre.Text);
-                m.ID_SEG_MEN = int.Parse(comboBoxSegundo.Text);
-                m.ID_SOP_MEN = int.Parse(comboBoxSopa.Text);
-                m.FECHA_MEN = DateTime.Parse(dateTimePickerFecha.Value.ToShortDateString());
-                ws.ServiciosNuevoMenu(m);
-                MessageBox.Show("hecho");
-                this.Close();
+                DialogResult r = MessageBox.Show("¿DESEA REGISTRAR EL MENÚ?", "ADVERTENCIA", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (r == DialogResult.OK)
+                {
+                    if (textBoxID.TextLength <= 0)
+                    {
+                        EntidadMenu m = new EntidadMenu();
+                        m.FECHA_MEN = DateTime.Parse(dateTimePickerFecha.Value.ToShortDateString());
+
+                        var a = ws.ServicioCargarMenuFecha(m.FECHA_MEN.ToShortDateString());
+                        if (a.Count > 0)
+                        {
+                            MessageBox.Show("esta fecha ya tiene asignado un MENÚ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            dateTimePickerFecha.ResetText();
+
+                        }
+                        else
+                        {
+                            m.CANTIDAD = 0;
+                            m.ID_BEB_MEN = comboBoxBebida.SelectedIndex;
+                            m.ID_POS_MEN = comboBoxPostre.SelectedIndex;
+                            m.ID_SEG_MEN = comboBoxSegundo.SelectedIndex;
+                            m.ID_SOP_MEN = comboBoxSopa.SelectedIndex;
+                            ws.ServiciosNuevoMenu(m);
+                            MessageBox.Show("Se completó satisfactoriamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        EntidadMenu m = new EntidadMenu();
+                        m.ID_MEN = int.Parse(textBoxID.Text);
+                        m.CANTIDAD = 0;
+                        m.ID_BEB_MEN = comboBoxBebida.SelectedIndex;
+                        m.ID_POS_MEN = comboBoxPostre.SelectedIndex;
+                        m.ID_SEG_MEN = comboBoxSegundo.SelectedIndex;
+                        m.ID_SOP_MEN = comboBoxSopa.SelectedIndex;
+                        m.FECHA_MEN = DateTime.Now;
+                        //cambiar entidad y servicio desde web
+                        ws.ServicioModificarMenu(m);
+                        MessageBox.Show("Se completo satisfactoriamente", "HECHO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                }
+                else if (r == DialogResult.Cancel)
+                {
+                    limpiarDatos();
+                }
             }
 
-        }
-        private Boolean validarDatos()
-        {
-            if (comboBoxSopa.SelectedIndex != 0 && comboBoxSegundo.SelectedIndex != 0
-                && comboBoxBebida.SelectedIndex != 0 && comboBoxPostre.SelectedIndex != 0)
-            {
-
-            }
-            MessageBox.Show("selecione un valor", "hecho", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            return false;
-        }
-
-        private void Registro_Load(object sender, EventArgs e)
-        {
-            llenarComboBebida();
-            llenarComboPostre();
-            llenarComboSegundo();
-            llenarComboSopa();
         }
 
         public void llenarComboSopa()
@@ -119,7 +220,6 @@ namespace Presentacion
             }
 
         }
-
         private void llenarComboSegundo()
         {
             //llenar combo segundo
@@ -154,8 +254,7 @@ namespace Presentacion
                 comboBoxPostre.Items.Insert(i.ID_POS, i.NOM_POS);
             }
         }
-
-        private void buttonCancelReg_Click(object sender, EventArgs e)
+        private void limpiarDatos()
         {
             comboBoxSopa.SelectedIndex = 0;
             comboBoxSegundo.SelectedIndex = 0;
@@ -163,42 +262,17 @@ namespace Presentacion
             comboBoxPostre.SelectedIndex = 0;
             dateTimePickerFecha.Refresh();
         }
-
-        private void comboBoxPostre_SelectionChangeCommitted(object sender, EventArgs e)
+        private Boolean validarDatos()
         {
-            int a = comboBoxPostre.SelectedIndex;
-            string b = ws.ServicioDetallePostreObtenerIngredientes(a);
-            textBoxPostreIngrediente.Text = $"POSTRE/ENTRADA: {b} {Environment.NewLine}";
-        }
-
-        private void comboBoxSopa_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            int a = comboBoxSopa.SelectedIndex;
-            string b = ws.ServicioDetalleSopaObtenerIngredientes(a);
-            textBoxSopaIngrediente.Text = $"SOPA: {b} {Environment.NewLine }";
-        }
-
-        private void comboBoxBebida_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            int a = comboBoxBebida.SelectedIndex;
-            string b = ws.ServicioDetalleBebidaObtenerIngredientes(a);
-            textBoxBebidaIngrediente.Text = $"BEBIDA: {b} {Environment.NewLine }";
-        }
-
-        private void comboBoxSegundo_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            int a = comboBoxSegundo.SelectedIndex;
-            string b = ws.ServicioDetalleSegundoObtenerIngredientes(a);
-            textBoxSegundoIngrediente.Text = $"SEGUNDO: {b} { Environment.NewLine }";
-        }
-
-        private void dateTimePickerFecha_ValueChanged(object sender, EventArgs e)
-        {
-            if (dateTimePickerFecha.Value.Day < DateTime.Now.Day || dateTimePickerFecha.Value > DateTime.Now.AddDays(3))
+            if (comboBoxSopa.SelectedIndex == 0 || comboBoxSegundo.SelectedIndex == 0
+                || comboBoxBebida.SelectedIndex == 0 || comboBoxPostre.SelectedIndex == 0)
             {
-                MessageBox.Show("Por favor seleccione una fecha entre el dia de hoy o 3 dias como maximo", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                dateTimePickerFecha.ResetText();
+                MessageBox.Show("No puede enviar datos vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
+
+            return true;
+
         }
     }
 }

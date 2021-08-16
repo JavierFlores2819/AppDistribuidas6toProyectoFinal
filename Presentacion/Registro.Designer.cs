@@ -50,45 +50,54 @@ namespace Presentacion
             this.textBoxSopaIngrediente = new System.Windows.Forms.TextBox();
             this.textBoxBebidaIngrediente = new System.Windows.Forms.TextBox();
             this.textBoxSegundoIngrediente = new System.Windows.Forms.TextBox();
+            this.textBoxID = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxSopa
             // 
+            this.comboBoxSopa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSopa.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSopa.FormattingEnabled = true;
             this.comboBoxSopa.Location = new System.Drawing.Point(141, 33);
             this.comboBoxSopa.Name = "comboBoxSopa";
-            this.comboBoxSopa.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxSopa.Size = new System.Drawing.Size(157, 20);
             this.comboBoxSopa.TabIndex = 0;
-            this.comboBoxSopa.SelectionChangeCommitted += new System.EventHandler(this.comboBoxSopa_SelectionChangeCommitted);
+            this.comboBoxSopa.SelectedIndexChanged += new System.EventHandler(this.comboBoxSopa_SelectedIndexChanged);
             // 
             // comboBoxSegundo
             // 
+            this.comboBoxSegundo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSegundo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSegundo.FormattingEnabled = true;
             this.comboBoxSegundo.Location = new System.Drawing.Point(141, 60);
             this.comboBoxSegundo.Name = "comboBoxSegundo";
-            this.comboBoxSegundo.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxSegundo.Size = new System.Drawing.Size(157, 20);
             this.comboBoxSegundo.TabIndex = 1;
-            this.comboBoxSegundo.SelectionChangeCommitted += new System.EventHandler(this.comboBoxSegundo_SelectionChangeCommitted);
+            this.comboBoxSegundo.SelectedIndexChanged += new System.EventHandler(this.comboBoxSegundo_SelectedIndexChanged);
             // 
             // comboBoxPostre
             // 
+            this.comboBoxPostre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPostre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxPostre.FormattingEnabled = true;
             this.comboBoxPostre.Location = new System.Drawing.Point(141, 114);
             this.comboBoxPostre.Name = "comboBoxPostre";
-            this.comboBoxPostre.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxPostre.Size = new System.Drawing.Size(157, 20);
             this.comboBoxPostre.TabIndex = 2;
-            this.comboBoxPostre.SelectionChangeCommitted += new System.EventHandler(this.comboBoxPostre_SelectionChangeCommitted);
+            this.comboBoxPostre.SelectedIndexChanged += new System.EventHandler(this.comboBoxPostre_SelectedIndexChanged);
             // 
             // comboBoxBebida
             // 
+            this.comboBoxBebida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBebida.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxBebida.FormattingEnabled = true;
             this.comboBoxBebida.Location = new System.Drawing.Point(141, 87);
             this.comboBoxBebida.Name = "comboBoxBebida";
-            this.comboBoxBebida.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxBebida.Size = new System.Drawing.Size(157, 20);
             this.comboBoxBebida.TabIndex = 3;
-            this.comboBoxBebida.SelectionChangeCommitted += new System.EventHandler(this.comboBoxBebida_SelectionChangeCommitted);
+            this.comboBoxBebida.SelectedIndexChanged += new System.EventHandler(this.comboBoxBebida_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -96,19 +105,20 @@ namespace Presentacion
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(121, 137);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Menú";
+            this.groupBox1.Text = "MENU";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 105);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 13);
+            this.label4.Size = new System.Drawing.Size(88, 12);
             this.label4.TabIndex = 8;
             this.label4.Text = "Postre/Entrada";
             // 
@@ -117,7 +127,7 @@ namespace Presentacion
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.Size = new System.Drawing.Size(44, 12);
             this.label3.TabIndex = 7;
             this.label3.Text = "Bebida";
             // 
@@ -126,7 +136,7 @@ namespace Presentacion
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.Size = new System.Drawing.Size(33, 12);
             this.label1.TabIndex = 5;
             this.label1.Text = "Sopa";
             // 
@@ -135,12 +145,13 @@ namespace Presentacion
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.Size = new System.Drawing.Size(54, 12);
             this.label2.TabIndex = 6;
             this.label2.Text = "Segundo";
             // 
             // buttonCancelReg
             // 
+            this.buttonCancelReg.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelReg.Location = new System.Drawing.Point(175, 293);
             this.buttonCancelReg.Name = "buttonCancelReg";
             this.buttonCancelReg.Size = new System.Drawing.Size(75, 23);
@@ -151,6 +162,7 @@ namespace Presentacion
             // 
             // buttonRegistra
             // 
+            this.buttonRegistra.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegistra.Location = new System.Drawing.Point(94, 293);
             this.buttonRegistra.Name = "buttonRegistra";
             this.buttonRegistra.Size = new System.Drawing.Size(75, 23);
@@ -167,6 +179,7 @@ namespace Presentacion
             this.dateTimePickerFecha.Size = new System.Drawing.Size(157, 20);
             this.dateTimePickerFecha.TabIndex = 7;
             this.dateTimePickerFecha.ValueChanged += new System.EventHandler(this.dateTimePickerFecha_ValueChanged);
+            this.dateTimePickerFecha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dateTimePickerFecha_KeyDown);
             // 
             // buttonSopa
             // 
@@ -214,12 +227,13 @@ namespace Presentacion
             this.groupBox2.Controls.Add(this.textBoxSopaIngrediente);
             this.groupBox2.Controls.Add(this.textBoxBebidaIngrediente);
             this.groupBox2.Controls.Add(this.textBoxSegundoIngrediente);
+            this.groupBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 168);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(323, 119);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Ingredientes";
+            this.groupBox2.Text = "INGREDIENTES";
             // 
             // textBoxPostreIngrediente
             // 
@@ -234,7 +248,7 @@ namespace Presentacion
             // textBoxSopaIngrediente
             // 
             this.textBoxSopaIngrediente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxSopaIngrediente.Location = new System.Drawing.Point(6, 19);
+            this.textBoxSopaIngrediente.Location = new System.Drawing.Point(6, 20);
             this.textBoxSopaIngrediente.Multiline = true;
             this.textBoxSopaIngrediente.Name = "textBoxSopaIngrediente";
             this.textBoxSopaIngrediente.ReadOnly = true;
@@ -261,11 +275,21 @@ namespace Presentacion
             this.textBoxSegundoIngrediente.Size = new System.Drawing.Size(319, 18);
             this.textBoxSegundoIngrediente.TabIndex = 18;
             // 
+            // textBoxID
+            // 
+            this.textBoxID.Location = new System.Drawing.Point(141, 7);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.ReadOnly = true;
+            this.textBoxID.Size = new System.Drawing.Size(42, 20);
+            this.textBoxID.TabIndex = 15;
+            this.textBoxID.Visible = false;
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(347, 321);
+            this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.buttonSegund);
             this.Controls.Add(this.buttonBebida);
@@ -281,13 +305,13 @@ namespace Presentacion
             this.Controls.Add(this.comboBoxSopa);
             this.Name = "Registro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registro";
-            this.Load += new System.EventHandler(this.Registro_Load);
+            this.Text = "REGISTRO";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -313,5 +337,6 @@ namespace Presentacion
         public System.Windows.Forms.ComboBox comboBoxPostre;
         public System.Windows.Forms.ComboBox comboBoxBebida;
         public System.Windows.Forms.DateTimePicker dateTimePickerFecha;
+        public System.Windows.Forms.TextBox textBoxID;
     }
 }

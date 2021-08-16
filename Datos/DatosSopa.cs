@@ -36,7 +36,7 @@ namespace Datos
             {
                 List<SOPA> listaSOPA = new List<SOPA>();
                 List<EntidadSopa> listaEntidadSopa = new List<EntidadSopa>();
-
+                byte[] ARRAY = new byte[] { };
                 using (BASEDataContext contexto = new BASEDataContext())
                 {
                     var result = from c in contexto.SOPA
@@ -48,7 +48,7 @@ namespace Datos
                     listaEntidadSopa.Add(new EntidadSopa(
                         item.ID_SOP,
                         item.NOM_SOP,
-                        item.IMG_SOPA.ToArray()
+                       ARRAY
                         )
                         );
                 }
@@ -65,9 +65,32 @@ namespace Datos
                 using (BASEDataContext contexto = new BASEDataContext())
                 {
                     var a = contexto.SOPA.FirstOrDefault(cc => cc.ID_SOP == id);
-                    b.ID_SOP= a.ID_SOP;
+                    b.ID_SOP = a.ID_SOP;
                     b.NOM_SOP = a.NOM_SOP;
                     b.IMG_SOPA = a.IMG_SOPA.ToArray();
+                }
+                return b;
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+        }
+
+        public static EntidadSopa DatosObteneSopaWindows(int id)
+        {
+            try
+            {
+                byte[] ARRAY = new byte[] { };
+                EntidadSopa b = new EntidadSopa();
+                using (BASEDataContext contexto = new BASEDataContext())
+                {
+                    var a = contexto.SOPA.FirstOrDefault(cc => cc.ID_SOP == id);
+                    b.ID_SOP = a.ID_SOP;
+                    b.NOM_SOP = a.NOM_SOP;
+                    b.IMG_SOPA = ARRAY;
                 }
                 return b;
 

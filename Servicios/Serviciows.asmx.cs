@@ -157,22 +157,22 @@ namespace Servicios
             return NegocioMenu.NegocioEliminarMenu(id);
         }
         [WebMethod]
-        public  EntidadSegundo ServicioObtenerSegundo(int id)
+        public EntidadSegundo ServicioObtenerSegundo(int id)
         {
             return NegocioSegundo.NegocioObtenerSegundo(id);
         }
         [WebMethod]
-        public  EntidadSopa ServicioObtenerSopa(int id)
+        public EntidadSopa ServicioObtenerSopa(int id)
         {
             return NegocioSopa.NegocioObtenerSopa(id);
         }
         [WebMethod]
-        public  EntidadBebida ServicioObtenerBebida(int id)
+        public EntidadBebida ServicioObtenerBebida(int id)
         {
             return NegocioBebida.NegocioObtenerBebida(id);
         }
         [WebMethod]
-        public  EntidadPostre ServicioObtenerPostre(int id)
+        public EntidadPostre ServicioObtenerPostre(int id)
         {
             return NegocioPostre.NegocioObtenerPostre(id);
         }
@@ -183,5 +183,29 @@ namespace Servicios
             return NegocioPedido.NegocioCargarPedidos(id);
         }
 
+        public EntidadSegundo ServicioObtenerSegundoWindows(int id)
+        {
+            return NegocioSegundo.NegocioObtenerSegundoWindows(id);
+        }
+        [WebMethod]
+        public EntidadSopa ServicioObtenerSopaWindows(int id)
+        {
+            return NegocioSopa.NegocioObtenerSopaWindows(id);
+        }
+        [WebMethod]
+        public EntidadBebida ServicioObtenerBebidaWindows(int id)
+        {
+            return NegocioBebida.NegocioObtenerBebidaWindows(id);
+        }
+        [WebMethod]
+        public EntidadPostre ServicioObtenerPostreWindows(int id)
+        {
+            return NegocioPostre.NegocioObtenerPostreWindows(id);
+        }
+        [WebMethod]
+        public Boolean ServicioEliminarIngrediente(String id)
+        {
+            return NegocioIngredientes.NegocioEliminarIngrediente(id);
+        }
     }
 }

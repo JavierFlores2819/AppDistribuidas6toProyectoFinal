@@ -12,7 +12,7 @@ namespace Datos.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.0.3.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,52 +26,8 @@ namespace Datos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL5105.site4now.net;Initial Catalog=db_a77d24_appdistribuidas;Persis" +
-            "t Security Info=True;User ID=db_a77d24_appdistribuidas_admin;Password=dayana19")]
-        public string db_a77d24_appdistribuidasConnectionString {
-            get {
-                return ((string)(this["db_a77d24_appdistribuidasConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-5T0Q15T\\BASE;Initial Catalog=APPDISPRUEBA;Integrated Security" +
-            "=True")]
-        public string APPDISPRUEBAConnectionString {
-            get {
-                return ((string)(this["APPDISPRUEBAConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-5T0Q15T\\BASE;Initial Catalog=APPDISTRIPRUEBA;Integrated Secur" +
-            "ity=True")]
-        public string APPDISTRIPRUEBAConnectionString {
-            get {
-                return ((string)(this["APPDISTRIPRUEBAConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=AppDistr6TO.mssql.somee.com;Initial Catalog=AppDistr6TO;Persist Secur" +
-            "ity Info=True;User ID=JaviFlores2819_SQLLogin_1;Password=scgiu6codk")]
-        public string AppDistr6TOConnectionString {
-            get {
-                return ((string)(this["AppDistr6TOConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=AppDistrI6TO.mssql.somee.com;Initial Catalog=AppDistrI6TO;Persist Sec" +
-            "urity Info=True;User ID=JaviFlores2819_SQLLogin_1;Password=scgiu6codk")]
+            "urity Info=True;User ID=JavierFlores2819_SQLLogin_1;Password=sggjhyzf2k")]
         public string AppDistrI6TOConnectionString {
             get {
                 return ((string)(this["AppDistrI6TOConnectionString"]));

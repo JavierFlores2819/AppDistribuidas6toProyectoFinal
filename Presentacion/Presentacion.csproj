@@ -48,7 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\ServiciosR\Reference.cs">
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiciosWSLP\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -109,133 +114,260 @@
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadBebida.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.EntidadBebida.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadIngredientes.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.EntidadIngredientes.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadMenu.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.EntidadMenu.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadMenuAndroid.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.EntidadMenuAndroid.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadMenuNombres.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.EntidadMenuNombres.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadPedido.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.EntidadPedido.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadPostre.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.EntidadPostre.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadSegundo.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.EntidadSegundo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.EntidadSopa.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.EntidadSopa.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioCargarBebidaResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioCargarBebidaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioCargarIngredientesResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioCargarIngredientesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioCargarMenuFechaResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioCargarMenuFechaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioCargarMenuResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioCargarMenuResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioCargarPedidosResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioCargarPedidosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioCargarPostreResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioCargarPostreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioCargarSegundoResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioCargarSegundoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioCargarSopaResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioCargarSopaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioDetalleBebidaObtenerIngredientesResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioDetalleBebidaObtenerIngredientesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioDetallePostreObtenerIngredientesResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioDetallePostreObtenerIngredientesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioDetalleSegundoObtenerIngredientesResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioDetalleSegundoObtenerIngredientesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioDetalleSopaObtenerIngredientesResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioDetalleSopaObtenerIngredientesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioEliminarIngredienteResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioEliminarIngredienteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioEliminarMenuResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioEliminarMenuResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioModificarMenuResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioModificarMenuResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioNuevaSopaResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioNuevaSopaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioNuevoBebidaResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioNuevoBebidaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioNuevoDetalleBebidaResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioNuevoDetalleBebidaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioNuevoDetallePostreResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioNuevoDetallePostreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioNuevoDetalleSegundoResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioNuevoDetalleSegundoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioNuevoDetalleSopaResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioNuevoDetalleSopaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioNuevoIngredienteResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioNuevoIngredienteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioNuevoSegundoResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioNuevoSegundoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerBebidaResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioObtenerBebidaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerBebidaWindowsResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioObtenerBebidaWindowsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerMenuporIdResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioObtenerMenuporIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerPostreResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioObtenerPostreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerPostreWindowsResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioObtenerPostreWindowsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerSegundoResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioObtenerSegundoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerSopaResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioObtenerSopaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServicioObtenerSopaWindowsResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServicioObtenerSopaWindowsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServiciosNuevoMenuResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServiciosNuevoMenuResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Presentacion.ServiciosR.ServiciosNuevoPostreResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Presentacion.ServiceReference1.ServiciosNuevoPostreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosR\Serviciows.wsdl" />
+    <None Include="Connected Services\ServiceReference1\Serviciows.wsdl" />
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.EntidadBebida.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.EntidadIngredientes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.EntidadMenu.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.EntidadMenuAndroid.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.EntidadMenuNombres.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.EntidadPedido.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.EntidadPostre.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.EntidadSegundo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.EntidadSopa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioCargarBebidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioCargarIngredientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioCargarMenuFechaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioCargarMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioCargarPedidosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioCargarPostreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioCargarSegundoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioCargarSopaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioDetalleBebidaObtenerIngredientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioDetallePostreObtenerIngredientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioDetalleSegundoObtenerIngredientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioDetalleSopaObtenerIngredientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioEliminarIngredienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioEliminarMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioModificarMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioNuevaSopaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioNuevoBebidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioNuevoDetalleBebidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioNuevoDetallePostreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioNuevoDetalleSegundoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioNuevoDetalleSopaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioNuevoIngredienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioNuevoSegundoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioObtenerBebidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioObtenerBebidaWindowsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioObtenerMenuporIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioObtenerPostreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioObtenerPostreWindowsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioObtenerSegundoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioObtenerSopaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServicioObtenerSopaWindowsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServiciosNuevoMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Presentacion.ServiciosWSLP.ServiciosNuevoPostreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWSLP\Serviciows.wsdl" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -253,19 +385,35 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiciosR\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+    <WCFMetadataStorage Include="Connected Services\ServiciosWSLP\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiciosR\Serviciows.disco" />
+    <None Include="Connected Services\ServiciosWSLP\Serviciows.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiciosR\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiciosWSLP\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiciosR\configuration.svcinfo" />
+    <None Include="Connected Services\ServiciosWSLP\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiciosR\Reference.svcmap">
+    <None Include="Connected Services\ServiciosWSLP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\Serviciows.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

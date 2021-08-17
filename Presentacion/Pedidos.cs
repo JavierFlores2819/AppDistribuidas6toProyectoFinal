@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Presentacion.ServiciosR;
+using Presentacion.ServiciosWSLP;
 
 namespace Presentacion
 {

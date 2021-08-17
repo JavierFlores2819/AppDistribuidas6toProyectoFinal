@@ -110,7 +110,8 @@ namespace Servicios
         [WebMethod]
         public List<EntidadMenuAndroid> ServicioCargarMenuFecha(String fechaId)
         {
-            DateTime s = DateTime.ParseExact(fechaId, "dd/MM/yyyy", null);
+            DateTime s;
+            DateTime.TryParse(fechaId,out s);
             return NegocioMenu.NegocioCargarMenuFecha(s);
         }
 

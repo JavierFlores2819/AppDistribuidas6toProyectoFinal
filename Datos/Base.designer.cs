@@ -48,9 +48,6 @@ namespace Datos
     partial void InsertINGREDIENTES(INGREDIENTES instance);
     partial void UpdateINGREDIENTES(INGREDIENTES instance);
     partial void DeleteINGREDIENTES(INGREDIENTES instance);
-    partial void InsertMENU(MENU instance);
-    partial void UpdateMENU(MENU instance);
-    partial void DeleteMENU(MENU instance);
     partial void InsertPEDIDOS(PEDIDOS instance);
     partial void UpdatePEDIDOS(PEDIDOS instance);
     partial void DeletePEDIDOS(PEDIDOS instance);
@@ -63,6 +60,9 @@ namespace Datos
     partial void InsertSOPA(SOPA instance);
     partial void UpdateSOPA(SOPA instance);
     partial void DeleteSOPA(SOPA instance);
+    partial void InsertMENU(MENU instance);
+    partial void UpdateMENU(MENU instance);
+    partial void DeleteMENU(MENU instance);
     #endregion
 		
 		public BASEDataContext() : 
@@ -143,14 +143,6 @@ namespace Datos
 			}
 		}
 		
-		public System.Data.Linq.Table<MENU> MENU
-		{
-			get
-			{
-				return this.GetTable<MENU>();
-			}
-		}
-		
 		public System.Data.Linq.Table<PEDIDOS> PEDIDOS
 		{
 			get
@@ -180,6 +172,14 @@ namespace Datos
 			get
 			{
 				return this.GetTable<SOPA>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MENU> MENU
+		{
+			get
+			{
+				return this.GetTable<MENU>();
 			}
 		}
 	}
@@ -1316,404 +1316,6 @@ namespace Datos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MENU")]
-	public partial class MENU : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _CAN_PED_MEN;
-		
-		private int _ID_MEN;
-		
-		private int _ID_SOP_MEN;
-		
-		private int _ID_SEG_MEN;
-		
-		private int _ID_BEB_MEN;
-		
-		private int _ID_POS_MEN;
-		
-		private System.DateTime _FECHA_MEN;
-		
-		private EntitySet<PEDIDOS> _PEDIDOS;
-		
-		private EntityRef<BEBIDA> _BEBIDA;
-		
-		private EntityRef<POSTRE> _POSTRE;
-		
-		private EntityRef<SEGUNDO> _SEGUNDO;
-		
-		private EntityRef<SOPA> _SOPA;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCAN_PED_MENChanging(int value);
-    partial void OnCAN_PED_MENChanged();
-    partial void OnID_MENChanging(int value);
-    partial void OnID_MENChanged();
-    partial void OnID_SOP_MENChanging(int value);
-    partial void OnID_SOP_MENChanged();
-    partial void OnID_SEG_MENChanging(int value);
-    partial void OnID_SEG_MENChanged();
-    partial void OnID_BEB_MENChanging(int value);
-    partial void OnID_BEB_MENChanged();
-    partial void OnID_POS_MENChanging(int value);
-    partial void OnID_POS_MENChanged();
-    partial void OnFECHA_MENChanging(System.DateTime value);
-    partial void OnFECHA_MENChanged();
-    #endregion
-		
-		public MENU()
-		{
-			this._PEDIDOS = new EntitySet<PEDIDOS>(new Action<PEDIDOS>(this.attach_PEDIDOS), new Action<PEDIDOS>(this.detach_PEDIDOS));
-			this._BEBIDA = default(EntityRef<BEBIDA>);
-			this._POSTRE = default(EntityRef<POSTRE>);
-			this._SEGUNDO = default(EntityRef<SEGUNDO>);
-			this._SOPA = default(EntityRef<SOPA>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CAN_PED_MEN", DbType="Int NOT NULL")]
-		public int CAN_PED_MEN
-		{
-			get
-			{
-				return this._CAN_PED_MEN;
-			}
-			set
-			{
-				if ((this._CAN_PED_MEN != value))
-				{
-					this.OnCAN_PED_MENChanging(value);
-					this.SendPropertyChanging();
-					this._CAN_PED_MEN = value;
-					this.SendPropertyChanged("CAN_PED_MEN");
-					this.OnCAN_PED_MENChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_MEN", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID_MEN
-		{
-			get
-			{
-				return this._ID_MEN;
-			}
-			set
-			{
-				if ((this._ID_MEN != value))
-				{
-					this.OnID_MENChanging(value);
-					this.SendPropertyChanging();
-					this._ID_MEN = value;
-					this.SendPropertyChanged("ID_MEN");
-					this.OnID_MENChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SOP_MEN", DbType="Int NOT NULL")]
-		public int ID_SOP_MEN
-		{
-			get
-			{
-				return this._ID_SOP_MEN;
-			}
-			set
-			{
-				if ((this._ID_SOP_MEN != value))
-				{
-					if (this._SOPA.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_SOP_MENChanging(value);
-					this.SendPropertyChanging();
-					this._ID_SOP_MEN = value;
-					this.SendPropertyChanged("ID_SOP_MEN");
-					this.OnID_SOP_MENChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SEG_MEN", DbType="Int NOT NULL")]
-		public int ID_SEG_MEN
-		{
-			get
-			{
-				return this._ID_SEG_MEN;
-			}
-			set
-			{
-				if ((this._ID_SEG_MEN != value))
-				{
-					if (this._SEGUNDO.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_SEG_MENChanging(value);
-					this.SendPropertyChanging();
-					this._ID_SEG_MEN = value;
-					this.SendPropertyChanged("ID_SEG_MEN");
-					this.OnID_SEG_MENChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_BEB_MEN", DbType="Int NOT NULL")]
-		public int ID_BEB_MEN
-		{
-			get
-			{
-				return this._ID_BEB_MEN;
-			}
-			set
-			{
-				if ((this._ID_BEB_MEN != value))
-				{
-					if (this._BEBIDA.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_BEB_MENChanging(value);
-					this.SendPropertyChanging();
-					this._ID_BEB_MEN = value;
-					this.SendPropertyChanged("ID_BEB_MEN");
-					this.OnID_BEB_MENChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_POS_MEN", DbType="Int NOT NULL")]
-		public int ID_POS_MEN
-		{
-			get
-			{
-				return this._ID_POS_MEN;
-			}
-			set
-			{
-				if ((this._ID_POS_MEN != value))
-				{
-					if (this._POSTRE.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_POS_MENChanging(value);
-					this.SendPropertyChanging();
-					this._ID_POS_MEN = value;
-					this.SendPropertyChanged("ID_POS_MEN");
-					this.OnID_POS_MENChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_MEN", DbType="DateTime NOT NULL")]
-		public System.DateTime FECHA_MEN
-		{
-			get
-			{
-				return this._FECHA_MEN;
-			}
-			set
-			{
-				if ((this._FECHA_MEN != value))
-				{
-					this.OnFECHA_MENChanging(value);
-					this.SendPropertyChanging();
-					this._FECHA_MEN = value;
-					this.SendPropertyChanged("FECHA_MEN");
-					this.OnFECHA_MENChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MENU_PEDIDOS", Storage="_PEDIDOS", ThisKey="ID_MEN", OtherKey="MENU")]
-		public EntitySet<PEDIDOS> PEDIDOS
-		{
-			get
-			{
-				return this._PEDIDOS;
-			}
-			set
-			{
-				this._PEDIDOS.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BEBIDA_MENU", Storage="_BEBIDA", ThisKey="ID_BEB_MEN", OtherKey="ID_BEB", IsForeignKey=true)]
-		public BEBIDA BEBIDA
-		{
-			get
-			{
-				return this._BEBIDA.Entity;
-			}
-			set
-			{
-				BEBIDA previousValue = this._BEBIDA.Entity;
-				if (((previousValue != value) 
-							|| (this._BEBIDA.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._BEBIDA.Entity = null;
-						previousValue.MENU.Remove(this);
-					}
-					this._BEBIDA.Entity = value;
-					if ((value != null))
-					{
-						value.MENU.Add(this);
-						this._ID_BEB_MEN = value.ID_BEB;
-					}
-					else
-					{
-						this._ID_BEB_MEN = default(int);
-					}
-					this.SendPropertyChanged("BEBIDA");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="POSTRE_MENU", Storage="_POSTRE", ThisKey="ID_POS_MEN", OtherKey="ID_POS", IsForeignKey=true)]
-		public POSTRE POSTRE
-		{
-			get
-			{
-				return this._POSTRE.Entity;
-			}
-			set
-			{
-				POSTRE previousValue = this._POSTRE.Entity;
-				if (((previousValue != value) 
-							|| (this._POSTRE.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._POSTRE.Entity = null;
-						previousValue.MENU.Remove(this);
-					}
-					this._POSTRE.Entity = value;
-					if ((value != null))
-					{
-						value.MENU.Add(this);
-						this._ID_POS_MEN = value.ID_POS;
-					}
-					else
-					{
-						this._ID_POS_MEN = default(int);
-					}
-					this.SendPropertyChanged("POSTRE");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SEGUNDO_MENU", Storage="_SEGUNDO", ThisKey="ID_SEG_MEN", OtherKey="ID_SEG", IsForeignKey=true)]
-		public SEGUNDO SEGUNDO
-		{
-			get
-			{
-				return this._SEGUNDO.Entity;
-			}
-			set
-			{
-				SEGUNDO previousValue = this._SEGUNDO.Entity;
-				if (((previousValue != value) 
-							|| (this._SEGUNDO.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._SEGUNDO.Entity = null;
-						previousValue.MENU.Remove(this);
-					}
-					this._SEGUNDO.Entity = value;
-					if ((value != null))
-					{
-						value.MENU.Add(this);
-						this._ID_SEG_MEN = value.ID_SEG;
-					}
-					else
-					{
-						this._ID_SEG_MEN = default(int);
-					}
-					this.SendPropertyChanged("SEGUNDO");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SOPA_MENU", Storage="_SOPA", ThisKey="ID_SOP_MEN", OtherKey="ID_SOP", IsForeignKey=true)]
-		public SOPA SOPA
-		{
-			get
-			{
-				return this._SOPA.Entity;
-			}
-			set
-			{
-				SOPA previousValue = this._SOPA.Entity;
-				if (((previousValue != value) 
-							|| (this._SOPA.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._SOPA.Entity = null;
-						previousValue.MENU.Remove(this);
-					}
-					this._SOPA.Entity = value;
-					if ((value != null))
-					{
-						value.MENU.Add(this);
-						this._ID_SOP_MEN = value.ID_SOP;
-					}
-					else
-					{
-						this._ID_SOP_MEN = default(int);
-					}
-					this.SendPropertyChanged("SOPA");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_PEDIDOS(PEDIDOS entity)
-		{
-			this.SendPropertyChanging();
-			entity.MENU1 = this;
-		}
-		
-		private void detach_PEDIDOS(PEDIDOS entity)
-		{
-			this.SendPropertyChanging();
-			entity.MENU1 = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PEDIDOS")]
 	public partial class PEDIDOS : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1770,7 +1372,7 @@ namespace Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CLIENTE", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CLIENTE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string CLIENTE
 		{
 			get
@@ -2130,7 +1732,7 @@ namespace Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IMG_SEGUNDO", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[IMG:SEGUNDO]", Storage="_IMG_SEGUNDO", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary IMG_SEGUNDO
 		{
 			get
@@ -2296,7 +1898,7 @@ namespace Datos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IMG_SOPA", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[IMG:SOPA]", Storage="_IMG_SOPA", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary IMG_SOPA
 		{
 			get
@@ -2384,6 +1986,404 @@ namespace Datos
 		{
 			this.SendPropertyChanging();
 			entity.SOPA = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MENU")]
+	public partial class MENU : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_MEN;
+		
+		private int _ID_SOP_MEN;
+		
+		private int _ID_SEG_MEN;
+		
+		private int _ID_BEB_MEN;
+		
+		private int _ID_POS_MEN;
+		
+		private System.DateTime _FECHA_MEN;
+		
+		private int _CAN_PED_MEN;
+		
+		private EntitySet<PEDIDOS> _PEDIDOS;
+		
+		private EntityRef<BEBIDA> _BEBIDA;
+		
+		private EntityRef<POSTRE> _POSTRE;
+		
+		private EntityRef<SEGUNDO> _SEGUNDO;
+		
+		private EntityRef<SOPA> _SOPA;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_MENChanging(int value);
+    partial void OnID_MENChanged();
+    partial void OnID_SOP_MENChanging(int value);
+    partial void OnID_SOP_MENChanged();
+    partial void OnID_SEG_MENChanging(int value);
+    partial void OnID_SEG_MENChanged();
+    partial void OnID_BEB_MENChanging(int value);
+    partial void OnID_BEB_MENChanged();
+    partial void OnID_POS_MENChanging(int value);
+    partial void OnID_POS_MENChanged();
+    partial void OnFECHA_MENChanging(System.DateTime value);
+    partial void OnFECHA_MENChanged();
+    partial void OnCAN_PED_MENChanging(int value);
+    partial void OnCAN_PED_MENChanged();
+    #endregion
+		
+		public MENU()
+		{
+			this._PEDIDOS = new EntitySet<PEDIDOS>(new Action<PEDIDOS>(this.attach_PEDIDOS), new Action<PEDIDOS>(this.detach_PEDIDOS));
+			this._BEBIDA = default(EntityRef<BEBIDA>);
+			this._POSTRE = default(EntityRef<POSTRE>);
+			this._SEGUNDO = default(EntityRef<SEGUNDO>);
+			this._SOPA = default(EntityRef<SOPA>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_MEN", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_MEN
+		{
+			get
+			{
+				return this._ID_MEN;
+			}
+			set
+			{
+				if ((this._ID_MEN != value))
+				{
+					this.OnID_MENChanging(value);
+					this.SendPropertyChanging();
+					this._ID_MEN = value;
+					this.SendPropertyChanged("ID_MEN");
+					this.OnID_MENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SOP_MEN", DbType="Int NOT NULL")]
+		public int ID_SOP_MEN
+		{
+			get
+			{
+				return this._ID_SOP_MEN;
+			}
+			set
+			{
+				if ((this._ID_SOP_MEN != value))
+				{
+					if (this._SOPA.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_SOP_MENChanging(value);
+					this.SendPropertyChanging();
+					this._ID_SOP_MEN = value;
+					this.SendPropertyChanged("ID_SOP_MEN");
+					this.OnID_SOP_MENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SEG_MEN", DbType="Int NOT NULL")]
+		public int ID_SEG_MEN
+		{
+			get
+			{
+				return this._ID_SEG_MEN;
+			}
+			set
+			{
+				if ((this._ID_SEG_MEN != value))
+				{
+					if (this._SEGUNDO.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_SEG_MENChanging(value);
+					this.SendPropertyChanging();
+					this._ID_SEG_MEN = value;
+					this.SendPropertyChanged("ID_SEG_MEN");
+					this.OnID_SEG_MENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_BEB_MEN", DbType="Int NOT NULL")]
+		public int ID_BEB_MEN
+		{
+			get
+			{
+				return this._ID_BEB_MEN;
+			}
+			set
+			{
+				if ((this._ID_BEB_MEN != value))
+				{
+					if (this._BEBIDA.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_BEB_MENChanging(value);
+					this.SendPropertyChanging();
+					this._ID_BEB_MEN = value;
+					this.SendPropertyChanged("ID_BEB_MEN");
+					this.OnID_BEB_MENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_POS_MEN", DbType="Int NOT NULL")]
+		public int ID_POS_MEN
+		{
+			get
+			{
+				return this._ID_POS_MEN;
+			}
+			set
+			{
+				if ((this._ID_POS_MEN != value))
+				{
+					if (this._POSTRE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_POS_MENChanging(value);
+					this.SendPropertyChanging();
+					this._ID_POS_MEN = value;
+					this.SendPropertyChanged("ID_POS_MEN");
+					this.OnID_POS_MENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA_MEN", DbType="DateTime NOT NULL")]
+		public System.DateTime FECHA_MEN
+		{
+			get
+			{
+				return this._FECHA_MEN;
+			}
+			set
+			{
+				if ((this._FECHA_MEN != value))
+				{
+					this.OnFECHA_MENChanging(value);
+					this.SendPropertyChanging();
+					this._FECHA_MEN = value;
+					this.SendPropertyChanged("FECHA_MEN");
+					this.OnFECHA_MENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CAN_PED_MEN", DbType="Int NOT NULL")]
+		public int CAN_PED_MEN
+		{
+			get
+			{
+				return this._CAN_PED_MEN;
+			}
+			set
+			{
+				if ((this._CAN_PED_MEN != value))
+				{
+					this.OnCAN_PED_MENChanging(value);
+					this.SendPropertyChanging();
+					this._CAN_PED_MEN = value;
+					this.SendPropertyChanged("CAN_PED_MEN");
+					this.OnCAN_PED_MENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MENU_PEDIDOS", Storage="_PEDIDOS", ThisKey="ID_MEN", OtherKey="MENU")]
+		public EntitySet<PEDIDOS> PEDIDOS
+		{
+			get
+			{
+				return this._PEDIDOS;
+			}
+			set
+			{
+				this._PEDIDOS.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BEBIDA_MENU", Storage="_BEBIDA", ThisKey="ID_BEB_MEN", OtherKey="ID_BEB", IsForeignKey=true)]
+		public BEBIDA BEBIDA
+		{
+			get
+			{
+				return this._BEBIDA.Entity;
+			}
+			set
+			{
+				BEBIDA previousValue = this._BEBIDA.Entity;
+				if (((previousValue != value) 
+							|| (this._BEBIDA.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._BEBIDA.Entity = null;
+						previousValue.MENU.Remove(this);
+					}
+					this._BEBIDA.Entity = value;
+					if ((value != null))
+					{
+						value.MENU.Add(this);
+						this._ID_BEB_MEN = value.ID_BEB;
+					}
+					else
+					{
+						this._ID_BEB_MEN = default(int);
+					}
+					this.SendPropertyChanged("BEBIDA");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="POSTRE_MENU", Storage="_POSTRE", ThisKey="ID_POS_MEN", OtherKey="ID_POS", IsForeignKey=true)]
+		public POSTRE POSTRE
+		{
+			get
+			{
+				return this._POSTRE.Entity;
+			}
+			set
+			{
+				POSTRE previousValue = this._POSTRE.Entity;
+				if (((previousValue != value) 
+							|| (this._POSTRE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._POSTRE.Entity = null;
+						previousValue.MENU.Remove(this);
+					}
+					this._POSTRE.Entity = value;
+					if ((value != null))
+					{
+						value.MENU.Add(this);
+						this._ID_POS_MEN = value.ID_POS;
+					}
+					else
+					{
+						this._ID_POS_MEN = default(int);
+					}
+					this.SendPropertyChanged("POSTRE");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SEGUNDO_MENU", Storage="_SEGUNDO", ThisKey="ID_SEG_MEN", OtherKey="ID_SEG", IsForeignKey=true)]
+		public SEGUNDO SEGUNDO
+		{
+			get
+			{
+				return this._SEGUNDO.Entity;
+			}
+			set
+			{
+				SEGUNDO previousValue = this._SEGUNDO.Entity;
+				if (((previousValue != value) 
+							|| (this._SEGUNDO.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._SEGUNDO.Entity = null;
+						previousValue.MENU.Remove(this);
+					}
+					this._SEGUNDO.Entity = value;
+					if ((value != null))
+					{
+						value.MENU.Add(this);
+						this._ID_SEG_MEN = value.ID_SEG;
+					}
+					else
+					{
+						this._ID_SEG_MEN = default(int);
+					}
+					this.SendPropertyChanged("SEGUNDO");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SOPA_MENU", Storage="_SOPA", ThisKey="ID_SOP_MEN", OtherKey="ID_SOP", IsForeignKey=true)]
+		public SOPA SOPA
+		{
+			get
+			{
+				return this._SOPA.Entity;
+			}
+			set
+			{
+				SOPA previousValue = this._SOPA.Entity;
+				if (((previousValue != value) 
+							|| (this._SOPA.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._SOPA.Entity = null;
+						previousValue.MENU.Remove(this);
+					}
+					this._SOPA.Entity = value;
+					if ((value != null))
+					{
+						value.MENU.Add(this);
+						this._ID_SOP_MEN = value.ID_SOP;
+					}
+					else
+					{
+						this._ID_SOP_MEN = default(int);
+					}
+					this.SendPropertyChanged("SOPA");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_PEDIDOS(PEDIDOS entity)
+		{
+			this.SendPropertyChanging();
+			entity.MENU1 = this;
+		}
+		
+		private void detach_PEDIDOS(PEDIDOS entity)
+		{
+			this.SendPropertyChanging();
+			entity.MENU1 = null;
 		}
 	}
 }
